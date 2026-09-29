@@ -1,95 +1,156 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 const galleryItems = [
+  // ── ROW 1 (4 items) ──
   {
-    id: 'campus',
-    title: 'Modern World-Class Campus',
-    category: 'Campus',
-    icon: '🏛️',
-    badgeText: 'Campus',
-    image: '/WhatsApp Image 2026-09-28 at 7.24.42 PM.jpeg',
-    highRes: '/WhatsApp Image 2026-09-28 at 7.24.42 PM.jpeg',
-    description: 'Expansive pollution-free campus in Narapally featuring state-of-the-art infrastructure, landscaped courtyards, amphitheater steps, and safe bus transit.',
-  },
-  {
-    id: 'learning',
-    title: 'Interactive STEM & Innovation Labs',
-    category: 'Learning',
-    icon: '🔬',
-    badgeText: 'Learning',
-    image: '/WhatsApp Image 2026-09-28 at 7.32.11 PM.jpeg',
-    highRes: '/WhatsApp Image 2026-09-28 at 7.32.11 PM.jpeg',
-    description: 'Hands-on experiential learning where students design and build working scientific models, explore physics concepts, and nurture creative thinking.',
+    id: 'academics',
+    title: 'Academics',
+    badge: 'Academics',
+    categories: ['Academics'],
+    image: '/primary-school-study.jpg',
+    description: 'Engaging classroom learning, interactive NCERT curriculum, and foundational scholastic discovery.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
   },
   {
     id: 'sports',
-    title: 'Track Athletics & Sports Championships',
-    category: 'Sports',
-    icon: '🏃',
-    badgeText: 'Sports',
+    title: 'Sports',
+    badge: 'Sports',
+    categories: ['Sports', 'Beyond the Classroom'],
     image: '/games-and-sports-track.jpg',
-    highRes: '/games-and-sports-track.jpg',
-    description: 'Students competing in track sprinting and athletics across inter-house teams on our dedicated international standard running track.',
+    description: 'Students competing in running track athletics, football, and inter-house sporting championships.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3h14v4a5 5 0 01-5 5h-4a5 5 0 01-5-5V3zm0 2H3a2 2 0 00-2 2v1a4 4 0 004 4h0m14-7h2a2 2 0 012 2v1a4 4 0 01-4 4h0M10 14.5V18m4-3.5V18m-6 3h8" />
+      </svg>
+    ),
   },
   {
-    id: 'arts',
-    title: 'School Brass Band & Music Ensemble',
-    category: 'Arts & Culture',
-    icon: '🥁',
-    badgeText: 'Arts & Culture',
+    id: 'art-painting',
+    title: 'Art & Painting',
+    badge: 'Art & Painting',
+    categories: ['Arts & Culture', 'Beyond the Classroom'],
+    image: '/art-and-painting.jpg',
+    description: 'Canvas painting, creative sketchcraft, and visual arts nurturing imagination and creative flair.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4 11.97 11.97 0 012.24-6.66l6.83-9.56a1.5 1.5 0 012.38 0l2.42 3.38a1.5 1.5 0 01-.19 2.05L12 11.5M7 21h10a4 4 0 004-4 11.97 11.97 0 00-2.24-6.66L15 4" />
+      </svg>
+    ),
+  },
+  {
+    id: 'dance',
+    title: 'Dance',
+    badge: 'Dance',
+    categories: ['Arts & Culture', 'Beyond the Classroom'],
+    image: '/classical-dance-activity.jpg',
+    description: 'Graceful Bharatanatyam mudras, folk traditions, and vibrant stage dance choreography.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+      </svg>
+    ),
+  },
+
+  // ── ROW 2 (4 items) ──
+  {
+    id: 'music',
+    title: 'Music',
+    badge: 'Music',
+    categories: ['Arts & Culture', 'Beyond the Classroom'],
     image: '/music-band-activity.jpg',
-    highRes: '/music-band-activity.jpg',
-    description: 'Nurturing musical discipline, rhythm, and collaborative teamwork through our distinguished marching band and ceremonial percussion performances.',
+    description: 'Ceremonial brass band, percussion ensembles, and instrumental music coaching.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+      </svg>
+    ),
   },
   {
-    id: 'activities',
-    title: 'Outdoor Experiential Activities',
-    category: 'Activities',
-    icon: '🌱',
-    badgeText: 'Activities',
-    image: '/WhatsApp Image 2026-09-28 at 7.33.04 PM.jpeg',
-    highRes: '/WhatsApp Image 2026-09-28 at 7.33.04 PM.jpeg',
-    description: 'Primary learners discovering nature, developing social coordination, and enjoying guided outdoor recreation on the open campus grounds.',
+    id: 'karate',
+    title: 'Karate',
+    badge: 'Karate',
+    categories: ['Sports', 'Beyond the Classroom'],
+    image: '/karati.webp',
+    description: 'Certified martial arts training building self-defense, discipline, reflexes, and inner focus.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
   },
   {
-    id: 'student-life',
-    title: 'Joyful Daily Student Life',
-    category: 'Student Life',
-    icon: '✨',
-    badgeText: 'Student Life',
-    image: '/WhatsApp Image 2026-09-28 at 7.32.45 PM.jpeg',
-    highRes: '/WhatsApp Image 2026-09-28 at 7.32.45 PM.jpeg',
-    description: 'A welcoming, positive school environment where every student is encouraged to walk with confidence, form lifelong friendships, and thrive.',
+    id: 'yoga',
+    title: 'Yoga',
+    badge: 'Yoga',
+    categories: ['Sports', 'Beyond the Classroom'],
+    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80',
+    description: 'Daily morning pranayama, mindfulness asanas, and emotional wellness in our meditation hall.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="5" r="2.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 19c1.5-3 4-5 8-5s6.5 2 8 5M12 10v4" />
+      </svg>
+    ),
   },
+  {
+    id: 'science-activities',
+    title: 'Science Activities',
+    badge: 'Science Activities',
+    categories: ['Academics', 'Beyond the Classroom'],
+    image: '/science-lab-activity.jpg',
+    description: 'Hands-on laboratory experiments, chemistry flask demonstrations, and practical scientific inquiry.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    ),
+  },
+
+  // ── ROW 3 (3 wider items) ──
   {
     id: 'events',
-    title: 'School Assembly & Celebrations',
-    category: 'Events',
-    icon: '🏫',
-    badgeText: 'Events',
+    title: 'Events',
+    badge: 'Events',
+    categories: ['Events'],
     image: '/hero image.png',
-    highRes: '/hero image.png',
-    description: 'Whole-school morning drills, national festivals, and milestone assemblies bringing our complete student body and faculty together.',
+    description: 'Annual sports meets, patriotic parades, flag hosting ceremonies, and whole-school milestones.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 2v4M8 2v4M3 10h18" />
+      </svg>
+    ),
   },
   {
-    id: 'library',
-    title: 'Collaborative Reading Plaza',
-    category: 'Library',
-    icon: '📖',
-    badgeText: 'Library',
-    image: '/heroslider.jpeg',
-    highRes: '/heroslider.jpeg',
-    description: 'Extensive print volumes, journals, and quiet research study tables inspiring lifelong scholarly discipline and curiosity.',
+    id: 'celebrations',
+    title: 'Celebrations',
+    badge: 'Celebrations',
+    categories: ['Celebrations', 'Events'],
+    image: '/cocurricular-fest.jpg',
+    description: 'Joyous cultural fests, fancy dress annual days, festive pageants, and campus carnivals.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ),
   },
   {
-    id: 'transit',
-    title: 'Safe Campus Transit & Care',
-    category: 'Campus',
-    icon: '🚌',
-    badgeText: 'Transit',
+    id: 'field-trips',
+    title: 'Field Trips',
+    badge: 'Field Trips',
+    categories: ['Beyond the Classroom', 'Events'],
     image: '/school-bus-transit.jpg',
-    highRes: '/school-bus-transit.jpg',
-    description: 'Safe GPS-tracked school bus fleet with caring support staff ensuring comfortable, secure daily transit across Hyderabad.',
+    description: 'Safe GPS-enabled bus transit taking students on exciting heritage walks and nature expeditions.',
+    icon: (
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+        <circle cx="12" cy="13" r="3" strokeWidth="2" />
+      </svg>
+    ),
   },
 ];
 
@@ -97,7 +158,7 @@ export default function Gallery() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showFullModal, setShowFullModal] = useState(false);
 
-  // Keyboard navigation for lightbox
+  // Lightbox keyboard navigation
   const handleKeyDown = useCallback(
     (e) => {
       if (!selectedItem) return;
@@ -121,189 +182,94 @@ export default function Gallery() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  const campusItem = galleryItems.find((i) => i.id === 'campus');
-  const learningItem = galleryItems.find((i) => i.id === 'learning');
-  const sportsItem = galleryItems.find((i) => i.id === 'sports');
-  const bottomItems = galleryItems.filter(
-    (i) => i.id !== 'campus' && i.id !== 'learning' && i.id !== 'sports'
-  );
+  const row1 = galleryItems.slice(0, 4);
+  const row2 = galleryItems.slice(4, 8);
+  const row3 = galleryItems.slice(8, 11);
 
   return (
-    <section id="gallery" className="py-12 bg-white relative overflow-hidden border-b border-slate-200">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section
+      id="gallery"
+      className="py-14 sm:py-18 lg:py-20 bg-[#FCFAF7] relative overflow-hidden border-b border-slate-200/80"
+    >
+      {/* Decorative Soft Ambient Blobs (Matches screenshot atmosphere) */}
+      <div
+        className="w-80 h-80 rounded-full bg-[#E5F2E8]/70 blur-3xl absolute -top-20 -left-20 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="w-80 h-80 rounded-full bg-[#FCECE8]/70 blur-3xl absolute -bottom-20 -right-20 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* ================= SECTION HEADER ================= */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-red-50 via-white to-emerald-50 text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100 mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#DC2626]" />
-            CAMPUS LIFE GALLERY
-          </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
-            A glimpse of{' '}
-            <span className="bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">
-              life at JRS
-            </span>
+        {/* ── HEADER ── */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <p className="text-[11px] sm:text-xs font-sans font-bold tracking-[0.26em] text-slate-500 uppercase">
+            GALLERY
+          </p>
+          <div className="w-7 h-[2.5px] bg-[#B91C1C] mx-auto mt-1.5 mb-3 rounded-full" />
+          
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-[42px] lg:text-[46px] font-bold text-[#1E293B] tracking-tight leading-tight">
+            Moments at <span className="text-[#B91C1C] font-extrabold">JRS</span>
           </h2>
+
+          <p className="text-sm sm:text-[15px] lg:text-base text-slate-600 font-sans max-w-2xl mx-auto mt-3 font-normal leading-relaxed">
+            A glimpse into the vibrant life at JRS International School — where learning, creativity and growth come together.
+          </p>
         </div>
 
-        {/* ================= 5-COLUMN ASYMMETRICAL COLLAGE (Pixel-Perfect Reference Match) ================= */}
-        <div className="overflow-x-auto no-scrollbar pb-3 -mx-4 px-4 sm:mx-0 sm:px-0">
-          <div className="min-w-[880px] lg:min-w-0 h-[440px] sm:h-[480px] lg:h-[520px] flex items-center justify-between gap-3.5 sm:gap-4 lg:gap-5">
-            
-            {/* COLUMN 1: Far Left (Single Vertically Centered Card) */}
-            <div className="w-[18%] flex flex-col justify-center">
-              <div
-                onClick={() => setSelectedItem(galleryItems[4])}
-                className="group relative w-full h-[260px] sm:h-[290px] lg:h-[320px] rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src={galleryItems[4].image}
-                  alt={galleryItems[4].title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[4].title}</span>
-                </div>
-              </div>
-            </div>
+        {/* ── PHOTO GRID (4 + 4 + 3 Exact Screenshot Match) ── */}
+        <div className="space-y-3.5 sm:space-y-4">
+          {/* ROW 1: 4 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+            {row1.map((item) => (
+              <CardItem key={item.id} item={item} onSelect={setSelectedItem} heightClass="h-[210px] sm:h-[225px] lg:h-[235px]" />
+            ))}
+          </div>
 
-            {/* COLUMN 2: Left Middle (Two Stacked Cards - Locked to Top & Bottom) */}
-            <div className="w-[21%] h-full flex flex-col gap-3.5 sm:gap-4 lg:gap-5">
-              {/* Top Card */}
-              <div
-                onClick={() => setSelectedItem(galleryItems[1])}
-                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src={galleryItems[1].image}
-                  alt={galleryItems[1].title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[1].title}</span>
-                </div>
-              </div>
-              {/* Bottom Card */}
-              <div
-                onClick={() => setSelectedItem(galleryItems[2])}
-                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src={galleryItems[2].image}
-                  alt={galleryItems[2].title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[2].title}</span>
-                </div>
-              </div>
-            </div>
+          {/* ROW 2: 4 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+            {row2.map((item) => (
+              <CardItem key={item.id} item={item} onSelect={setSelectedItem} heightClass="h-[210px] sm:h-[225px] lg:h-[235px]" />
+            ))}
+          </div>
 
-            {/* COLUMN 3: Focal Center (Single Tall Portrait Card spanning full height) */}
-            <div className="w-[22%] lg:w-[22%] h-full flex flex-col">
-              <div
-                onClick={() => setSelectedItem({
-                  id: 'center-campus',
-                  title: 'JRS International School Campus',
-                  category: 'Campus',
-                  image: '/contact-school-building.jpg',
-                  description: 'State-of-the-art academic blocks, landscaped amphitheater, and expansive campus grounds in Narapally, Hyderabad.'
-                })}
-                className="group relative w-full h-full rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_14px_38px_rgba(0,0,0,0.12)] hover:shadow-[0_22px_48px_rgba(0,0,0,0.22)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src="/contact-school-building.jpg"
-                  alt="JRS International School Campus"
-                  loading="lazy"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
-                  <span className="text-white text-sm font-bold drop-shadow">JRS International School Campus</span>
-                </div>
-              </div>
-            </div>
-
-            {/* COLUMN 4: Right Middle (Two Stacked Cards - Locked to Top & Bottom) */}
-            <div className="w-[21%] h-full flex flex-col gap-3.5 sm:gap-4 lg:gap-5">
-              {/* Top Card */}
-              <div
-                onClick={() => setSelectedItem(galleryItems[3])}
-                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src={galleryItems[3].image}
-                  alt={galleryItems[3].title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[3].title}</span>
-                </div>
-              </div>
-              {/* Bottom Card */}
-              <div
-                onClick={() => setSelectedItem(galleryItems[7])}
-                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src={galleryItems[7].image}
-                  alt={galleryItems[7].title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[7].title}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* COLUMN 5: Far Right (Single Vertically Centered Card) */}
-            <div className="w-[18%] flex flex-col justify-center">
-              <div
-                onClick={() => setSelectedItem({
-                  id: 'transit',
-                  title: 'Safe Campus Transit',
-                  category: 'Campus Life',
-                  image: '/school-bus-transit.jpg',
-                  description: 'Safe, GPS-enabled school bus fleet with attentive staff ensuring secure, caring daily transit for students across Hyderabad.'
-                })}
-                className="group relative w-full h-[260px] sm:h-[290px] lg:h-[320px] rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
-              >
-                <img
-                  src="/school-bus-transit.jpg"
-                  alt="JRS Safe Campus Transit"
-                  loading="lazy"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-xs font-semibold drop-shadow">Safe Campus Transit</span>
-                </div>
-              </div>
-            </div>
-
+          {/* ROW 3: 3 Wider Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
+            {row3.map((item) => (
+              <CardItem key={item.id} item={item} onSelect={setSelectedItem} heightClass="h-[220px] sm:h-[240px] lg:h-[255px]" />
+            ))}
           </div>
         </div>
 
-        {/* View Full Gallery Action Button */}
-        <div className="text-center mt-10">
-          <button
-            type="button"
-            onClick={() => setShowFullModal(true)}
-            className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer"
-          >
-            <span>View All Photos</span>
-            <span>→</span>
-          </button>
+        {/* ── BOTTOM BUTTON: "View More Photos →" (With Sunburst Spark Accents) ── */}
+        <div className="text-center mt-10 sm:mt-12 flex items-center justify-center">
+          <div className="relative inline-flex items-center justify-center">
+            {/* Left Sunburst Sparks */}
+            <span className="hidden sm:inline-block text-[#DC2626]/70 mr-3 text-sm select-none" aria-hidden="true">
+              ╲ ─ ╱
+            </span>
+
+            <button
+              type="button"
+              onClick={() => setShowFullModal(true)}
+              className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#16A34A] text-white px-7 sm:px-8 py-3.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wider transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
+            >
+              <span>View More Photos</span>
+              <span className="text-sm font-normal">→</span>
+            </button>
+
+            {/* Right Sunburst Sparks */}
+            <span className="hidden sm:inline-block text-[#DC2626]/70 ml-3 text-sm select-none" aria-hidden="true">
+              ╲ ─ ╱
+            </span>
+          </div>
         </div>
 
       </div>
 
-      {/* ─────────────────────────────────────────────────────────────
-          LIGHTBOX MODAL (On click of any card)
-      ───────────────────────────────────────────────────────────── */}
+      {/* ── LIGHTBOX MODAL (On click of any card) ── */}
       {selectedItem && (
         <div
           role="dialog"
@@ -318,9 +284,9 @@ export default function Gallery() {
             {/* Modal Header */}
             <div className="flex items-center justify-between px-5 py-4 bg-[#0B0F17] border-b border-white/10 text-white shrink-0">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#DC2626] text-white flex items-center gap-1.5">
-                  <span>{selectedItem.icon}</span>
-                  <span>{selectedItem.badgeText}</span>
+                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#B91C1C] text-white flex items-center gap-2">
+                  <span className="w-4 h-4 flex items-center justify-center">{selectedItem.icon}</span>
+                  <span>{selectedItem.badge}</span>
                 </span>
                 <span className="text-xs text-gray-300 font-medium">
                   {galleryItems.findIndex((i) => i.id === selectedItem.id) + 1} of {galleryItems.length}
@@ -336,15 +302,15 @@ export default function Gallery() {
               </button>
             </div>
 
-            {/* Modal Image Area with Navigation Buttons */}
+            {/* Modal Image Area */}
             <div className="relative flex-grow min-h-[260px] max-h-[62vh] bg-black/50 flex items-center justify-center overflow-hidden">
               <img
-                src={selectedItem.highRes || selectedItem.image}
+                src={selectedItem.image}
                 alt={selectedItem.title}
                 className="w-full h-full max-h-[62vh] object-contain"
               />
 
-              {/* Previous Photo Button */}
+              {/* Prev Button */}
               <button
                 type="button"
                 onClick={(e) => {
@@ -359,7 +325,7 @@ export default function Gallery() {
                 ‹
               </button>
 
-              {/* Next Photo Button */}
+              {/* Next Button */}
               <button
                 type="button"
                 onClick={(e) => {
@@ -378,7 +344,7 @@ export default function Gallery() {
             {/* Modal Description Footer */}
             <div className="p-5 bg-[#0B0F17] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-white shrink-0">
               <div className="space-y-1 max-w-xl">
-                <h3 className="font-modern font-bold text-base sm:text-lg">
+                <h3 className="font-bold text-base sm:text-lg">
                   {selectedItem.title}
                 </h3>
                 <p className="text-xs text-gray-300 leading-relaxed">
@@ -386,24 +352,20 @@ export default function Gallery() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 shrink-0">
-                <a
-                  href="#admissions"
-                  onClick={() => setSelectedItem(null)}
-                  className="inline-flex items-center gap-1.5 bg-[#DC2626] hover:bg-[#16A34A] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer"
-                >
-                  <span>Enquire for 2026–27</span>
-                  <span>›</span>
-                </a>
-              </div>
+              <a
+                href="#admissions"
+                onClick={() => setSelectedItem(null)}
+                className="inline-flex items-center gap-1.5 bg-[#B91C1C] hover:bg-[#16A34A] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer shrink-0"
+              >
+                <span>Book Campus Tour</span>
+                <span>›</span>
+              </a>
             </div>
           </div>
         </div>
       )}
 
-      {/* ─────────────────────────────────────────────────────────────
-          "VIEW FULL GALLERY" EXPANDED MODAL
-      ───────────────────────────────────────────────────────────── */}
+      {/* ── "VIEW MORE PHOTOS" FULL ARCHIVE MODAL ── */}
       {showFullModal && (
         <div
           role="dialog"
@@ -418,11 +380,11 @@ export default function Gallery() {
             {/* Modal Header */}
             <div className="flex items-center justify-between px-6 py-5 bg-white border-b border-gray-200 shrink-0">
               <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#DC2626]">
-                  COMPLETE PHOTO ARCHIVE
+                <span className="text-[11px] font-bold tracking-widest uppercase text-[#B91C1C]">
+                  PHOTO ARCHIVE
                 </span>
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-[#0B0F17]">
-                  Life at JRS International School
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#0B0F17]">
+                  Moments at JRS International School
                 </h3>
               </div>
               <button
@@ -437,7 +399,7 @@ export default function Gallery() {
 
             {/* Grid of All Photos */}
             <div className="p-6 overflow-y-auto max-h-[calc(92vh-140px)]">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {galleryItems.map((item) => (
                   <div
                     key={item.id}
@@ -447,35 +409,32 @@ export default function Gallery() {
                     }}
                     className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
                   >
-                    <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                    <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
                       <img
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                    </div>
-                    <div className="p-3">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#DC2626] block mb-1">
-                        {item.badgeText}
-                      </span>
-                      <h4 className="font-semibold text-xs text-[#0B0F17] leading-snug line-clamp-1">
-                        {item.title}
-                      </h4>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-xs font-semibold">
+                        <span className="w-4 h-4 flex items-center justify-center">{item.icon}</span>
+                        <span>{item.badge}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Footer */}
+            {/* Modal Footer */}
             <div className="p-4 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 shrink-0">
-              <span>Showing {galleryItems.length} curated highlights of JRS International School</span>
+              <span>Showing all 11 curated campus photo moments</span>
               <a
                 href="#admissions"
                 onClick={() => setShowFullModal(false)}
-                className="bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white px-5 py-2 rounded-full font-semibold transition-all"
+                className="bg-[#B91C1C] hover:bg-[#16A34A] text-white px-5 py-2 rounded-full font-semibold transition-all"
               >
-                Book a Campus Tour
+                Apply for Admission
               </a>
             </div>
           </div>
@@ -483,5 +442,40 @@ export default function Gallery() {
       )}
 
     </section>
+  );
+}
+
+// ── SUB-COMPONENT: Individual Gallery Card (Pixel-Perfect Reference Match) ──
+function CardItem({ item, onSelect, heightClass }) {
+  return (
+    <div
+      onClick={() => onSelect(item)}
+      className={`group relative w-full ${heightClass} rounded-2xl overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60`}
+    >
+      {/* Background Image */}
+      <img
+        src={item.image}
+        alt={item.title}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      />
+
+      {/* Gentle Bottom Gradient Scrim */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent pointer-events-none" />
+
+      {/* Bottom-Left Floating Glassmorphism Pill Badge */}
+      <div className="absolute bottom-3 left-3 sm:bottom-3.5 sm:left-3.5 z-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/45 hover:bg-black/60 backdrop-blur-md border border-white/25 text-white shadow-xs transition-colors">
+          {/* Circular Icon Container */}
+          <div className="w-5 h-5 rounded-full border border-white/40 flex items-center justify-center shrink-0 text-white/95">
+            {item.icon}
+          </div>
+          {/* Title */}
+          <span className="text-xs sm:text-[13px] font-sans font-semibold tracking-wide text-white drop-shadow-xs">
+            {item.badge}
+          </span>
+        </div>
+      </div>
+    </div>
   );
 }

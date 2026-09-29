@@ -14,7 +14,8 @@ export const images = {
   sportsField: "/annual-sports-meet.jpeg",
   swimmingPool: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1200&q=80",
   basketballCourt: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
-  skatingAndGames: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80",
+  skatingAndGames: "/karati.webp",
+  karateAndMartialArts: "/karati.webp",
   yogaZen: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80",
   
   // Arts & culture
@@ -77,7 +78,7 @@ export const programmesData = [
     subLevels: ["Classes I to V (NCERT Syllabus)"],
     description: "CBSE curriculum infused with practical and interactive learning, blending theoretical concepts with hands-on projects, science quizzes, and environmental awareness.",
     image: images.classroomModern,
-    features: ["Comprehensive CBSE curriculum coverage", "IIT & NIT Foundation groundwork", "Language immersion & public speaking", "Physical fitness, yoga & skating"],
+    features: ["Comprehensive CBSE curriculum coverage", "IIT & NIT Foundation groundwork", "Language immersion & public speaking", "Physical fitness, yoga & karate"],
     accent: "#16A34A",
   },
   {

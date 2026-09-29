@@ -15,18 +15,6 @@ const slidesData = [
     mobilePosition: 'object-[65%_35%]',
   },
   {
-    id: 'students',
-    eyebrow: 'LEARN • EXPLORE • GROW',
-    headline: ['Learning That', 'Inspires Possibility'],
-    supporting: 'Encouraging students to think independently, collaborate confidently and grow with purpose.',
-    primaryCta: { label: 'Discover Student Life →', href: '/student-life' },
-    secondaryCta: null,
-    image: '/heroslider.jpeg',
-    imageAlt: 'JRS International School students in uniform blazers engaged in library study and reading',
-    desktopPosition: 'object-center lg:object-[65%_center]',
-    mobilePosition: 'object-[70%_center]',
-  },
-  {
     id: 'beyond-classroom',
     eyebrow: 'MORE THAN EDUCATION',
     headline: ['A Journey Beyond', 'the Classroom'],

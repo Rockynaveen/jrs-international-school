@@ -35,7 +35,7 @@ const pathways = [
       'Comprehensive CBSE curriculum with NCERT standards',
       'Early IIT & NIT Foundation groundwork in math and logic',
       'Bilingual proficiency, vocabulary & reading circles',
-      'Weekly sports coaching, swimming, yoga and skating',
+      'Weekly sports coaching, swimming, yoga and karate',
     ],
   },
   {

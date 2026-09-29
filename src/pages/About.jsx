@@ -41,7 +41,7 @@ const corePillars = [
     title: 'Holistic Development',
     eyebrow: 'BALANCE',
     description:
-      'Balancing scholastic achievements with performing arts, visual arts, skating, team athletics, and emotional wellbeing.',
+      'Balancing scholastic achievements with performing arts, visual arts, karate, team athletics, and emotional wellbeing.',
     image: images.artPainting,
     accent: '#16A34A',
   },

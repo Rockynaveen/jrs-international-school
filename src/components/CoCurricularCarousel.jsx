@@ -7,7 +7,7 @@ const activitiesData = [
     title: 'Art & Painting',
     description:
       'Nurturing creativity and self-expression through drawing, watercolours, sketch work, and studio canvas painting.',
-    image: 'https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&w=1200&q=80',
+    image: '/art-and-painting.jpg',
     link: '/student-life',
     accent: '#DC2626',
   },
@@ -27,19 +27,9 @@ const activitiesData = [
     title: 'Dance',
     description:
       'Exploring classical, folk and modern dance forms to cultivate poise, rhythm and graceful artistic confidence.',
-    image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=80',
+    image: '/classical-dance-activity.jpg',
     link: '/student-life',
     accent: '#DC2626',
-  },
-  {
-    id: 'theatre',
-    tag: 'DRAMATICS & STAGE',
-    title: 'Theatre & Dramatics',
-    description:
-      'Building confidence through performance, voice modulation, creative improvisation and dramatic expression.',
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80',
-    link: '/student-life',
-    accent: '#16A34A',
   },
   {
     id: 'yoga',
@@ -52,12 +42,12 @@ const activitiesData = [
     accent: '#DC2626',
   },
   {
-    id: 'skating',
-    tag: 'AGILITY & FITNESS',
-    title: 'Skating',
+    id: 'karate',
+    tag: 'MARTIAL ARTS & DISCIPLINE',
+    title: 'Karate',
     description:
-      'Building balance, discipline, sharp coordination and physical fitness on our dedicated campus skating rink.',
-    image: 'https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?auto=format&fit=crop&w=1200&q=80',
+      'Instilling self-defense, confidence, physical stamina, and mental discipline under certified martial arts masters.',
+    image: '/karati.webp',
     link: '/student-life',
     accent: '#16A34A',
   },

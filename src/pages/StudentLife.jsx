@@ -41,15 +41,6 @@ const activitiesData = [
     accent: '#DC2626',
   },
   {
-    title: 'Theatre & Dramatics',
-    category: 'STAGE PRESENCE',
-    description:
-      'Speech, elocution, role-playing, and full-length annual stage plays that dissolve stage fear and instill magnetic communication skills.',
-    image: images.danceDramatics,
-    highlights: ['Speech & debate club', 'Shakespeare & Indian plays', 'Scriptwriting', 'Annual day drama'],
-    accent: '#16A34A',
-  },
-  {
     title: 'Mindful Yoga & Wellness',
     category: 'INNER TRANQUILITY',
     description:
@@ -59,12 +50,12 @@ const activitiesData = [
     accent: '#0B0F17',
   },
   {
-    title: 'Skating & Agility Academy',
-    category: 'BALANCE & SPEED',
+    title: 'Karate & Martial Arts Academy',
+    category: 'SELF-DEFENSE & DISCIPLINE',
     description:
-      'Smooth outdoor skating rink where certified instructors guide learners through balance, speed control, and agility drills.',
-    image: images.skatingAndGames,
-    highlights: ['Safety gear protocols', 'Speed skating', 'Balance development', 'Skating showcases'],
+      'Structured martial arts training where black-belt certified senseis guide students through katas, sparring stances, self-defense, and inner discipline.',
+    image: '/karati.webp',
+    highlights: ['Belt gradation exams', 'Self-defense techniques', 'Focus & reflex drills', 'Inter-school tournaments'],
     accent: '#DC2626',
   },
   {

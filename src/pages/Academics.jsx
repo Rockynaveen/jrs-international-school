@@ -64,7 +64,7 @@ const academicProgrammes = [
       'Conceptual inquiry & experiential science',
       'Creative writing, reading clubs & debating',
       'Math lab puzzles & practical applications',
-      'Weekly physical education, swimming & skating',
+      'Weekly physical education, swimming & karate',
     ],
     image: images.classroomModern,
   },

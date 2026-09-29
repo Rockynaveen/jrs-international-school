@@ -28,6 +28,16 @@ function ScrollToTop() {
 
 export default function App() {
   const [heroMode, setHeroMode] = useState('home-1');
+  const location = useLocation();
+
+  // Sync heroMode state with route path
+  useEffect(() => {
+    if (location.pathname === '/home-2') {
+      setHeroMode('home-2');
+    } else if (location.pathname === '/home-1') {
+      setHeroMode('home-1');
+    }
+  }, [location.pathname]);
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-white text-[#111827] selection:bg-[#DC2626] selection:text-white">
@@ -36,6 +46,8 @@ export default function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home heroMode={heroMode} />} />
+          <Route path="/home-1" element={<Home heroMode="home-1" />} />
+          <Route path="/home-2" element={<Home heroMode="home-2" />} />
           <Route path="/about" element={<About />} />
           <Route path="/academics" element={<Academics />} />
           <Route path="/admissions" element={<Admissions />} />
