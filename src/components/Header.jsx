@@ -62,9 +62,10 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || !isHomePage
           ? 'bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm py-2'
-          : 'bg-transparent border-b border-transparent py-4'
+          : 'bg-gradient-to-b from-black/60 via-black/20 to-transparent border-b border-white/10 py-3.5'
       }`}
     >
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#DC2626] via-[#16A34A] to-[#DC2626]" />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         
         {/* LEFT: Official JRS Logo */}
@@ -136,11 +137,7 @@ export default function Header() {
                 else navigate('/admissions');
               }
             }}
-            className={`inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer ${
-              isScrolled || !isHomePage
-                ? 'bg-[#DC2626] text-white hover:bg-[#B91C1C]'
-                : 'bg-[#DC2626] text-white hover:bg-white hover:text-[#DC2626]'
-            }`}
+            className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white"
           >
             <span>Apply Now</span>
             <span className="text-xs font-normal">→</span>
@@ -211,7 +208,7 @@ export default function Header() {
             <a
               href="/admissions"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center block bg-[#DC2626] text-white py-3.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-[#B91C1C] transition-colors shadow-sm"
+              className="w-full text-center block bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
             >
               Apply Now →
             </a>

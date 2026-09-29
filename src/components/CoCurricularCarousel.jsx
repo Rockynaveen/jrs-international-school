@@ -1,297 +1,271 @@
-import React, { useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const activitiesData = [
   {
     id: 'art',
+    tag: 'CREATIVITY & EXPRESSION',
     title: 'Art & Painting',
-    description: 'Nurturing creativity and self-expression through art.',
-    badgeColor: 'bg-[#F59E0B]',
-    haloBg: 'bg-[#FEF9C3]/80 border-[#FDE047]/70 hover:border-[#F59E0B]',
-    shadowColor: 'hover:shadow-[#F59E0B]/20',
-    shapeClass: 'rounded-[48%_52%_50%_50%_/_52%_48%_54%_46%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 8 6.5 8s1.5.67 1.5 1.5S7.33 11 6.5 11zm3-4c-.83 0-1.5-.67-1.5-1.5S8.67 4 9.5 4s1.5.67 1.5 1.5S10.33 7 9.5 7zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 4 14.5 4s1.5.67 1.5 1.5S15.33 7 14.5 7zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 8 17.5 8s1.5.67 1.5 1.5S18.33 11 17.5 11z" />
-      </svg>
-    ),
+    description:
+      'Nurturing creativity and self-expression through drawing, watercolours, sketch work, and studio canvas painting.',
+    image: 'https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#DC2626',
   },
   {
     id: 'music',
+    tag: 'RHYTHM & SOUND',
     title: 'Music',
-    description: 'Building rhythm, listening skills and a love for music.',
-    badgeColor: 'bg-[#EC4899]',
-    haloBg: 'bg-[#FCE7F3]/80 border-[#F472B6]/50 hover:border-[#EC4899]',
-    shadowColor: 'hover:shadow-[#EC4899]/20',
-    shapeClass: 'rounded-[52%_48%_54%_46%_/_48%_52%_48%_52%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-      </svg>
-    ),
+    description:
+      'Building rhythm, listening skills and a lifelong love for Indian classical and contemporary music.',
+    image: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#16A34A',
   },
   {
     id: 'dance',
+    tag: 'PERFORMING ARTS',
     title: 'Dance',
-    description: 'Exploring classical and modern dance forms.',
-    badgeColor: 'bg-[#A855F7]',
-    haloBg: 'bg-[#F3E8FF]/80 border-[#C084FC]/50 hover:border-[#A855F7]',
-    shadowColor: 'hover:shadow-[#A855F7]/20',
-    shapeClass: 'rounded-[50%_50%_46%_54%_/_52%_48%_52%_48%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <circle cx="15" cy="4" r="2" />
-        <path d="M16.5 8.5c-.3-.3-.7-.5-1.1-.5h-2.8c-.4 0-.8.2-1.1.5L9 11l1.4 1.4 1.6-1.6V16l-3.2 2.4 1.2 1.6 4-3c.6-.4 1-.1.1-1.8v-3.7l1.3 1.3 1.8-1.8-2.1-2.5z" />
-        <path d="M8 8c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1zm11 8c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z" opacity="0.6"/>
-      </svg>
-    ),
+    description:
+      'Exploring classical, folk and modern dance forms to cultivate poise, rhythm and graceful artistic confidence.',
+    image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#DC2626',
   },
   {
     id: 'theatre',
+    tag: 'DRAMATICS & STAGE',
     title: 'Theatre & Dramatics',
-    description: 'Building confidence through performance and expression.',
-    badgeColor: 'bg-[#14B8A6]',
-    haloBg: 'bg-[#CCFBF1]/80 border-[#5EEAD4]/50 hover:border-[#14B8A6]',
-    shadowColor: 'hover:shadow-[#14B8A6]/20',
-    shapeClass: 'rounded-[46%_54%_50%_50%_/_50%_50%_54%_46%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.5 2 2 6.5 2 12c0 3.6 2 6.8 5 8.5v-1.7C4.6 17.3 3.6 14.8 3.6 12 3.6 7.4 7.4 3.6 12 3.6s8.4 3.8 8.4 8.4c0 2.8-1 5.3-3.4 6.8v1.7c3-1.7 5-4.9 5-8.5 0-5.5-4.5-10-10-10zm-3 8c.8 0 1.5.7 1.5 1.5S9.8 13 9 13s-1.5-.7-1.5-1.5S8.2 10 9 10zm6 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm-3 5c2.2 0 4 1.3 4.5 3h-9c.5-1.7 2.3-3 4.5-3z" />
-      </svg>
-    ),
+    description:
+      'Building confidence through performance, voice modulation, creative improvisation and dramatic expression.',
+    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#16A34A',
   },
   {
     id: 'yoga',
+    tag: 'WELLNESS & MINDFULNESS',
     title: 'Yoga',
-    description: 'Developing focus, well-being and mindfulness.',
-    badgeColor: 'bg-[#0EA5E9]',
-    haloBg: 'bg-[#E0F2FE]/80 border-[#7DD3FC]/50 hover:border-[#0EA5E9]',
-    shadowColor: 'hover:shadow-[#0EA5E9]/20',
-    shapeClass: 'rounded-[50%_50%_48%_52%_/_48%_52%_50%_50%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <circle cx="12" cy="4" r="2" />
-        <path d="M12 7c-1.1 0-2 .9-2 2v2.5l-2.2 1.3c-.5.3-.8.8-.8 1.4v1.8h2v-1.3l2-1.2v4.5l-3.3 2.5 1.2 1.6 3.1-2.3 3.1 2.3 1.2-1.6-3.3-2.5V11.5l2 1.2v1.3h2v-1.8c0-.6-.3-1.1-.8-1.4L14 9.5V9c0-1.1-.9-2-2-2z" />
-      </svg>
-    ),
+    description:
+      'Developing focus, inner well-being, healthy posture, breath awareness and mental calmness.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#DC2626',
   },
   {
     id: 'skating',
+    tag: 'AGILITY & FITNESS',
     title: 'Skating',
-    description: 'Building balance, discipline and physical fitness.',
-    badgeColor: 'bg-[#F97316]',
-    haloBg: 'bg-[#FFEDD5]/80 border-[#FDBA74]/50 hover:border-[#F97316]',
-    shadowColor: 'hover:shadow-[#F97316]/20',
-    shapeClass: 'rounded-[52%_48%_46%_54%_/_48%_52%_52%_48%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17 14c-.6 0-1.1.2-1.5.5L14 12V6c0-1.1-.9-2-2-2h-3v4h2v3l-4 3c-.6-.4-1.2-.6-1.9-.6-1.7 0-3 1.3-3 3s1.3 3 3 3c1.4 0 2.5-.9 2.9-2.2l3.4-2.6 1.4 1c.2 1.5 1.5 2.8 3.2 2.8 1.7 0 3-1.3 3-3s-1.3-3-3-3zm-12 4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm12 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
-      </svg>
-    ),
+    description:
+      'Building balance, discipline, sharp coordination and physical fitness on our dedicated campus skating rink.',
+    image: 'https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#16A34A',
   },
   {
     id: 'sports',
+    tag: 'ATHLETICS & TEAMWORK',
     title: 'Games & Sports',
-    description: 'Encouraging teamwork, sportsmanship and a healthy lifestyle.',
-    badgeColor: 'bg-[#22C55E]',
-    haloBg: 'bg-[#DCFCE7]/80 border-[#86EFAC]/50 hover:border-[#22C55E]',
-    shadowColor: 'hover:shadow-[#22C55E]/20',
-    shapeClass: 'rounded-[50%_50%_50%_50%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 3.1c1.8.3 3.4 1.2 4.6 2.4l-2 2.5-3.3-.5.7-4.4zm-2 0l.7 4.4-3.3.5-2-2.5c1.2-1.2 2.8-2.1 4.6-2.4zm-6.6 6.1c0-.4 0-.8.1-1.2l3.3.8.9 3.2-3.1 1.7c-.8-1.3-1.2-2.8-1.2-4.5zm2.8 6.4l2.5-1.4 2.8 1.8-.7 3.5c-1.8-.4-3.4-1.7-4.6-3.9zm9.4 3.9l-.7-3.5 2.8-1.8 2.5 1.4c-1.2 2.2-2.8 3.5-4.6 3.9zm3.5-6.4l-3.1-1.7.9-3.2 3.3-.8c.1.4.1.8.1 1.2 0 1.7-.4 3.2-1.2 4.5z" />
-      </svg>
-    ),
+    description:
+      'Encouraging teamwork, sportsmanship, strategic thinking and a healthy active lifestyle across multiple sports.',
+    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80',
+    link: '/student-life',
+    accent: '#DC2626',
   },
   {
     id: 'science',
+    tag: 'INQUIRY & INNOVATION',
     title: 'Science Activities',
-    description: 'Hands-on learning to spark curiosity and innovation.',
-    badgeColor: 'bg-[#8B5CF6]',
-    haloBg: 'bg-[#EDE9FE]/80 border-[#C4B5FD]/50 hover:border-[#8B5CF6]',
-    shadowColor: 'hover:shadow-[#8B5CF6]/20',
-    shapeClass: 'rounded-[48%_52%_52%_48%_/_52%_48%_48%_52%]',
-    imgShape: 'rounded-full',
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80',
-    icon: (
-      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.8 18.4L14 10.7V5h1c.6 0 1-.4 1-1s-.4-1-1-1H9c-.6 0-1 .4-1 1s.4 1 1 1h1v5.7L4.2 18.4c-.8 1.1-.1 2.6 1.3 2.6h13c1.4 0 2.1-1.5 1.3-2.6zM7.1 19l4.9-6.5V5h-.1v-.1h.2V5h-.1v-.1h.2V5h.1v7.5L16.9 19H7.1z" />
-        <circle cx="10" cy="16" r="1" opacity="0.6"/>
-        <circle cx="13" cy="14.5" r="1.2" opacity="0.6"/>
-      </svg>
-    ),
+    description:
+      'Hands-on experimental learning and robotics to spark scientific curiosity, analytical reasoning and innovation.',
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80',
+    link: '/academics',
+    accent: '#16A34A',
   },
 ];
 
+// 4-petal geometric watermark motif matching Anurag's design
+function WatermarkPattern({ className = '' }) {
+  return (
+    <svg
+      viewBox="0 0 200 200"
+      className={`pointer-events-none select-none text-white/10 ${className}`}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <g opacity="0.14">
+        {/* Main 4-point rounded star / petals */}
+        <path d="M100 15 C75 55 55 75 15 100 C55 125 75 145 100 185 C125 145 145 125 185 100 C145 75 125 55 100 15 Z" />
+        {/* Four circular petal lobes */}
+        <circle cx="100" cy="58" r="32" />
+        <circle cx="100" cy="142" r="32" />
+        <circle cx="58" cy="100" r="32" />
+        <circle cx="142" cy="100" r="32" />
+        {/* Inner geometric core */}
+        <circle cx="100" cy="100" r="18" fill="#182032" />
+        <circle cx="100" cy="100" r="10" fill="currentColor" opacity="0.8" />
+      </g>
+    </svg>
+  );
+}
+
 export default function CoCurricularCarousel() {
-  const scrollRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollStartLeft, setScrollStartLeft] = useState(0);
+  const cardRefs = useRef([]);
+  const [activeCovered, setActiveCovered] = useState({});
 
-  const handleScroll = (direction) => {
-    if (!scrollRef.current) return;
-    const { clientWidth, scrollLeft, scrollWidth } = scrollRef.current;
-    const maxScroll = scrollWidth - clientWidth;
-    const scrollAmount = Math.max(220, clientWidth * 0.5);
+  // Dynamic scroll listener that detects when a card is being overlapped by the next card
+  useEffect(() => {
+    let ticking = false;
 
-    if (direction === 'left') {
-      if (scrollLeft <= 10) {
-        scrollRef.current.scrollTo({ left: maxScroll, behavior: 'smooth' });
-      } else {
-        scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    const checkOverlap = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const coveredMap = {};
+          activitiesData.forEach((_, i) => {
+            if (i === activitiesData.length - 1) return;
+            const nextEl = cardRefs.current[i + 1];
+            if (!nextEl) return;
+
+            const rect = nextEl.getBoundingClientRect();
+            const currentStickyTop = 90 + i * 16;
+
+            // When next card approaches within 250px of current card's top
+            const distance = rect.top - currentStickyTop;
+            if (distance <= 180) {
+              coveredMap[i] = true;
+            } else {
+              coveredMap[i] = false;
+            }
+          });
+
+          setActiveCovered(coveredMap);
+          ticking = false;
+        });
+        ticking = true;
       }
-    } else {
-      if (scrollLeft >= maxScroll - 10) {
-        scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }
-  };
+    };
 
-  // Drag to scroll handlers for desktop and mobile
-  const onMouseDown = (e) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollStartLeft(scrollRef.current.scrollLeft);
-  };
+    window.addEventListener('scroll', checkOverlap, { passive: true });
+    window.addEventListener('resize', checkOverlap, { passive: true });
+    checkOverlap();
 
-  const onMouseMove = (e) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    scrollRef.current.scrollLeft = scrollStartLeft - walk;
-  };
-
-  const onMouseUpOrLeave = () => {
-    setIsDragging(false);
-  };
+    return () => {
+      window.removeEventListener('scroll', checkOverlap);
+      window.removeEventListener('resize', checkOverlap);
+    };
+  }, []);
 
   return (
-    <section id="activities" className="py-16 sm:py-20 bg-white relative overflow-hidden select-none border-t border-slate-100">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 relative">
+    <section
+      id="activities"
+      className="py-12 bg-white relative border-b border-slate-200"
+    >
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* ================= SECTION HEADER ================= */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 relative">
           {/* Eyebrow Label */}
           <div className="inline-flex flex-col items-center justify-center">
             <span className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.25em] text-[#DC2626] block">
               BEYOND THE CLASSROOM
             </span>
-            {/* Red Horizontal Accent Bar */}
-            <div className="w-12 h-1 bg-[#DC2626] rounded-full mt-2.5 mb-4" />
+            {/* Red to Green Horizontal Accent Bar */}
+            <div className="w-12 h-1 bg-gradient-to-r from-[#DC2626] to-[#16A34A] rounded-full mt-2 mb-3.5" />
           </div>
 
           {/* Main Display Headline */}
-          <div className="relative inline-flex items-center justify-center">
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] text-[#0B0F17] font-bold tracking-tight leading-tight">
-              Explore.{' '}
-              <span className="text-[#16A34A]">Create.</span>{' '}
-              Grow.
-            </h2>
-          </div>
-
-          {/* Subtitle Description */}
-          <p className="mt-4 text-slate-600 text-sm sm:text-base lg:text-[17px] leading-relaxed max-w-2xl mx-auto px-4 font-sans">
-            A wide range of co-curricular activities to help every child discover their interests,
-            build confidence and develop life skills.
-          </p>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
+            Explore.{' '}
+            <span className="bg-gradient-to-r from-[#16A34A] to-[#22C55E] bg-clip-text text-transparent">Create.</span>{' '}
+            Grow.
+          </h2>
         </div>
 
-        {/* Carousel Container */}
-        <div className="relative group/carousel px-3 sm:px-6 lg:px-8">
-          {/* Left Arrow Indicator Button */}
-          <button
-            onClick={() => handleScroll('left')}
-            aria-label="Previous activities"
-            className="absolute left-0 sm:left-1 lg:-left-2 top-[38%] -translate-y-1/2 z-20 p-3 sm:p-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 shadow-md flex items-center justify-center text-[#0B0F17] hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
-          >
-            <ChevronLeft className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.4]" />
-          </button>
+        {/* ================= ON-SCROLL CARD STACKING CONTAINER ================= */}
+        <div className="relative max-w-[1080px] mx-auto pb-32">
+          {activitiesData.map((activity, index) => {
+            const isLast = index === activitiesData.length - 1;
+            const isCovered = !!activeCovered[index];
+            // Sticky top position: each card pins with a 16px offset to form a physical card deck
+            const topOffset = `calc(90px + ${index * 16}px)`;
+            // 45vh scroll runway between cards ensures a slow, progressive overlap
+            const marginBottom = isLast ? '0px' : '45vh';
 
-          {/* Right Arrow Indicator Button */}
-          <button
-            onClick={() => handleScroll('right')}
-            aria-label="Next activities"
-            className="absolute right-0 sm:right-1 lg:-right-2 top-[38%] -translate-y-1/2 z-20 p-3 sm:p-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 shadow-md flex items-center justify-center text-[#0B0F17] hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
-          >
-            <ChevronRight className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.4]" />
-          </button>
-
-          {/* Scrollable Track */}
-          <div
-            ref={scrollRef}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUpOrLeave}
-            onMouseLeave={onMouseUpOrLeave}
-            className={`flex items-start gap-4 sm:gap-5 lg:gap-6 overflow-x-auto scroll-smooth no-scrollbar py-6 px-3 sm:px-4 snap-x snap-mandatory ${
-              isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'
-            }`}
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch',
-            }}
-          >
-            {activitiesData.map((activity) => (
+            return (
               <div
                 key={activity.id}
-                className="flex-shrink-0 w-[145px] sm:w-[155px] md:w-[165px] lg:w-[170px] xl:w-[175px] snap-start flex flex-col items-center text-center group cursor-pointer"
+                ref={(el) => (cardRefs.current[index] = el)}
+                className="sticky will-change-transform"
+                style={{
+                  top: topOffset,
+                  marginBottom: marginBottom,
+                  zIndex: index + 10,
+                }}
               >
-                {/* Rounded Organic Card Frame */}
+                {/* 
+                  Card Box:
+                  - Top shadow (shadow-[0_-16px_36px_-8px_...]) creates real 3D shadow as below card overlaps above card
+                  - Smooth CSS scale and brightness transitions when covered by the next card
+                */}
                 <div
-                  className={`relative w-full p-2.5 sm:p-3 border-2 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-hover:shadow-xl ${activity.shapeClass} ${activity.haloBg} ${activity.shadowColor} bg-white shadow-sm flex flex-col items-center justify-center`}
+                  className={`w-full bg-[#182032] rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden border border-slate-700/50 grid grid-cols-1 md:grid-cols-12 items-stretch transition-all duration-500 ease-out ${
+                    isCovered ? 'scale-[0.96] brightness-90 -translate-y-1' : 'scale-100 brightness-100 translate-y-0'
+                  }`}
+                  style={{
+                    transformOrigin: 'top center',
+                  }}
                 >
-                  {/* Floating Circular Badge on Top Left */}
-                  <div
-                    className={`absolute -top-3 -left-1.5 sm:-top-3.5 sm:-left-2 z-10 w-11 h-11 sm:w-12 sm:h-12 p-2.5 rounded-full ${activity.badgeColor} flex items-center justify-center shadow-lg border-2 border-white ring-2 ring-white/95 group-hover:scale-115 transition-transform duration-300`}
-                  >
-                    {activity.icon}
-                  </div>
-
-                  {/* Circular / Rounded Masked Image */}
-                  <div className={`relative w-full aspect-square ${activity.imgShape} overflow-hidden bg-slate-100 shadow-inner`}>
+                  {/* LEFT: Activity Photography */}
+                  <div className="md:col-span-6 relative h-[240px] sm:h-[300px] md:h-[400px] lg:h-[440px] overflow-hidden bg-slate-900">
                     <img
                       src={activity.image}
                       alt={activity.title}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       loading="lazy"
-                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
                     />
-                    {/* Soft gradient bottom overlay for depth */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent md:hidden" />
+                  </div>
+
+                  {/* RIGHT: Editorial Content with Watermark & Pill Button */}
+                  <div className="md:col-span-6 relative p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-[#182032] text-white overflow-hidden space-y-4 sm:space-y-5">
+                    {/* Corner Decorative Watermark Pattern */}
+                    <WatermarkPattern className="absolute -top-10 -right-10 w-44 h-44 text-white opacity-80" />
+                    <WatermarkPattern className="absolute -bottom-10 -right-10 w-40 h-40 text-white opacity-80" />
+
+                    {/* Content */}
+                    <div className="relative z-10 space-y-2.5 sm:space-y-3">
+                      {/* Category Label */}
+                      <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.22em] text-[#DC2626] uppercase">
+                        {activity.tag}
+                      </span>
+
+                      {/* Main Title */}
+                      <h3 className="font-display text-2xl sm:text-3xl lg:text-[32px] font-bold text-white tracking-tight leading-tight">
+                        {activity.title}
+                      </h3>
+
+                      {/* Paragraph Copy */}
+                      <p className="font-sans text-sm sm:text-base lg:text-[16px] text-slate-200 leading-relaxed font-normal max-w-lg">
+                        {activity.description}
+                      </p>
+                    </div>
+
+                    {/* Explore More Pill Button (Demo / Dummy - Stays on Index Page) */}
+                    <div className="relative z-10 pt-1 sm:pt-2">
+                      <button
+                        type="button"
+                        onClick={(e) => e.preventDefault()}
+                        className="inline-flex items-center justify-center px-8 sm:px-9 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-white to-slate-100 hover:from-[#16A34A] hover:to-[#15803D] text-[#0B0F17] hover:text-white border border-white/60 hover:border-transparent font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                      >
+                        Explore More
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-                {/* Card Title (Serif) */}
-                <h3 className="font-display font-bold text-sm sm:text-base text-[#0B0F17] mt-3.5 mb-1 tracking-tight leading-snug group-hover:text-[#DC2626] transition-colors">
-                  {activity.title}
-                </h3>
-
-                {/* Card Description */}
-                <p className="text-[11px] sm:text-xs text-slate-500 font-sans leading-relaxed px-1">
-                  {activity.description}
-                </p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );

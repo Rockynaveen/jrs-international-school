@@ -22,7 +22,6 @@ export default function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -30,146 +29,117 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-t border-slate-100">
+    <section id="contact" className="py-12 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-t border-slate-200">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase shadow-xs border border-slate-200">
+        {/* Section Header - Clean & Simple, No Sub-paragraph */}
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-red-50 via-white to-emerald-50 text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100 mb-3">
             <span className="w-2 h-2 rounded-full bg-[#DC2626]" />
             GET IN TOUCH • ADMISSIONS 2026–27
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#0B0F17] leading-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
             Connect with our{' '}
-            <span className="text-[#DC2626] not-italic italic">
+            <span className="bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">
               admissions team.
             </span>
           </h2>
-          <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-lg mx-auto">
-            Schedule a personal campus tour, discuss CBSE curriculum &amp; IIT/NIT foundation,
-            or enquire about seat availability.
-          </p>
         </div>
 
-        {/* 2-Column Card: Left Side Image, Right Side Simple Form */}
-        <div className="bg-white rounded-[32px] sm:rounded-[36px] shadow-xl border border-slate-100 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        {/* Simple 2-Column Layout: School Image on Left, Form on Right */}
+        <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-sm">
           
-          {/* LEFT COLUMN: School Campus Image & Quick Details */}
-          <div className="lg:col-span-5 relative min-h-[340px] sm:min-h-[420px] lg:min-h-full bg-[#0B0F17] overflow-hidden flex flex-col justify-between p-6 sm:p-8 text-white">
-            {/* Campus Background Image */}
+          {/* LEFT: School Image & Direct Info */}
+          <div className="lg:col-span-5 relative flex flex-col justify-between min-h-[380px] lg:min-h-[540px] overflow-hidden">
+            {/* Campus Image */}
             <img
-              src="/hero-building.jpg"
-              alt="JRS International School Campus Building"
-              className="absolute inset-0 w-full h-full object-cover z-0 filter brightness-[0.55] contrast-[1.1] transition-transform duration-700 hover:scale-105"
+              src="/contact-school-building.jpg"
+              alt="JRS International School Campus"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
             />
-            
-            {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/95 via-[#0B0F17]/50 to-[#0B0F17]/30 z-10 pointer-events-none" />
+            {/* Soft gradient overlay at bottom for readable text */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
 
-            {/* Top Badge */}
-            <div className="relative z-20">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-wider uppercase">
-                <span>📍 Narapally, Hyderabad</span>
-              </div>
+            {/* Top Pill */}
+            <div className="relative z-10 p-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#0B0F17] text-xs font-semibold border border-white/40">
+                <span className="w-2 h-2 rounded-full bg-[#16A34A]" />
+                Admissions Open 2026–27
+              </span>
             </div>
 
-            {/* Bottom Contact Card Content */}
-            <div className="relative z-20 space-y-4 pt-20">
+            {/* Bottom Info Card */}
+            <div className="relative z-10 p-6 text-white space-y-3">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest text-[#16A34A]">
-                  CBSE Affiliation # 3630478
-                </p>
-                <h3 className="font-modern font-bold text-xl sm:text-2xl text-white mt-1">
+                <h3 className="font-modern text-xl font-bold text-white leading-snug">
                   JRS International School
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-200 mt-1 leading-snug">
+                <p className="text-xs text-slate-200 mt-1 leading-relaxed">
                   {schoolContact.address}
                 </p>
               </div>
 
-              {/* Direct Info Pills */}
-              <div className="space-y-2 pt-2 border-t border-white/20 text-xs sm:text-sm">
+              <div className="pt-2 border-t border-white/20 flex flex-col sm:flex-row lg:flex-col gap-2 text-xs">
                 <a
                   href={`tel:${schoolContact.primaryPhone}`}
-                  className="flex items-center gap-2.5 text-slate-200 hover:text-[#DC2626] transition-colors"
+                  className="inline-flex items-center gap-2 text-white hover:text-red-300 transition-colors"
                 >
-                  <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs shrink-0">
+                  <span className="w-5 h-5 rounded-full bg-red-600/80 flex items-center justify-center text-[10px]">
                     📞
                   </span>
                   <span>+91 8367777545 / 8367777548</span>
                 </a>
-
                 <a
                   href={`mailto:${schoolContact.email}`}
-                  className="flex items-center gap-2.5 text-slate-200 hover:text-[#DC2626] transition-colors"
+                  className="inline-flex items-center gap-2 text-white hover:text-red-300 transition-colors"
                 >
-                  <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs shrink-0">
+                  <span className="w-5 h-5 rounded-full bg-emerald-600/80 flex items-center justify-center text-[10px]">
                     ✉️
                   </span>
-                  <span className="truncate">{schoolContact.email}</span>
+                  <span>{schoolContact.email}</span>
                 </a>
-
-                <div className="flex items-center gap-2.5 text-slate-300">
-                  <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs shrink-0">
-                    ⏰
-                  </span>
-                  <span>8:15 AM – 3:30 PM (Mon – Sat)</span>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Clean Simple Form */}
-          <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
+          {/* RIGHT: Simple Contact & Enquiry Form */}
+          <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-white">
             {isSubmitted ? (
-              <div className="text-center py-10 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-[#F0FDF4] text-[#16A34A] flex items-center justify-center text-3xl mx-auto shadow-sm">
+              <div className="text-center py-12 space-y-4">
+                <div className="w-14 h-14 rounded-full bg-emerald-50 text-[#16A34A] flex items-center justify-center text-2xl mx-auto border border-emerald-100">
                   ✓
                 </div>
                 <h3 className="font-modern text-2xl font-bold text-[#0B0F17]">
-                  Enquiry Received!
+                  Enquiry Submitted!
                 </h3>
-                <p className="text-slate-600 max-w-md mx-auto text-sm leading-relaxed">
-                  Thank you for your interest in JRS International School. Our admissions
-                  counselor will get in touch with you shortly on{' '}
-                  <strong className="text-[#0B0F17]">{formData.phone || 'your phone number'}</strong>.
+                <p className="text-slate-600 text-sm max-w-md mx-auto">
+                  Thank you for contacting JRS International School. Our team will reach out to you shortly.
                 </p>
-                <div className="pt-4">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        studentName: '',
-                        parentName: '',
-                        phone: '',
-                        email: '',
-                        grade: 'Grade 1',
-                        message: '',
-                      });
-                    }}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0B0F17] text-white hover:bg-[#DC2626] text-xs font-semibold transition-colors cursor-pointer"
-                  >
-                    Submit Another Enquiry
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setFormData({
+                      studentName: '',
+                      parentName: '',
+                      phone: '',
+                      email: '',
+                      grade: 'Grade 1',
+                      message: '',
+                    });
+                  }}
+                  className="mt-4 px-6 py-2.5 rounded-full bg-slate-900 text-white hover:bg-[#16A34A] text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  Send Another Message
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                <div className="space-y-1">
-                  <h3 className="font-modern font-bold text-2xl text-[#0B0F17]">
-                    Admission &amp; Campus Enquiry
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500">
-                    Fill out this simple form and we will call you back with admission guidelines and fee structure.
-                  </p>
-                </div>
-
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Student Name */}
                   <div>
                     <label
                       htmlFor="studentName"
-                      className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-1.5"
+                      className="block text-xs font-bold text-[#0B0F17] uppercase tracking-wider mb-1"
                     >
                       Student Name *
                     </label>
@@ -178,10 +148,10 @@ export default function ContactSection() {
                       id="studentName"
                       name="studentName"
                       required
-                      placeholder="e.g. Aarav Sharma"
+                      placeholder="Student full name"
                       value={formData.studentName}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
                     />
                   </div>
 
@@ -189,7 +159,7 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="parentName"
-                      className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-1.5"
+                      className="block text-xs font-bold text-[#0B0F17] uppercase tracking-wider mb-1"
                     >
                       Parent / Guardian Name *
                     </label>
@@ -198,20 +168,20 @@ export default function ContactSection() {
                       id="parentName"
                       name="parentName"
                       required
-                      placeholder="e.g. Rajesh Sharma"
+                      placeholder="Parent full name"
                       value={formData.parentName}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Phone Number */}
+                  {/* Phone */}
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-1.5"
+                      className="block text-xs font-bold text-[#0B0F17] uppercase tracking-wider mb-1"
                     >
                       Phone Number *
                     </label>
@@ -223,15 +193,15 @@ export default function ContactSection() {
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
                     />
                   </div>
 
-                  {/* Email Address */}
+                  {/* Email */}
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-1.5"
+                      className="block text-xs font-bold text-[#0B0F17] uppercase tracking-wider mb-1"
                     >
                       Email Address *
                     </label>
@@ -243,16 +213,16 @@ export default function ContactSection() {
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors"
                     />
                   </div>
                 </div>
 
-                {/* Grade Seeking Admission */}
+                {/* Grade */}
                 <div>
                   <label
                     htmlFor="grade"
-                    className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-1.5"
+                    className="block text-xs font-bold text-[#0B0F17] uppercase tracking-wider mb-1"
                   >
                     Grade Seeking Admission *
                   </label>
@@ -261,7 +231,7 @@ export default function ContactSection() {
                     name="grade"
                     value={formData.grade}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors bg-white cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors bg-white cursor-pointer"
                   >
                     <option value="Pre-Primary (Nursery / PP1 / PP2)">Pre-Primary (Nursery / PP1 / PP2)</option>
                     <option value="Grade 1">Grade 1</option>
@@ -269,7 +239,7 @@ export default function ContactSection() {
                     <option value="Grade 3">Grade 3</option>
                     <option value="Grade 4">Grade 4</option>
                     <option value="Grade 5">Grade 5</option>
-                    <option value="Grade 6 (Middle School)">Grade 6 (Middle School)</option>
+                    <option value="Grade 6">Grade 6</option>
                     <option value="Grade 7">Grade 7</option>
                     <option value="Grade 8">Grade 8</option>
                     <option value="Grade 9">Grade 9</option>
@@ -277,39 +247,35 @@ export default function ContactSection() {
                   </select>
                 </div>
 
-                {/* Message / Questions */}
+                {/* Message */}
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-1.5"
+                    className="block text-xs font-bold text-[#0B0F17] uppercase tracking-wider mb-1"
                   >
-                    Questions or Message (Optional)
+                    Message (Optional)
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows="3"
-                    placeholder="Ask about school timings, transport routes, curriculum or schedule a campus tour..."
+                    placeholder="Any specific questions about admissions, transportation, or fee structure..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/10 outline-none text-sm text-[#0B0F17] transition-colors resize-none"
                   />
                 </div>
 
-                {/* Submit Action */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* Submit Button - Red gradient to Green hover, no shadow */}
+                <div className="pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#DC2626] text-white hover:bg-[#B91C1C] px-8 py-3 rounded-full text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer disabled:opacity-70"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] text-white hover:from-[#16A34A] hover:to-[#15803D] px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer disabled:opacity-70"
                   >
                     <span>{isSubmitting ? 'Submitting...' : 'Submit Enquiry'}</span>
-                    <span className="text-xs">›</span>
+                    <span>→</span>
                   </button>
-
-                  <span className="text-xs text-slate-400 text-center sm:text-right">
-                    🔒 All information is kept strictly confidential.
-                  </span>
                 </div>
               </form>
             )}
@@ -320,3 +286,4 @@ export default function ContactSection() {
     </section>
   );
 }
+

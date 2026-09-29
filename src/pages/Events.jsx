@@ -128,7 +128,7 @@ export default function Events() {
               ANNUAL CALENDAR & HAPPENINGS
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               Milestones celebrated,
               <br />
               <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
@@ -174,7 +174,7 @@ export default function Events() {
       </section>
 
       {/* Large Numbered Rows Section */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-6">
           {filtered.map((item) => (
             <div

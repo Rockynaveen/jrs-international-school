@@ -4,7 +4,7 @@ import { schoolContact } from '../data/siteData';
 
 export default function AdmissionCTA() {
   return (
-    <section className="bg-white py-20 sm:py-28 relative overflow-hidden border-t border-slate-100">
+    <section className="bg-white py-10 relative overflow-hidden border-t border-slate-100">
       <div className="max-w-[1040px] mx-auto px-6 text-center">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase shadow-xs border border-red-100 mb-6">
@@ -13,10 +13,10 @@ export default function AdmissionCTA() {
         </div>
 
         {/* Heading */}
-        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-[#0B0F17] leading-[1.12] mb-6">
+        <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight mb-6">
           Ready for their
           <br />
-          <span className="text-[#DC2626] not-italic italic">
+          <span className="text-[#DC2626]">
             NEXT BIG STEP?
           </span>
         </h2>
@@ -35,7 +35,7 @@ export default function AdmissionCTA() {
             variant="primary"
             size="lg"
             arrowType="right"
-            className="bg-[#DC2626] text-white hover:bg-[#B91C1C] font-semibold px-9 py-4 shadow-md"
+            className="bg-[#DC2626] text-white hover:bg-[#16A34A] font-semibold px-9 py-4"
           >
             Call Admissions ({schoolContact.primaryPhone})
           </Button>

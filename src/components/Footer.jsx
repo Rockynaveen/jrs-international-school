@@ -3,8 +3,13 @@ import { schoolContact } from '../data/siteData';
 
 export default function Footer({ setHeroMode }) {
   return (
-    <footer className="bg-[#0B0F17] text-white pt-16 pb-12 border-t border-white/10">
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
+    <footer className="relative bg-gradient-to-b from-[#0B0F17] via-[#07090E] to-[#020305] text-white pt-16 pb-12 border-t border-white/10 overflow-hidden">
+      {/* Top Accent Gradient Border */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#DC2626] via-[#16A34A] to-[#DC2626]" />
+      {/* Ambient Radial Mesh */}
+      <div className="absolute -top-32 -left-32 w-80 h-80 bg-gradient-to-br from-red-600/10 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-tl from-emerald-600/10 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/10">
           {/* Brand & About */}
@@ -207,7 +212,7 @@ export default function Footer({ setHeroMode }) {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#DC2626] hover:text-white text-slate-200 flex items-center justify-center text-xs font-bold transition-all duration-300"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#16A34A] hover:to-[#15803D] hover:text-white text-slate-200 flex items-center justify-center text-xs font-bold transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}

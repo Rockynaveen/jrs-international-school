@@ -65,7 +65,7 @@ export default function FeatureSection({
                 variant="primary"
                 size="md"
                 arrowType="right"
-                className="bg-[#DC2626] text-white hover:bg-[#B91C1C] shadow-sm"
+                className="bg-[#DC2626] text-white hover:bg-[#16A34A]"
               >
                 {ctaText}
               </Button>

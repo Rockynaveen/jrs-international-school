@@ -42,7 +42,7 @@ export default function Contact() {
               GET IN TOUCH
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               We’d love to
               <br />
               <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
@@ -59,7 +59,7 @@ export default function Contact() {
       </section>
 
       {/* Main Split Section: Contact Info & Form */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Official Details */}
@@ -163,7 +163,7 @@ export default function Contact() {
                     href="https://maps.google.com/?q=JRS+International+School+Narapally+Hyderabad"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#DC2626] hover:text-[#B91C1C]"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#DC2626] hover:text-[#16A34A]"
                   >
                     Open in Google Maps ↗
                   </a>
@@ -203,7 +203,7 @@ export default function Contact() {
                         }}
                         variant="primary"
                         arrow={false}
-                        className="bg-[#DC2626] text-white hover:bg-[#B91C1C]"
+                        className="bg-[#DC2626] text-white hover:bg-[#16A34A]"
                       >
                         Send Another Note
                       </Button>
@@ -305,7 +305,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-[#DC2626] text-white hover:bg-[#B91C1C] rounded-full py-4 text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="w-full bg-[#DC2626] text-white hover:bg-[#16A34A] rounded-full py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#16A34A] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {submitting ? 'Transmitting message...' : 'Send Message →'}
                     </button>

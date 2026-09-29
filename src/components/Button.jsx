@@ -17,7 +17,7 @@ export default function Button({
   const sizeStyles = {
     sm: 'text-xs pl-4 pr-1.5 py-1.5 gap-2.5',
     md: 'text-sm sm:text-base pl-6 pr-2 py-2 gap-3.5',
-    lg: 'text-base sm:text-lg pl-7 pr-2.5 py-2.5 gap-4 shadow-sm hover:shadow-md',
+    lg: 'text-base sm:text-lg pl-7 pr-2.5 py-2.5 gap-4',
   };
 
   const badgeSizes = {
@@ -28,30 +28,30 @@ export default function Button({
 
   const variants = {
     primary:
-      'bg-[#DC2626] text-white hover:bg-[#B91C1C] focus:ring-[#DC2626]',
+      'bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white focus:ring-[#16A34A]',
     secondary:
-      'bg-[#16A34A] text-white hover:bg-[#15803D] font-semibold focus:ring-[#16A34A]',
+      'bg-gradient-to-r from-[#16A34A] to-[#15803D] hover:from-[#DC2626] hover:to-[#B91C1C] text-white font-semibold focus:ring-[#16A34A]',
     orange:
-      'bg-[#DC2626] text-white hover:bg-[#B91C1C] font-semibold focus:ring-[#DC2626]',
+      'bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white font-semibold focus:ring-[#16A34A]',
     outline:
-      'border-2 border-[#0B0F17]/20 bg-white text-[#0B0F17] hover:border-[#0B0F17] hover:bg-slate-50 focus:ring-[#0B0F17]',
+      'border-2 border-[#0B0F17]/20 bg-white text-[#0B0F17] hover:border-[#16A34A] hover:text-[#16A34A] hover:bg-slate-50 focus:ring-[#0B0F17]',
     white:
-      'bg-white text-[#0B0F17] hover:bg-slate-100 shadow-md focus:ring-white',
+      'bg-gradient-to-r from-white to-slate-50 text-[#0B0F17] hover:from-[#16A34A] hover:to-[#15803D] hover:text-white border border-slate-200 focus:ring-white',
     mint:
-      'bg-[#F0FDF4] text-[#16A34A] hover:bg-[#DCFCE7] font-semibold focus:ring-[#16A34A]',
+      'bg-gradient-to-r from-[#F0FDF4] to-[#DCFCE7] text-[#16A34A] hover:from-[#16A34A] hover:to-[#15803D] hover:text-white font-semibold focus:ring-[#16A34A]',
     black:
-      'bg-[#0B0F17] text-white hover:bg-[#1F2937] focus:ring-[#0B0F17]',
+      'bg-gradient-to-r from-[#0B0F17] to-[#1E293B] text-white hover:from-[#16A34A] hover:to-[#15803D] focus:ring-[#0B0F17]',
   };
 
   // Badge background & icon color based on button variant
   const badgeColors = {
-    primary: 'bg-white text-[#DC2626]',
+    primary: 'bg-white text-[#DC2626] group-hover:text-[#16A34A]',
     secondary: 'bg-white text-[#16A34A]',
-    orange: 'bg-white text-[#DC2626]',
-    outline: 'bg-[#0B0F17] text-white',
-    white: 'bg-[#DC2626] text-white',
+    orange: 'bg-white text-[#DC2626] group-hover:text-[#16A34A]',
+    outline: 'bg-[#0B0F17] text-white group-hover:bg-[#16A34A]',
+    white: 'bg-[#DC2626] text-white group-hover:bg-white group-hover:text-[#16A34A]',
     mint: 'bg-[#16A34A] text-white',
-    black: 'bg-[#DC2626] text-white',
+    black: 'bg-[#DC2626] text-white group-hover:bg-white group-hover:text-[#16A34A]',
   };
 
   const content = (
@@ -61,7 +61,7 @@ export default function Button({
         <span
           className={`lilstep-btn-arrow ${badgeSizes[size] || badgeSizes.md} ${
             badgeColors[variant] || badgeColors.primary
-          } rounded-full flex items-center justify-center relative overflow-hidden shrink-0 shadow-xs`}
+          } rounded-full flex items-center justify-center relative overflow-hidden shrink-0`}
           aria-hidden="true"
         >
           {/* Arrow 1: moves up-right on hover */}

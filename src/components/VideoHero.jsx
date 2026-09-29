@@ -96,7 +96,7 @@ export default function VideoHero() {
           <button
             type="button"
             onClick={() => setIsVideoModalOpen(true)}
-            className="group inline-flex items-center gap-2.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-8 py-4 rounded-full text-[15px] font-bold transition-all duration-300 shadow-[0_10px_30px_rgba(220,38,38,0.5)] hover:shadow-[0_15px_35px_rgba(220,38,38,0.7)] hover:-translate-y-0.5 cursor-pointer"
+            className="group inline-flex items-center gap-2.5 bg-[#DC2626] hover:bg-[#16A34A] text-white px-8 py-4 rounded-full text-[15px] font-bold transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
             <span>Watch Official Video</span>
             <span className="text-base font-normal leading-none transition-transform duration-200 group-hover:translate-x-1">›</span>
@@ -104,7 +104,7 @@ export default function VideoHero() {
 
           <a
             href="#admissions"
-            className="group inline-flex items-center gap-2.5 bg-black/50 hover:bg-white text-white hover:text-[#0B0F17] border border-white/50 hover:border-white px-8 py-4 rounded-full text-[15px] font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer backdrop-blur-md"
+            className="group inline-flex items-center gap-2.5 bg-black/50 hover:bg-white text-white hover:text-[#0B0F17] border border-white/50 hover:border-white px-8 py-4 rounded-full text-[15px] font-bold transition-all duration-300 hover:-translate-y-0.5 cursor-pointer backdrop-blur-md"
           >
             <span>Schedule Campus Walk</span>
             <span className="text-base font-normal leading-none transition-transform duration-200 group-hover:translate-x-1">›</span>
@@ -207,7 +207,7 @@ export default function VideoHero() {
               <a
                 href="#admissions"
                 onClick={() => setIsVideoModalOpen(false)}
-                className="inline-flex items-center gap-2 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#DC2626] hover:bg-[#16A34A] text-white px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-colors cursor-pointer"
               >
                 <span>Book Campus Visit</span>
                 <span>›</span>

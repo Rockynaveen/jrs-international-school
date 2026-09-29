@@ -98,7 +98,7 @@ export default function Academics() {
               ACADEMIC PHILOSOPHY & PROGRAMMES
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               Learning for
               <br />
               <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
@@ -115,7 +115,7 @@ export default function Academics() {
       </section>
 
       {/* Editorial Horizontal Programme Rows */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-16 sm:space-y-24">
           <div className="border-b border-gray-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
@@ -189,7 +189,7 @@ export default function Academics() {
                         variant="primary"
                         size="sm"
                         arrowType="right"
-                        className="bg-[#DC2626] text-white hover:bg-[#B91C1C]"
+                        className="bg-[#DC2626] text-white hover:bg-[#16A34A]"
                       >
                         Enquire for {prog.name}
                       </Button>
@@ -223,7 +223,7 @@ export default function Academics() {
       </section>
 
       {/* Curriculum Highlights Banner */}
-      <section className="py-16 bg-[#F0FDF4] border-t border-emerald-100">
+      <section className="py-10 bg-[#F0FDF4] border-t border-emerald-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-3xl p-8 border border-emerald-50 shadow-sm">

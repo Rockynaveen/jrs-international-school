@@ -4,7 +4,7 @@ import { images } from '../data/siteData';
 
 export default function ImageStory() {
   return (
-    <section className="bg-white py-12 overflow-hidden relative border-t border-slate-100">
+    <section className="bg-white py-10 overflow-hidden relative border-t border-slate-100">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-2xl mb-12 sm:mb-16 space-y-3">
@@ -12,9 +12,9 @@ export default function ImageStory() {
             <span>✦</span> STORYTELLING THROUGH EXPERIENCE
           </div>
 
-          <h2 className="font-display text-3xl sm:text-5xl text-[#0B0F17] leading-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl text-[#0B0F17] leading-tight">
             Joyful environment where children learn{' '}
-            <span className="text-[#DC2626] not-italic italic">
+            <span className="text-[#DC2626]">
               confidently.
             </span>
           </h2>

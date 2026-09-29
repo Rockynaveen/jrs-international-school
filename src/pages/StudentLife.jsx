@@ -103,7 +103,7 @@ export default function StudentLife() {
               LIFE BEYOND THE CLASSROOM
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               Curiosity in action,
               <br />
               <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">

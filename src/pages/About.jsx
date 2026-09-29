@@ -77,7 +77,7 @@ export default function About() {
               ABOUT JRS INTERNATIONAL SCHOOL
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               Growing minds,
               <br />
               <em className="text-[#DC2626] not-italic italic">
@@ -95,19 +95,19 @@ export default function About() {
       </section>
 
       {/* Leadership / Vision Split Section */}
-      <section className="py-20 sm:py-28 bg-white border-b border-gray-100">
+      <section className="py-10 bg-white border-b border-gray-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
             {/* Image Collage */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+            <div className="lg:col-span-6 relative flex flex-col">
+              <div className="relative flex-1 min-h-[340px] sm:min-h-[400px] rounded-[40px] overflow-hidden shadow-2xl border-4 border-white">
                 <img
                   src={images.campusExterior}
                   alt="JRS International School Campus"
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-[#0B0F17] text-white p-6 sm:p-8 rounded-[28px] shadow-xl max-w-xs border-2 border-white">
+              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-[#0B0F17] text-white p-6 sm:p-8 rounded-[28px] shadow-xl max-w-xs border-2 border-white z-10">
                 <span className="text-[#DC2626] font-display text-2xl font-bold block mb-1">
                   CBSE Affiliated
                 </span>
@@ -157,7 +157,7 @@ export default function About() {
       </section>
 
       {/* Six Pillars Editorial Grid */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#DC2626]">

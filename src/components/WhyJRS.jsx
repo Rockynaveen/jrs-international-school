@@ -4,138 +4,85 @@ import { Link } from 'react-router-dom';
 export default function WhyJRS() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
-  const features = [
-    {
-      title: 'International Curriculum',
-      icon: (
-        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" y1="12" x2="22" y2="12" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Expert Faculty',
-      icon: (
-        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Modern Infrastructure',
-      icon: (
-        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Global Exposure',
-      icon: (
-        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="2" x2="12" y2="22" />
-          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
-          <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" />
-        </svg>
-      ),
-    },
-  ];
-
   return (
-    <section className="relative w-full bg-[#f8fafc] py-16 sm:py-24 overflow-hidden border-t border-slate-100">
-      <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+    <section id="about" className="relative w-full bg-white py-12 overflow-hidden border-b border-slate-200">
+      {/* Subtle Ambient Brand Glows */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-red-500/5 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-emerald-500/5 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           
-          {/* ================= LEFT COLUMN ================= */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-7">
-            {/* Label */}
-            <div className="font-modern text-xs font-bold uppercase tracking-[0.25em] text-[#DC2626]">
-              WHY JRS?
-            </div>
-
-            {/* Headline matching screenshot */}
-            <h2 className="font-modern text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
-              More Than Education.
-              <br />
-              <span className="text-[#DC2626]">A World of Opportunities.</span>
-            </h2>
-
-            {/* Paragraph */}
-            <p className="font-modern text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl font-normal">
-              We provide a dynamic learning environment where academic excellence,
-              personal growth and global exposure come together to shape future leaders.
-            </p>
-
-            {/* CTA Link */}
-            <div className="pt-2">
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0F17] hover:text-[#DC2626] transition-colors group cursor-pointer"
-              >
-                <span>Discover Our Approach</span>
-                <span className="transform group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </Link>
-            </div>
-
-            {/* 4 Feature Columns at Bottom */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-200/80">
-              {features.map((feat, idx) => (
-                <div key={idx} className="space-y-2.5">
-                  <div className="w-10 h-10 rounded-xl bg-white shadow-xs border border-slate-200 flex items-center justify-center">
-                    {feat.icon}
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-[#0B0F17] leading-snug">
-                    {feat.title}
-                  </h4>
-                </div>
-              ))}
+          {/* ================= LEFT COLUMN: School Building Image (Same height as content) ================= */}
+          <div className="lg:col-span-6 flex flex-col">
+            <div className="relative w-full flex-1 min-h-[340px] sm:min-h-[420px] lg:min-h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-gray-50">
+              <img
+                src="/about-campus-main.jpeg"
+                alt="JRS International School Modern Campus Building"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                loading="lazy"
+              />
             </div>
           </div>
 
-          {/* ================= RIGHT COLUMN: Image & Quote Card ================= */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-[560px] lg:max-w-none">
-              
-              {/* Campus Building Image Frame */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/11] bg-slate-100">
-                <img
-                  src="/hero-building.jpg"
-                  alt="JRS International School Modern Campus Architecture"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  loading="lazy"
-                />
+          {/* ================= RIGHT COLUMN: About Us Editorial Content ================= */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 sm:space-y-5">
+            {/* Tag / Eyebrow: Graduation Cap Icon + "About Us" */}
+            <div className="inline-flex items-center gap-2 text-[#DC2626] font-bold text-base sm:text-lg">
+              <svg
+                className="w-6 h-6 text-[#DC2626] shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+              <span>About Us</span>
+            </div>
 
-                {/* Floating Watch Campus Tour Button on Image */}
-                <button
-                  type="button"
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="absolute bottom-5 right-5 bg-white/95 hover:bg-white text-[#0B0F17] hover:text-[#DC2626] px-4 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-lg flex items-center gap-2 transition-all duration-200 hover:scale-105 cursor-pointer z-20"
-                >
-                  <span className="w-6 h-6 rounded-full bg-[#DC2626] text-white flex items-center justify-center text-[10px] pl-0.5">
-                    ▶
-                  </span>
-                  <span>Watch Campus Tour</span>
-                </button>
-              </div>
+            {/* Main Heading */}
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
+              Welcome to <span className="bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">JRS International School</span>
+            </h2>
 
-              {/* Overlapping Dark Black Quote Card on Top Right */}
-              <div className="relative lg:absolute -top-6 lg:-top-8 lg:-right-6 bg-[#0B0F17] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl shadow-2xl max-w-sm border-2 border-white mt-4 lg:mt-0 z-20 space-y-3">
-                <div className="w-8 h-1 bg-[#DC2626] rounded-full" />
-                <p className="text-sm sm:text-base font-normal text-slate-100 leading-relaxed italic">
-                  “Education is not preparation for life; education is life itself.”
-                </p>
-                <span className="text-xs font-semibold text-slate-400 block tracking-wide">
-                  — JRS Philosophy
+            {/* Subheading */}
+            <h3 className="font-display text-lg sm:text-xl font-bold text-[#0B0F17] leading-snug">
+              Best CBSE School with <span className="bg-gradient-to-r from-[#16A34A] to-[#15803D] bg-clip-text text-transparent">IIT &amp; NIT Foundation</span> in Narapally, Hyderabad
+            </h3>
+
+            {/* Description Paragraph */}
+            <p className="font-sans text-sm sm:text-[15px] lg:text-base text-gray-600 leading-relaxed font-normal">
+              Where dreams take flight and possibilities are limitless. Step into a world of
+              boundless learning at JRS International School, the premier CBSE International School in
+              Narapally, Hyderabad, where each day brings new discoveries and opportunities for growth,
+              and the corridors echo with the whispers of tomorrow’s leaders. We nurture not just
+              scholars but pioneers of the future. Experience a realm where innovation blends with
+              timeless wisdom, setting the stage for a transformative learning journey.
+            </p>
+
+            {/* Two Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-3">
+              <Link
+                to="/about"
+                className="group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+              >
+                <span>Learn More</span>
+                <span className="text-lg leading-none transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setIsVideoModalOpen(true)}
+                className="group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#0B0F17] to-[#1E293B] hover:from-[#16A34A] hover:to-[#15803D] text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 cursor-pointer border border-slate-700/50"
+              >
+                <span className="w-5 h-5 rounded-full bg-white text-[#DC2626] group-hover:text-[#16A34A] flex items-center justify-center text-[10px] font-bold pl-0.5 transition-colors">
+                  ▶
                 </span>
-              </div>
-
+                <span>Virtual Tour</span>
+              </button>
             </div>
           </div>
 
@@ -144,38 +91,47 @@ export default function WhyJRS() {
 
       {/* Campus Video Tour Modal */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 relative shadow-2xl">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <h3 className="text-lg font-bold text-[#0B0F17]">
-                JRS International School Campus Tour
-              </h3>
+        <div
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setIsVideoModalOpen(false)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+        >
+          <div
+            className="relative max-w-4xl w-full bg-[#0B0F17] rounded-3xl overflow-hidden shadow-2xl border border-white/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-white/10 bg-[#0B0F17]">
+              <div className="flex items-center gap-3">
+                <span className="w-3 h-3 rounded-full bg-[#DC2626] animate-pulse" />
+                <h3 className="font-display font-bold text-sm sm:text-base text-white">
+                  JRS International School Campus Tour
+                </h3>
+              </div>
               <button
+                type="button"
                 onClick={() => setIsVideoModalOpen(false)}
-                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center font-bold"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#0B0F17] flex items-center justify-center text-sm font-bold transition-all cursor-pointer"
+                aria-label="Close video"
               >
                 ✕
               </button>
             </div>
-            <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-slate-900 relative">
-              <img
-                src="/hero-building.jpg"
-                alt="JRS Campus Video"
-                className="w-full h-full object-cover"
+
+            {/* Video Player */}
+            <div className="aspect-video w-full bg-black">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/LBvByB-S0O4?autoplay=1&rel=0&modestbranding=1"
+                title="JRS International School Campus Tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
               />
-              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center p-6 space-y-3">
-                <span className="w-16 h-16 rounded-full bg-white text-[#DC2626] flex items-center justify-center text-2xl shadow-xl pl-1">
-                  ▶
-                </span>
-                <p className="text-sm font-semibold max-w-md">
-                  Welcome to JRS International School, Narapally, Hyderabad. Contact us at +91 95426 64980 to book an in-person guided tour!
-                </p>
-              </div>
             </div>
           </div>
         </div>
       )}
-
     </section>
   );
 }

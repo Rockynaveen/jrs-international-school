@@ -119,7 +119,7 @@ export default function Gallery() {
   );
 
   return (
-    <section id="gallery" className="py-12 bg-white relative overflow-hidden border-t border-slate-100">
+    <section id="gallery" className="py-12 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-b border-slate-200">
       {/* ─────────────────────────────────────────────────────────────
           MAIN CONTENT CONTAINER
       ───────────────────────────────────────────────────────────── */}
@@ -136,29 +136,24 @@ export default function Gallery() {
               <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#DC2626]">
                 GALLERY
               </span>
-              <span className="w-12 h-[2px] bg-[#DC2626]" />
+              <span className="w-12 h-[2px] bg-gradient-to-r from-[#DC2626] to-[#16A34A]" />
             </div>
 
             {/* Main Headline */}
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.25rem] text-[#0B0F17] leading-[1.08] tracking-tight mb-5">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight mb-6">
               A glimpse <br />
               of{' '}
-              <span className="font-display italic font-normal text-[#DC2626]">
+              <span className="font-bold bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">
                 life at JRS
               </span>
             </h2>
-
-            {/* Description Paragraph */}
-            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-sm mb-7">
-              From classrooms to playgrounds, from celebrations to everyday moments — explore the stories that make JRS a vibrant place to learn, grow and belong.
-            </p>
 
             {/* Button */}
             <div>
               <button
                 type="button"
                 onClick={() => setShowFullModal(true)}
-                className="inline-flex items-center gap-3 bg-[#0B0F17] hover:bg-[#DC2626] text-white px-7 py-3.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0B0F17] to-[#1E293B] hover:from-[#16A34A] hover:to-[#15803D] text-white px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer group"
               >
                 <span>View Full Gallery</span>
                 <span className="text-base group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -325,7 +320,7 @@ export default function Gallery() {
                 <a
                   href="#admissions"
                   onClick={() => setSelectedItem(null)}
-                  className="inline-flex items-center gap-1.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 bg-[#DC2626] hover:bg-[#16A34A] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer"
                 >
                   <span>Enquire for 2026–27</span>
                   <span>›</span>
@@ -408,7 +403,7 @@ export default function Gallery() {
               <a
                 href="#admissions"
                 onClick={() => setShowFullModal(false)}
-                className="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2 rounded-full font-semibold transition-colors"
+                className="bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white px-5 py-2 rounded-full font-semibold transition-all"
               >
                 Book a Campus Tour
               </a>

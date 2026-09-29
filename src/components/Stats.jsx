@@ -60,21 +60,6 @@ const statsData = [
     badgeBg: 'bg-[#16A34A]',
     ringColor: 'ring-emerald-400/40',
   },
-  {
-    id: 'stat-5',
-    number: '1',
-    label: 'Inspiring Campus',
-    description: 'Nurturing confident, compassionate, future-ready learners.',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-        <path d="M2 12h20" />
-      </svg>
-    ),
-    badgeBg: 'bg-[#0B0F17]',
-    ringColor: 'ring-slate-400/40',
-  },
 ];
 
 export default function Stats() {
@@ -82,16 +67,16 @@ export default function Stats() {
     <section className="relative overflow-hidden py-12 bg-[#0B0F17] text-white">
       
       {/* ─────────────────────────────────────────────────────────────
-          TWILIGHT CAMPUS BACKGROUND IMAGE & GRADIENT OVERLAY
+          WHITE BUILDING CAMPUS BACKGROUND IMAGE & GRADIENT OVERLAY
       ───────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/jrs-twilight-campus.jpg"
-          alt="JRS International School Twilight Campus"
+          src="/contact-school-building.jpg"
+          alt="JRS International School White Building Campus"
           className="w-full h-full object-cover object-center"
         />
         {/* Cinematic dark black transparent gradient for crystal-clear readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D14]/95 via-[#0B0F17]/85 to-[#0A0D14]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#05070B]/92 via-[#0B0F17]/80 to-[#0A101D]/70" />
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
@@ -109,27 +94,22 @@ export default function Stats() {
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/90">
                 OUR COMMUNITY
               </span>
-              <span className="w-12 h-[2px] bg-[#DC2626]" />
+              <span className="w-12 h-[2px] bg-gradient-to-r from-[#DC2626] to-[#16A34A]" />
             </div>
 
             {/* Headline */}
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[2.85rem] text-white leading-[1.14] tracking-tight mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-white leading-tight tracking-tight mb-6">
               Built on People, <br />
-              <span className="italic font-normal text-[#16A34A]">
+              <span className="font-bold bg-gradient-to-r from-[#16A34A] to-[#4ADE80] bg-clip-text text-transparent">
                 Driven by Possibilities
               </span>
             </h2>
-
-            {/* Subtitle */}
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mb-7">
-              A thriving community that inspires learning, creativity and lifelong success.
-            </p>
 
             {/* Discover Our Community Action Button */}
             <div>
               <a
                 href="#about"
-                className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/35 hover:border-[#DC2626] text-white bg-black/40 hover:bg-[#DC2626] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm cursor-pointer group"
+                className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/20 text-white bg-gradient-to-r from-black/60 to-black/30 hover:from-[#16A34A] hover:to-[#15803D] hover:border-transparent text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer group"
               >
                 <span>Discover Our Community</span>
                 <span className="text-base group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -137,9 +117,9 @@ export default function Stats() {
             </div>
           </div>
 
-          {/* Right Column: 5 Stat Pillars Separated by Subtle Vertical Dividers */}
+          {/* Right Column: 4 Stat Pillars Separated by Subtle Vertical Dividers */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-8 sm:gap-y-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-y-6">
               {statsData.map((stat, idx) => (
                 <div
                   key={stat.id}
@@ -162,17 +142,9 @@ export default function Stats() {
                   </div>
 
                   {/* Stat Label */}
-                  <div className="text-xs sm:text-sm font-semibold text-slate-200 mt-1 mb-1.5 leading-snug">
+                  <div className="text-xs sm:text-sm font-semibold text-slate-200 mt-1.5 leading-snug">
                     {stat.label}
                   </div>
-
-                  {/* Accent Dash */}
-                  <div className="w-5 h-[2px] bg-[#DC2626] mx-auto mb-2" />
-
-                  {/* 1-Line Description */}
-                  <p className="text-[11px] text-slate-300/80 leading-relaxed max-w-[150px] mx-auto">
-                    {stat.description}
-                  </p>
                 </div>
               ))}
             </div>

@@ -77,7 +77,7 @@ export default function Admissions() {
               ADMISSIONS OPEN 2026–27
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               A bright beginning
               <br />
               <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
@@ -94,7 +94,7 @@ export default function Admissions() {
       </section>
 
       {/* 4 Steps Section */}
-      <section className="py-20 sm:py-24 bg-white border-b border-gray-100">
+      <section className="py-10 bg-white border-b border-gray-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#DC2626]">
@@ -136,7 +136,7 @@ export default function Admissions() {
       </section>
 
       {/* Enquiry Form Section with Editorial Split */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC]" id="enquiry-form">
+      <section className="py-10 bg-[#F8FAFC]" id="enquiry-form">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Context & Helpline */}
@@ -240,7 +240,7 @@ export default function Admissions() {
                         }}
                         variant="primary"
                         arrow={false}
-                        className="bg-[#DC2626] text-white hover:bg-[#B91C1C]"
+                        className="bg-[#DC2626] text-white hover:bg-[#16A34A]"
                       >
                         Submit Another Enquiry
                       </Button>
@@ -349,7 +349,7 @@ export default function Admissions() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-[#DC2626] text-white hover:bg-[#B91C1C] rounded-full py-4 text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="w-full bg-[#DC2626] text-white hover:bg-[#16A34A] rounded-full py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#16A34A] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {submitting ? (
                         <span>Processing enquiry...</span>

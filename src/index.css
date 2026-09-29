@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
-  --font-modern: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-heading: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-modern: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
 
   --color-brand-red: #DC2626;
   --color-brand-red-dark: #B91C1C;
@@ -28,16 +29,29 @@
   font-family: var(--font-modern);
 }
 
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
 @layer base {
-  body {
-    font-family: var(--font-body);
+  html, body {
+    font-family: "Inter", "Plus Jakarta Sans", sans-serif;
     color: #111827;
     background-color: #FFFFFF;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: var(--font-display);
+  p, li, label, input, textarea, select, button, a {
+    font-family: "Inter", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display, .font-heading, .font-modern {
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    letter-spacing: -0.015em;
   }
 }
 
@@ -175,5 +189,62 @@
 
 .animate-gauge-pulse {
   animation: gauge-pulse-arc 3s ease-in-out infinite;
+}
+
+/* ================= JRS BRAND GRADIENTS (Red, Black, White & Green) ================= */
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-gradient-primary:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  color: #FFFFFF;
+}
+
+.btn-gradient-dark {
+  background: linear-gradient(135deg, #0B0F17 0%, #1E293B 100%);
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-gradient-dark:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  color: #FFFFFF;
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #16A34A 0%, #22C55E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-dark {
+  background: linear-gradient(135deg, #0B0F17 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-line-brand {
+  background: linear-gradient(90deg, #DC2626 0%, #16A34A 50%, #0B0F17 100%);
+}
+
+.gradient-mesh-light {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(22, 163, 74, 0.05) 0%, transparent 40%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+}
+
+.gradient-mesh-dark {
+  background: 
+    radial-gradient(circle at 15% 30%, rgba(220, 38, 38, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(22, 163, 74, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, #0B0F17 0%, #05070B 100%);
 }
 

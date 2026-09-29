@@ -157,7 +157,7 @@ export default function Campus() {
               STATE-OF-THE-ART CAMPUS
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               Spaces that inspire,
               <br />
               <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
@@ -199,7 +199,7 @@ export default function Campus() {
       </section>
 
       {/* Modern Editorial Facility Grid (12 core facilities) */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredFacilities.map((facility) => (
@@ -248,7 +248,7 @@ export default function Campus() {
       </section>
 
       {/* Safety & Campus Care Banner */}
-      <section className="py-16 bg-[#F0FDF4] border-y border-emerald-100">
+      <section className="py-10 bg-[#F0FDF4] border-y border-emerald-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div className="space-y-2">

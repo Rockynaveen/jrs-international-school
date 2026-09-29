@@ -186,23 +186,23 @@ export default function Hero() {
             return (
               <div
                 key={slide.id}
-                className={`absolute inset-0 px-5 sm:px-8 lg:px-12 flex flex-col justify-center transition-all duration-700 ease-out ${
+                className={`absolute inset-0 px-5 sm:px-8 lg:px-12 flex flex-col justify-end pb-14 sm:pb-16 lg:pb-20 transition-all duration-700 ease-out ${
                   isActive
                     ? 'opacity-100 translate-y-0 pointer-events-auto z-20'
                     : 'opacity-0 translate-y-6 pointer-events-none z-10'
                 }`}
               >
-                <div className="max-w-xl lg:max-w-[620px] xl:max-w-[680px] pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12">
+                <div className="max-w-xl lg:max-w-[620px] xl:max-w-[680px] pb-2 sm:pb-4">
                   {/* Eyebrow Label */}
-                  <div className="inline-flex items-center gap-2.5 mb-3.5 sm:mb-4.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#DC2626] shadow-[0_0_10px_rgba(220,38,38,0.9)]" />
+                  <div className="inline-flex items-center gap-2.5 mb-3.5 sm:mb-4.5 px-3 py-1 rounded-full bg-gradient-to-r from-black/60 via-[#DC2626]/25 to-transparent border border-white/20 backdrop-blur-sm">
+                    <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-tr from-[#DC2626] to-[#EF4444] shadow-[0_0_8px_rgba(220,38,38,0.9)]" />
                     <span className="text-xs sm:text-[13px] font-bold tracking-[0.24em] text-white uppercase font-sans">
                       {slide.eyebrow}
                     </span>
                   </div>
 
-                  {/* Main Display Headline (Fraunces Serif, 64–88px on desktop) */}
-                  <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[70px] xl:text-[78px] font-normal text-white leading-[1.07] tracking-tight mb-4 sm:mb-6 drop-shadow-sm">
+                  {/* Main Display Headline (Manrope, reduced size & increased bold weight) */}
+                  <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-bold sm:font-extrabold text-white leading-[1.12] tracking-tight mb-4 sm:mb-6 drop-shadow-sm">
                     {slide.headline.map((line, i) => (
                       <span key={i} className="block">
                         {line}
@@ -220,7 +220,7 @@ export default function Hero() {
                     {/* Primary CTA */}
                     <a
                       href={slide.primaryCta.href}
-                      className="group inline-flex items-center gap-2.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-[13px] sm:text-[14px] uppercase tracking-wider px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(220,38,38,0.5)] hover:shadow-[0_12px_30px_rgba(220,38,38,0.6)] hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:ring-offset-2 focus:ring-offset-[#0B0F17] cursor-pointer"
+                      className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white font-bold text-[13px] sm:text-[14px] uppercase tracking-wider px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#16A34A] focus:ring-offset-2 focus:ring-offset-[#0B0F17] cursor-pointer"
                     >
                       <span>{slide.primaryCta.label}</span>
                     </a>
@@ -232,7 +232,7 @@ export default function Hero() {
                         onClick={() => setVideoModalOpen(true)}
                         className="group inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/60 backdrop-blur-md font-semibold text-[13px] sm:text-[14px] uppercase tracking-wider px-6 sm:px-7 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
                       >
-                        <span className="w-6 h-6 rounded-full bg-[#16A34A] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-sm">
+                        <span className="w-6 h-6 rounded-full bg-[#16A34A] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                           <Play className="w-3 h-3 fill-current ml-0.5" />
                         </span>
                         <span>{slide.secondaryCta.label}</span>
@@ -331,15 +331,15 @@ export default function Hero() {
             </button>
 
             {/* Video Player */}
-            <video
-              src="/campus-tour.mp4"
-              controls
-              autoPlay
-              playsInline
-              className="w-full h-full object-cover"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <div className="w-full h-full aspect-video bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/LBvByB-S0O4?autoplay=1&rel=0&modestbranding=1"
+                title="JRS International School Story"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
           </div>
         </div>
       )}
