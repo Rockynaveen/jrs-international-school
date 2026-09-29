@@ -185,24 +185,24 @@ export default function CoCurricularCarousel() {
   };
 
   return (
-    <section id="activities" className="py-16 sm:py-20 bg-gradient-to-b from-[#FFFDF9] via-[#FAF9F5] to-[#FFFFFF] relative overflow-hidden select-none">
+    <section id="activities" className="py-16 sm:py-20 bg-white relative overflow-hidden select-none border-t border-slate-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 relative">
           {/* Eyebrow Label */}
           <div className="inline-flex flex-col items-center justify-center">
-            <span className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.25em] text-[#06335F] block">
+            <span className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.25em] text-[#DC2626] block">
               BEYOND THE CLASSROOM
             </span>
-            {/* Golden Horizontal Accent Bar */}
-            <div className="w-12 h-1 bg-[#F59E0B] rounded-full mt-2.5 mb-4" />
+            {/* Red Horizontal Accent Bar */}
+            <div className="w-12 h-1 bg-[#DC2626] rounded-full mt-2.5 mb-4" />
           </div>
 
           {/* Main Display Headline */}
           <div className="relative inline-flex items-center justify-center">
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] text-[#0A2540] font-bold tracking-tight leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] text-[#0B0F17] font-bold tracking-tight leading-tight">
               Explore.{' '}
-              <span className="text-[#E59819]">Create.</span>{' '}
+              <span className="text-[#16A34A]">Create.</span>{' '}
               Grow.
             </h2>
           </div>
@@ -220,7 +220,7 @@ export default function CoCurricularCarousel() {
           <button
             onClick={() => handleScroll('left')}
             aria-label="Previous activities"
-            className="absolute left-0 sm:left-1 lg:-left-2 top-[38%] -translate-y-1/2 z-20 p-3 sm:p-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#06335F] hover:bg-[#06335F] hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+            className="absolute left-0 sm:left-1 lg:-left-2 top-[38%] -translate-y-1/2 z-20 p-3 sm:p-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 shadow-md flex items-center justify-center text-[#0B0F17] hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           >
             <ChevronLeft className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.4]" />
           </button>
@@ -229,7 +229,7 @@ export default function CoCurricularCarousel() {
           <button
             onClick={() => handleScroll('right')}
             aria-label="Next activities"
-            className="absolute right-0 sm:right-1 lg:-right-2 top-[38%] -translate-y-1/2 z-20 p-3 sm:p-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#06335F] hover:bg-[#06335F] hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+            className="absolute right-0 sm:right-1 lg:-right-2 top-[38%] -translate-y-1/2 z-20 p-3 sm:p-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 shadow-md flex items-center justify-center text-[#0B0F17] hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           >
             <ChevronRight className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.4]" />
           </button>
@@ -280,7 +280,7 @@ export default function CoCurricularCarousel() {
                 </div>
 
                 {/* Card Title (Serif) */}
-                <h3 className="font-display font-bold text-sm sm:text-base text-[#0A2540] mt-3.5 mb-1 tracking-tight leading-snug group-hover:text-[#0B6DB7] transition-colors">
+                <h3 className="font-display font-bold text-sm sm:text-base text-[#0B0F17] mt-3.5 mb-1 tracking-tight leading-snug group-hover:text-[#DC2626] transition-colors">
                   {activity.title}
                 </h3>
 

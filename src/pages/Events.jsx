@@ -114,29 +114,29 @@ export default function Events() {
   });
 
   return (
-    <div className="min-h-screen bg-[#FFF8ED]">
+    <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-[#FFF8ED] border-b border-slate-200/60 relative overflow-hidden">
+      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
-          className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#F7C95E]/20 blur-3xl -z-10"
+          className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#DC2626]/10 blur-3xl -z-10"
           aria-hidden="true"
         />
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F1EB] text-[#06335F] text-xs font-bold tracking-[0.2em] uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#EF8750]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
               ANNUAL CALENDAR & HAPPENINGS
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#152A40] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
               Milestones celebrated,
               <br />
-              <em className="text-[#EF8750] not-italic italic underline decoration-[#F7C95E] decoration-wavy underline-offset-4">
+              <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
                 MEMORIES MADE.
               </em>
             </h1>
 
-            <p className="text-lg sm:text-2xl text-[#68798B] leading-relaxed font-normal pt-2">
+            <p className="text-lg sm:text-2xl text-gray-600 leading-relaxed font-normal pt-2">
               Every season at JRS brings festivals of sport, science exhibitions,
               music carnivals, and cherished school celebrations.
             </p>
@@ -145,7 +145,7 @@ export default function Events() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="py-6 bg-white border-b border-slate-200 sticky top-18 sm:top-20 z-30 shadow-xs">
+      <section className="py-6 bg-white border-b border-gray-200 sticky top-18 sm:top-20 z-30 shadow-xs">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-2">
             {[
@@ -159,39 +159,39 @@ export default function Events() {
                 onClick={() => setFilter(tab.id)}
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all cursor-pointer ${
                   filter === tab.id
-                    ? 'bg-[#06335F] text-white shadow-sm'
-                    : 'bg-slate-100 text-[#152A40] hover:bg-slate-200'
+                    ? 'bg-[#DC2626] text-white shadow-sm'
+                    : 'bg-gray-100 text-[#0B0F17] hover:bg-gray-200'
                 }`}
               >
                 {tab.label}
               </button>
             ))}
           </div>
-          <span className="text-xs font-medium text-slate-500">
+          <span className="text-xs font-medium text-gray-500">
             {filtered.length} Signature Events Listed
           </span>
         </div>
       </section>
 
-      {/* Large Numbered Rows Section (NOT standard cards!) */}
-      <section className="py-16 sm:py-24 bg-[#FFF8ED]">
+      {/* Large Numbered Rows Section */}
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-6">
           {filtered.map((item) => (
             <div
               key={item.number}
-              className="bg-white rounded-[32px] p-6 sm:p-10 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group"
+              className="bg-white rounded-[32px] p-6 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
                 {/* Left Number & Date */}
-                <div className="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between border-b lg:border-b-0 lg:border-r border-slate-100 pb-4 lg:pb-0 lg:pr-6">
-                  <span className="font-display text-4xl sm:text-6xl font-normal text-[#06335F] group-hover:text-[#0B6DB7] transition-colors">
+                <div className="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between border-b lg:border-b-0 lg:border-r border-gray-100 pb-4 lg:pb-0 lg:pr-6">
+                  <span className="font-display text-4xl sm:text-6xl font-normal text-[#0B0F17] group-hover:text-[#DC2626] transition-colors">
                     {item.number}
                   </span>
                   <div className="text-right lg:text-left mt-2">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#E3F1EB] text-[#06335F] text-xs font-bold uppercase tracking-wider">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold uppercase tracking-wider">
                       {item.date}
                     </span>
-                    <span className="text-xs text-slate-400 block mt-1 uppercase font-semibold">
+                    <span className="text-xs text-gray-400 block mt-1 uppercase font-semibold">
                       {item.month}
                     </span>
                   </div>
@@ -199,20 +199,20 @@ export default function Events() {
 
                 {/* Middle Content */}
                 <div className="lg:col-span-6 space-y-3">
-                  <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#EF8750]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#EF8750]" />
+                  <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#16A34A]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
                     {item.category}
                   </div>
 
-                  <h3 className="font-display text-2xl sm:text-3xl text-[#152A40] group-hover:text-[#06335F] transition-colors leading-snug">
+                  <h3 className="font-display text-2xl sm:text-3xl text-[#0B0F17] group-hover:text-[#DC2626] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-[#68798B] leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     {item.summary}
                   </p>
 
-                  <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-500">
+                  <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-gray-500">
                     <span className="flex items-center gap-1.5">
                       ⏱ {item.timing}
                     </span>
@@ -225,7 +225,7 @@ export default function Events() {
 
                 {/* Right Image Thumbnail */}
                 <div className="lg:col-span-3">
-                  <div className="rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] relative shadow-sm border-2 border-slate-100">
+                  <div className="rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] relative shadow-sm border-2 border-gray-100">
                     <img
                       src={item.image}
                       alt={item.title}

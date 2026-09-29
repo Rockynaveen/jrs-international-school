@@ -6,14 +6,22 @@
   --font-modern: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
 
-  --color-brand-navy: #06335F;
-  --color-brand-blue: #0B6DB7;
-  --color-brand-yellow: #F7C95E;
-  --color-brand-orange: #EF8750;
-  --color-brand-cream: #FFF8ED;
-  --color-brand-mint: #E3F1EB;
-  --color-brand-dark: #152A40;
-  --color-brand-muted: #68798B;
+  --color-brand-red: #DC2626;
+  --color-brand-red-dark: #B91C1C;
+  --color-brand-red-light: #FEF2F2;
+  --color-brand-green: #16A34A;
+  --color-brand-green-dark: #15803D;
+  --color-brand-green-light: #F0FDF4;
+  --color-brand-black: #0B0F17;
+  --color-brand-dark: #111827;
+  --color-brand-white: #FFFFFF;
+  --color-brand-cream: #F8FAFC;
+  --color-brand-navy: #0B0F17;
+  --color-brand-blue: #DC2626;
+  --color-brand-yellow: #16A34A;
+  --color-brand-orange: #DC2626;
+  --color-brand-mint: #F0FDF4;
+  --color-brand-muted: #64748B;
 }
 
 .font-modern {
@@ -23,8 +31,8 @@
 @layer base {
   body {
     font-family: var(--font-body);
-    color: #152A40;
-    background-color: #FFF8ED;
+    color: #111827;
+    background-color: #FFFFFF;
     overflow-x: hidden;
   }
 
@@ -115,7 +123,7 @@
   bottom: -4px;
   width: 100%;
   height: 6px;
-  background-color: #F7C95E;
+  background-color: #DC2626;
   border-radius: 9999px;
   transform-origin: left;
 }

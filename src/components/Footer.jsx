@@ -3,7 +3,7 @@ import { schoolContact } from '../data/siteData';
 
 export default function Footer({ setHeroMode }) {
   return (
-    <footer className="bg-[#06335F] text-white pt-16 pb-12 border-t border-[#0B6DB7]/30">
+    <footer className="bg-[#0B0F17] text-white pt-16 pb-12 border-t border-white/10">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/10">
@@ -28,8 +28,8 @@ export default function Footer({ setHeroMode }) {
               JRS International School features comprehensive coverage of the CBSE curriculum with IIT and NIT Foundation, blending traditional Indian ethos with global educational standards.
             </p>
             <div className="flex items-center gap-3 text-sm">
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#F7C95E]"></span>
-              <span className="text-[#F7C95E] font-semibold text-xs tracking-wider uppercase">
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#DC2626]"></span>
+              <span className="text-[#16A34A] font-semibold text-xs tracking-wider uppercase">
                 CBSE Affiliation # 3630478
               </span>
             </div>
@@ -49,7 +49,7 @@ export default function Footer({ setHeroMode }) {
                     setHeroMode?.('home-1');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="hover:text-[#F7C95E] transition-colors cursor-pointer"
+                  className="hover:text-[#DC2626] transition-colors cursor-pointer"
                 >
                   Home 1 (Image Hero)
                 </a>
@@ -62,33 +62,33 @@ export default function Footer({ setHeroMode }) {
                     setHeroMode?.('home-2');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="hover:text-[#F7C95E] transition-colors cursor-pointer"
+                  className="hover:text-[#DC2626] transition-colors cursor-pointer"
                 >
                   Home 2 (Video Hero)
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#about" className="hover:text-[#DC2626] transition-colors">
                   About JRS
                 </a>
               </li>
               <li>
-                <a href="#academics" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#academics" className="hover:text-[#DC2626] transition-colors">
                   CBSE & IIT/NIT Foundation
                 </a>
               </li>
               <li>
-                <a href="#activities" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#activities" className="hover:text-[#DC2626] transition-colors">
                   Co-Curricular & Sports
                 </a>
               </li>
               <li>
-                <a href="#campus" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#campus" className="hover:text-[#DC2626] transition-colors">
                   Campus Facilities
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#gallery" className="hover:text-[#DC2626] transition-colors">
                   Campus Gallery
                 </a>
               </li>
@@ -97,7 +97,7 @@ export default function Footer({ setHeroMode }) {
                   href={schoolContact.brochureUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F7C95E] transition-colors inline-flex items-center gap-1 font-semibold text-[#F7C95E]"
+                  className="hover:text-[#DC2626] transition-colors inline-flex items-center gap-1 font-semibold text-[#DC2626]"
                 >
                   Download Brochure ↗
                 </a>
@@ -112,19 +112,19 @@ export default function Footer({ setHeroMode }) {
             </h3>
             <ul className="space-y-2.5 text-sm text-slate-300">
               <li>
-                <a href="#admissions" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#admissions" className="hover:text-[#DC2626] transition-colors">
                   Admissions Open 2026–27
                 </a>
               </li>
               <li>
-                <a href="#admissions" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#admissions" className="hover:text-[#DC2626] transition-colors">
                   Online Enquiry Form
                 </a>
               </li>
               <li>
                 <a
                   href={`tel:${schoolContact.primaryPhone}`}
-                  className="hover:text-[#F7C95E] transition-colors inline-flex items-center gap-1"
+                  className="hover:text-[#DC2626] transition-colors inline-flex items-center gap-1"
                 >
                   Call: +91 8367777545
                 </a>
@@ -132,13 +132,13 @@ export default function Footer({ setHeroMode }) {
               <li>
                 <a
                   href={`tel:${schoolContact.secondaryPhone}`}
-                  className="hover:text-[#F7C95E] transition-colors inline-flex items-center gap-1"
+                  className="hover:text-[#DC2626] transition-colors inline-flex items-center gap-1"
                 >
                   Call: +91 8367777548
                 </a>
               </li>
               <li>
-                <a href="#campus" className="hover:text-[#F7C95E] transition-colors">
+                <a href="#campus" className="hover:text-[#DC2626] transition-colors">
                   Schedule Campus Walk
                 </a>
               </li>
@@ -147,7 +147,7 @@ export default function Footer({ setHeroMode }) {
                   href="https://jrsinternationalschooluppal.com/cbse/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F7C95E] transition-colors text-xs text-slate-400"
+                  className="hover:text-[#DC2626] transition-colors text-xs text-slate-400"
                 >
                   Mandatory Public Disclosure ↗
                 </a>
@@ -167,23 +167,23 @@ export default function Footer({ setHeroMode }) {
               <div className="space-y-1.5 pt-1">
                 <p>
                   <strong className="text-white font-medium">Phone: </strong>
-                  <a href={`tel:${schoolContact.primaryPhone}`} className="hover:text-[#F7C95E]">
+                  <a href={`tel:${schoolContact.primaryPhone}`} className="hover:text-[#DC2626]">
                     +91 8367777545
                   </a>
                   {', '}
-                  <a href={`tel:${schoolContact.secondaryPhone}`} className="hover:text-[#F7C95E]">
+                  <a href={`tel:${schoolContact.secondaryPhone}`} className="hover:text-[#DC2626]">
                     8367777548
                   </a>
                 </p>
                 <p>
                   <strong className="text-white font-medium">Email: </strong>
-                  <a href={`mailto:${schoolContact.email}`} className="hover:text-[#F7C95E]">
+                  <a href={`mailto:${schoolContact.email}`} className="hover:text-[#DC2626]">
                     {schoolContact.email}
                   </a>
                 </p>
                 <p>
                   <strong className="text-white font-medium">Alt Email: </strong>
-                  <a href={`mailto:${schoolContact.secondaryEmail}`} className="hover:text-[#F7C95E]">
+                  <a href={`mailto:${schoolContact.secondaryEmail}`} className="hover:text-[#DC2626]">
                     {schoolContact.secondaryEmail}
                   </a>
                 </p>
@@ -207,7 +207,7 @@ export default function Footer({ setHeroMode }) {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#F7C95E] hover:text-[#06335F] text-slate-200 flex items-center justify-center text-xs font-bold transition-all duration-300"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#DC2626] hover:text-white text-slate-200 flex items-center justify-center text-xs font-bold transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}

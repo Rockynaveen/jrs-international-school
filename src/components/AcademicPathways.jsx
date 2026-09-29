@@ -14,14 +14,14 @@ const pathways = [
     id: 'pre-primary',
     title: 'Pre-Primary',
     subLevels: 'Nursery, LKG & UKG',
-    badgeVariant: 'amber',
+    badgeVariant: 'red',
     image: '/pre-primary.png',
     highRes: '/pre-primary.png',
-    cardBg: 'bg-[#FFF9EE]',
-    borderColor: 'border-[#F7C95E]/50',
-    iconBg: 'bg-[#FEF3C7] text-[#D97706]',
-    lineBg: 'bg-[#E5A83B]',
-    accentColor: '#D97706',
+    cardBg: 'bg-[#FEF2F2]/70',
+    borderColor: 'border-red-200',
+    iconBg: 'bg-red-100 text-[#DC2626]',
+    lineBg: 'bg-[#DC2626]',
+    accentColor: '#DC2626',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="13" width="8" height="8" rx="1.5" />
@@ -42,14 +42,14 @@ const pathways = [
     id: 'primary',
     title: 'Primary',
     subLevels: 'Classes I to V • NCERT Syllabus',
-    badgeVariant: 'blue',
+    badgeVariant: 'emerald',
     image: '/primary.png',
     highRes: '/primary.png',
-    cardBg: 'bg-[#F0F9FF]',
-    borderColor: 'border-[#38BDF8]/40',
-    iconBg: 'bg-[#E0F2FE] text-[#0B6DB7]',
-    lineBg: 'bg-[#0B6DB7]',
-    accentColor: '#0B6DB7',
+    cardBg: 'bg-[#F0FDF4]/70',
+    borderColor: 'border-emerald-200',
+    iconBg: 'bg-emerald-100 text-[#16A34A]',
+    lineBg: 'bg-[#16A34A]',
+    accentColor: '#16A34A',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
@@ -70,14 +70,14 @@ const pathways = [
     id: 'middle-school',
     title: 'Middle School',
     subLevels: 'Classes VI to VIII • CBSE Curriculum',
-    badgeVariant: 'emerald',
+    badgeVariant: 'default',
     image: '/middle.png',
     highRes: '/middle.png',
-    cardBg: 'bg-[#F0FDF4]',
-    borderColor: 'border-[#34D399]/40',
-    iconBg: 'bg-[#DCFCE7] text-[#0D9488]',
-    lineBg: 'bg-[#0D9488]',
-    accentColor: '#0D9488',
+    cardBg: 'bg-[#F9FAFB]',
+    borderColor: 'border-slate-200',
+    iconBg: 'bg-slate-200 text-[#111827]',
+    lineBg: 'bg-[#111827]',
+    accentColor: '#111827',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
@@ -100,24 +100,24 @@ export default function AcademicPathways() {
   const [selectedPathway, setSelectedPathway] = useState(null);
 
   return (
-    <section id="academics" className="py-10 bg-[#FAF8F5] relative overflow-hidden">
+    <section id="academics" className="py-12 bg-white relative overflow-hidden">
 
       {/* Main Content Container */}
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-          {/* Centered Yellow Dash */}
-          <div className="w-12 h-[2.5px] bg-[#E5A83B] mx-auto mb-3" />
+          {/* Centered Red Dash */}
+          <div className="w-12 h-[2.5px] bg-[#DC2626] mx-auto mb-3" />
 
           {/* Title: ACADEMIC PATHWAYS */}
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[2.85rem] leading-tight tracking-tight mb-3">
-            <span className="text-[#0B2545]">ACADEMIC </span>
-            <span className="text-[#E5A83B]">PATHWAYS</span>
+            <span className="text-[#0B0F17]">ACADEMIC </span>
+            <span className="text-[#DC2626]">PATHWAYS</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-xs sm:text-sm text-[#5A6E82] leading-relaxed max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-xl mx-auto">
             A progressive learning journey designed to nurture curiosity, build strong foundations and prepare students for a brighter tomorrow.
           </p>
         </div>
@@ -149,7 +149,7 @@ export default function AcademicPathways() {
                         {item.icon}
                       </div>
                       <div className="space-y-0.5">
-                        <CardTitle className="font-display font-bold text-base sm:text-lg text-[#0B2545] leading-snug">
+                        <CardTitle className="font-display font-bold text-base sm:text-lg text-[#0B0F17] leading-snug">
                           {item.title}
                         </CardTitle>
                         <Badge variant={item.badgeVariant} className="text-[10px] uppercase tracking-wider font-semibold py-0.5 px-2 leading-tight">
@@ -160,7 +160,7 @@ export default function AcademicPathways() {
                   </CardHeader>
 
                   <CardContent className="p-0 mb-4">
-                    <CardDescription className="text-sm sm:text-[14.5px] text-[#4A5D73] leading-relaxed font-normal">
+                    <CardDescription className="text-sm sm:text-[14.5px] text-[#374151] leading-relaxed font-normal">
                       {item.description}
                     </CardDescription>
                   </CardContent>
@@ -172,7 +172,7 @@ export default function AcademicPathways() {
                     onClick={() => setSelectedPathway(item)}
                     className="group/btn inline-flex flex-col items-start cursor-pointer text-left focus:outline-none"
                   >
-                    <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#0B2545] group-hover/btn:text-[#0B6DB7] transition-colors">
+                    <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#0B0F17] group-hover/btn:text-[#DC2626] transition-colors">
                       <span>Learn More</span>
                       <span className="text-sm group-hover/btn:translate-x-1 transition-transform duration-200">→</span>
                     </span>
@@ -209,7 +209,7 @@ export default function AcademicPathways() {
                   <Badge variant={selectedPathway.badgeVariant} className="text-[10px] uppercase tracking-wider font-semibold py-0.5 px-2 mb-1">
                     {selectedPathway.subLevels}
                   </Badge>
-                  <h3 className="font-display font-bold text-2xl text-[#0B2545]">
+                  <h3 className="font-display font-bold text-2xl text-[#0B0F17]">
                     {selectedPathway.title}
                   </h3>
                 </div>
@@ -217,7 +217,7 @@ export default function AcademicPathways() {
               <button
                 type="button"
                 onClick={() => setSelectedPathway(null)}
-                className="w-9 h-9 rounded-full bg-white text-[#0B2545] hover:bg-[#0B2545] hover:text-white flex items-center justify-center text-sm font-bold transition-all shadow-xs cursor-pointer"
+                className="w-9 h-9 rounded-full bg-white text-[#0B0F17] hover:bg-[#DC2626] hover:text-white flex items-center justify-center text-sm font-bold transition-all shadow-xs cursor-pointer"
                 aria-label="Close modal"
               >
                 ✕
@@ -236,22 +236,22 @@ export default function AcademicPathways() {
               </div>
 
               <div>
-                <h4 className="font-bold text-xs uppercase tracking-wider text-[#0B2545] mb-2">
+                <h4 className="font-bold text-xs uppercase tracking-wider text-[#0B0F17] mb-2">
                   Academic Philosophy & Approach
                 </h4>
-                <p className="text-sm text-[#5A6E82] leading-relaxed">
+                <p className="text-sm text-[#4B5563] leading-relaxed">
                   {selectedPathway.curriculumDetails}
                 </p>
               </div>
 
               <div>
-                <h4 className="font-bold text-xs uppercase tracking-wider text-[#0B2545] mb-3">
+                <h4 className="font-bold text-xs uppercase tracking-wider text-[#0B0F17] mb-3">
                   Key Curriculum Highlights
                 </h4>
                 <ul className="space-y-2.5">
                   {selectedPathway.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0B2545]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#0B6DB7] mt-1.5 shrink-0" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0B0F17]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626] mt-1.5 shrink-0" />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -261,13 +261,13 @@ export default function AcademicPathways() {
 
             {/* Modal Footer */}
             <div className="p-5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
-              <span className="text-xs text-[#5A6E82]">
+              <span className="text-xs text-[#4B5563]">
                 Admissions open for Academic Year 2026–27
               </span>
               <a
                 href="#contact"
                 onClick={() => setSelectedPathway(null)}
-                className="inline-flex items-center gap-2 bg-[#072B4F] hover:bg-[#0B6DB7] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-all shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-all shadow-xs cursor-pointer"
               >
                 <span>Enquire for Admissions</span>
                 <span>›</span>

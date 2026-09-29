@@ -30,17 +30,17 @@ export default function FeatureSection({
             }`}
           >
             {tag && (
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F1EB] text-[#06335F] text-xs font-bold tracking-[0.2em] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#EF8750]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
                 <span>{tag}</span>
               </div>
             )}
 
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#152A40] leading-[1.15]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#0B0F17] leading-[1.15]">
               {title}
             </h2>
 
-            <p className="text-base sm:text-lg text-[#68798B] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#4B5563] leading-relaxed">
               {description}
             </p>
 
@@ -48,10 +48,10 @@ export default function FeatureSection({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {bullets.map((bullet, idx) => (
                   <div key={idx} className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-[#F7C95E]/50 text-[#06335F] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-[#DCFCE7] text-[#16A34A] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                       ✓
                     </span>
-                    <span className="text-sm text-[#152A40] font-medium">
+                    <span className="text-sm text-[#0B0F17] font-medium">
                       {bullet}
                     </span>
                   </div>
@@ -65,7 +65,7 @@ export default function FeatureSection({
                 variant="primary"
                 size="md"
                 arrowType="right"
-                className="bg-[#06335F] text-white hover:bg-[#0B6DB7] shadow-sm"
+                className="bg-[#DC2626] text-white hover:bg-[#B91C1C] shadow-sm"
               >
                 {ctaText}
               </Button>
@@ -83,7 +83,7 @@ export default function FeatureSection({
               <div
                 className={`absolute -bottom-4 ${
                   reversed ? '-left-4' : '-right-4'
-                } w-full h-full rounded-[48px] bg-[#E3F1EB] -z-10`}
+                } w-full h-full rounded-[48px] bg-[#FEF2F2] -z-10`}
                 aria-hidden="true"
               />
 
@@ -103,9 +103,9 @@ export default function FeatureSection({
                 <div
                   className={`absolute -bottom-4 ${
                     reversed ? 'right-6' : 'left-6'
-                  } bg-[#F7C95E] text-[#06335F] px-5 py-3 rounded-2xl shadow-lg border-2 border-white flex items-center gap-2`}
+                  } bg-[#0B0F17] text-white px-5 py-3 rounded-2xl shadow-lg border-2 border-white flex items-center gap-2`}
                 >
-                  <span className="font-display font-bold text-sm">✦</span>
+                  <span className="font-display font-bold text-sm text-[#DC2626]">✦</span>
                   <span className="text-xs font-bold uppercase tracking-wider">
                     {badgeText}
                   </span>

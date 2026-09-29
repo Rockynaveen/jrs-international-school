@@ -67,7 +67,7 @@ export const programmesData = [
     description: "A nurturing and creative environment cultivating early wonder through interactive play, motor skill development, and foundational linguistic curiosity.",
     image: images.prePrimaryPlay,
     features: ["Montessori-inspired activity zones", "Foundational phonics & numeracy", "Art, painting & creative expression", "Emotional, social & physical wellness"],
-    accent: "#F7C95E",
+    accent: "#DC2626",
   },
   {
     id: "02",
@@ -78,7 +78,7 @@ export const programmesData = [
     description: "CBSE curriculum infused with practical and interactive learning, blending theoretical concepts with hands-on projects, science quizzes, and environmental awareness.",
     image: images.classroomModern,
     features: ["Comprehensive CBSE curriculum coverage", "IIT & NIT Foundation groundwork", "Language immersion & public speaking", "Physical fitness, yoga & skating"],
-    accent: "#0B6DB7",
+    accent: "#16A34A",
   },
   {
     id: "03",
@@ -89,6 +89,6 @@ export const programmesData = [
     description: "Empowering adolescents with scientific temper, advanced computer labs, sports leagues, and competitive examination preparation grounded in strong moral values.",
     image: images.stemLearning,
     features: ["Advanced science & robotics laboratories", "Rigorous IIT & NIT Foundation program", "Annual sports olympiads & tournaments", "Holistic co-curricular enrichment clubs"],
-    accent: "#EF8750",
+    accent: "#111827",
   },
 ];

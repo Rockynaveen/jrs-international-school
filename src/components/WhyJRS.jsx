@@ -8,7 +8,7 @@ export default function WhyJRS() {
     {
       title: 'International Curriculum',
       icon: (
-        <svg className="w-5 h-5 text-[#0B6DB7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="10" />
           <line x1="2" y1="12" x2="22" y2="12" />
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" />
@@ -18,7 +18,7 @@ export default function WhyJRS() {
     {
       title: 'Expert Faculty',
       icon: (
-        <svg className="w-5 h-5 text-[#0B6DB7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
           <circle cx="12" cy="7" r="4" />
         </svg>
@@ -27,7 +27,7 @@ export default function WhyJRS() {
     {
       title: 'Modern Infrastructure',
       icon: (
-        <svg className="w-5 h-5 text-[#0B6DB7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
         </svg>
@@ -36,7 +36,7 @@ export default function WhyJRS() {
     {
       title: 'Global Exposure',
       icon: (
-        <svg className="w-5 h-5 text-[#0B6DB7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-5 h-5 text-[#16A34A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="10" />
           <line x1="12" y1="2" x2="12" y2="22" />
           <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
@@ -54,15 +54,15 @@ export default function WhyJRS() {
           {/* ================= LEFT COLUMN ================= */}
           <div className="lg:col-span-6 space-y-6 sm:space-y-7">
             {/* Label */}
-            <div className="font-modern text-xs font-bold uppercase tracking-[0.25em] text-[#0B6DB7]">
+            <div className="font-modern text-xs font-bold uppercase tracking-[0.25em] text-[#DC2626]">
               WHY JRS?
             </div>
 
             {/* Headline matching screenshot */}
-            <h2 className="font-modern text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-[#072B4F] leading-[1.12] tracking-tight">
+            <h2 className="font-modern text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               More Than Education.
               <br />
-              <span className="text-[#0B6DB7]">A World of Opportunities.</span>
+              <span className="text-[#DC2626]">A World of Opportunities.</span>
             </h2>
 
             {/* Paragraph */}
@@ -75,7 +75,7 @@ export default function WhyJRS() {
             <div className="pt-2">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#072B4F] hover:text-[#0B6DB7] transition-colors group cursor-pointer"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0F17] hover:text-[#DC2626] transition-colors group cursor-pointer"
               >
                 <span>Discover Our Approach</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">
@@ -91,7 +91,7 @@ export default function WhyJRS() {
                   <div className="w-10 h-10 rounded-xl bg-white shadow-xs border border-slate-200 flex items-center justify-center">
                     {feat.icon}
                   </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-[#072B4F] leading-snug">
+                  <h4 className="text-xs sm:text-sm font-bold text-[#0B0F17] leading-snug">
                     {feat.title}
                   </h4>
                 </div>
@@ -116,18 +116,18 @@ export default function WhyJRS() {
                 <button
                   type="button"
                   onClick={() => setIsVideoModalOpen(true)}
-                  className="absolute bottom-5 right-5 bg-white/95 hover:bg-white text-[#072B4F] px-4 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-lg flex items-center gap-2 transition-all duration-200 hover:scale-105 cursor-pointer z-20"
+                  className="absolute bottom-5 right-5 bg-white/95 hover:bg-white text-[#0B0F17] hover:text-[#DC2626] px-4 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-lg flex items-center gap-2 transition-all duration-200 hover:scale-105 cursor-pointer z-20"
                 >
-                  <span className="w-6 h-6 rounded-full bg-[#072B4F] text-white flex items-center justify-center text-[10px] pl-0.5">
+                  <span className="w-6 h-6 rounded-full bg-[#DC2626] text-white flex items-center justify-center text-[10px] pl-0.5">
                     ▶
                   </span>
                   <span>Watch Campus Tour</span>
                 </button>
               </div>
 
-              {/* Overlapping Dark Navy Quote Card on Top Right (Exact match to screenshot) */}
-              <div className="relative lg:absolute -top-6 lg:-top-8 lg:-right-6 bg-[#072B4F] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl shadow-2xl max-w-sm border-2 border-white mt-4 lg:mt-0 z-20 space-y-3">
-                <div className="w-6 h-1 bg-[#0B6DB7] rounded-full" />
+              {/* Overlapping Dark Black Quote Card on Top Right */}
+              <div className="relative lg:absolute -top-6 lg:-top-8 lg:-right-6 bg-[#0B0F17] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl shadow-2xl max-w-sm border-2 border-white mt-4 lg:mt-0 z-20 space-y-3">
+                <div className="w-8 h-1 bg-[#DC2626] rounded-full" />
                 <p className="text-sm sm:text-base font-normal text-slate-100 leading-relaxed italic">
                   “Education is not preparation for life; education is life itself.”
                 </p>
@@ -147,7 +147,7 @@ export default function WhyJRS() {
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 relative shadow-2xl">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <h3 className="text-lg font-bold text-[#072B4F]">
+              <h3 className="text-lg font-bold text-[#0B0F17]">
                 JRS International School Campus Tour
               </h3>
               <button
@@ -164,7 +164,7 @@ export default function WhyJRS() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center p-6 space-y-3">
-                <span className="w-16 h-16 rounded-full bg-white text-[#072B4F] flex items-center justify-center text-2xl shadow-xl pl-1">
+                <span className="w-16 h-16 rounded-full bg-white text-[#DC2626] flex items-center justify-center text-2xl shadow-xl pl-1">
                   ▶
                 </span>
                 <p className="text-sm font-semibold max-w-md">

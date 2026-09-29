@@ -3,12 +3,14 @@ import { cn } from "../../lib/utils";
 
 function Badge({ className, variant = "default", ...props }) {
   const variantStyles = {
-    default: "bg-[#06335F] text-white border-transparent",
+    default: "bg-[#0B0F17] text-white border-transparent",
     secondary: "bg-slate-100 text-slate-800 border-transparent",
     outline: "text-slate-700 border-slate-200",
-    amber: "bg-amber-100 text-amber-800 border-amber-200",
-    blue: "bg-sky-100 text-sky-800 border-sky-200",
+    red: "bg-red-100 text-red-800 border-red-200",
+    amber: "bg-red-100 text-red-800 border-red-200",
+    blue: "bg-emerald-100 text-emerald-800 border-emerald-200",
     emerald: "bg-emerald-100 text-emerald-800 border-emerald-200",
+    black: "bg-[#0B0F17] text-white border-transparent",
   };
 
   return (

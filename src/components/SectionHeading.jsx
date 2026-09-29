@@ -8,7 +8,7 @@ export default function SectionHeading({
   centered = false,
   dark = false,
   className = '',
-  eyebrowColor = 'text-[#0B6DB7]',
+  eyebrowColor = 'text-[#DC2626]',
   size = 'lg', // 'md', 'lg', 'xl'
 }) {
   const sizeMap = {
@@ -34,7 +34,7 @@ export default function SectionHeading({
         <h2
           className={`font-display font-medium tracking-tight leading-[1.15] ${
             sizeMap[size]
-          } ${dark ? 'text-white' : 'text-[#152A40]'}`}
+          } ${dark ? 'text-white' : 'text-[#0B0F17]'}`}
         >
           {title}
         </h2>
@@ -44,7 +44,7 @@ export default function SectionHeading({
         <p
           className={`text-base sm:text-lg leading-relaxed max-w-2xl font-normal ${
             centered ? 'mx-auto' : ''
-          } ${dark ? 'text-slate-200' : 'text-[#68798B]'}`}
+          } ${dark ? 'text-slate-200' : 'text-[#4B5563]'}`}
         >
           {subtitle}
         </p>

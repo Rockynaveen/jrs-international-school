@@ -14,8 +14,8 @@ const statsData = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    badgeBg: 'bg-[#0B6DB7]',
-    ringColor: 'ring-[#38BDF8]/40',
+    badgeBg: 'bg-[#DC2626]',
+    ringColor: 'ring-red-400/40',
   },
   {
     id: 'stat-2',
@@ -28,8 +28,8 @@ const statsData = [
         <path d="M6 12v5c3 3 9 3 12 0v-5" />
       </svg>
     ),
-    badgeBg: 'bg-[#D97706]',
-    ringColor: 'ring-[#F59E0B]/40',
+    badgeBg: 'bg-[#16A34A]',
+    ringColor: 'ring-emerald-400/40',
   },
   {
     id: 'stat-3',
@@ -43,8 +43,8 @@ const statsData = [
         <path d="M6 10h10" />
       </svg>
     ),
-    badgeBg: 'bg-[#0D9488]',
-    ringColor: 'ring-[#34D399]/40',
+    badgeBg: 'bg-[#DC2626]',
+    ringColor: 'ring-red-400/40',
   },
   {
     id: 'stat-4',
@@ -57,8 +57,8 @@ const statsData = [
         <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
       </svg>
     ),
-    badgeBg: 'bg-[#EA580C]',
-    ringColor: 'ring-[#FB923C]/40',
+    badgeBg: 'bg-[#16A34A]',
+    ringColor: 'ring-emerald-400/40',
   },
   {
     id: 'stat-5',
@@ -72,14 +72,14 @@ const statsData = [
         <path d="M2 12h20" />
       </svg>
     ),
-    badgeBg: 'bg-[#7C3AED]',
-    ringColor: 'ring-[#C084FC]/40',
+    badgeBg: 'bg-[#0B0F17]',
+    ringColor: 'ring-slate-400/40',
   },
 ];
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden py-10 bg-slate-900 text-white">
+    <section className="relative overflow-hidden py-12 bg-[#0B0F17] text-white">
       
       {/* ─────────────────────────────────────────────────────────────
           TWILIGHT CAMPUS BACKGROUND IMAGE & GRADIENT OVERLAY
@@ -90,8 +90,8 @@ export default function Stats() {
           alt="JRS International School Twilight Campus"
           className="w-full h-full object-cover object-center"
         />
-        {/* Cinematic dark transparent gradient for crystal-clear readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#031120]/95 via-[#061B30]/80 to-[#031120]/65" />
+        {/* Cinematic dark black transparent gradient for crystal-clear readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D14]/95 via-[#0B0F17]/85 to-[#0A0D14]/70" />
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
@@ -109,13 +109,13 @@ export default function Stats() {
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/90">
                 OUR COMMUNITY
               </span>
-              <span className="w-12 h-[2px] bg-[#E5A83B]" />
+              <span className="w-12 h-[2px] bg-[#DC2626]" />
             </div>
 
             {/* Headline */}
             <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[2.85rem] text-white leading-[1.14] tracking-tight mb-4">
               Built on People, <br />
-              <span className="italic font-normal text-[#F7C95E]">
+              <span className="italic font-normal text-[#16A34A]">
                 Driven by Possibilities
               </span>
             </h2>
@@ -129,7 +129,7 @@ export default function Stats() {
             <div>
               <a
                 href="#about"
-                className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/35 hover:border-white text-white bg-black/40 hover:bg-white/15 text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm cursor-pointer group"
+                className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/35 hover:border-[#DC2626] text-white bg-black/40 hover:bg-[#DC2626] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm cursor-pointer group"
               >
                 <span>Discover Our Community</span>
                 <span className="text-base group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -156,8 +156,8 @@ export default function Stats() {
                     </div>
                   </div>
 
-                  {/* Big Bold Stat Value (Existing Values Only) */}
-                  <div className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight leading-tight group-hover:text-[#F7C95E] transition-colors">
+                  {/* Big Bold Stat Value */}
+                  <div className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight leading-tight group-hover:text-[#DC2626] transition-colors">
                     {stat.number}
                   </div>
 
@@ -166,8 +166,8 @@ export default function Stats() {
                     {stat.label}
                   </div>
 
-                  {/* Gold Underline Accent Dash */}
-                  <div className="w-5 h-[2px] bg-[#E5A83B] mx-auto mb-2" />
+                  {/* Accent Dash */}
+                  <div className="w-5 h-[2px] bg-[#DC2626] mx-auto mb-2" />
 
                   {/* 1-Line Description */}
                   <p className="text-[11px] text-slate-300/80 leading-relaxed max-w-[150px] mx-auto">
@@ -187,26 +187,26 @@ export default function Stats() {
       ───────────────────────────────────────────────────────────── */}
       <div className="absolute -bottom-1 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
         <svg
-          className="relative block w-full h-10 sm:h-14 lg:h-18 text-[#FFF8ED]"
+          className="relative block w-full h-10 sm:h-14 lg:h-18 text-white"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
-          {/* Warm gold ribbon wave */}
+          {/* Red ribbon wave */}
           <path
             d="M0,0 C150,85 400,95 600,35 C800,-15 1000,75 1200,20 L1200,120 L0,120 Z"
-            fill="#F7C95E"
-            opacity="0.35"
-          />
-          {/* Blue ribbon wave */}
-          <path
-            d="M0,15 C200,95 450,75 650,40 C850,10 1050,85 1200,35 L1200,120 L0,120 Z"
-            fill="#0B6DB7"
+            fill="#DC2626"
             opacity="0.3"
           />
-          {/* Solid fill matching the next section's background (#FFF8ED) */}
+          {/* Green ribbon wave */}
+          <path
+            d="M0,15 C200,95 450,75 650,40 C850,10 1050,85 1200,35 L1200,120 L0,120 Z"
+            fill="#16A34A"
+            opacity="0.25"
+          />
+          {/* Solid fill matching the next section's background (#FFFFFF) */}
           <path
             d="M0,35 C180,105 420,90 620,50 C820,15 1020,80 1200,45 L1200,120 L0,120 Z"
-            fill="#FFF8ED"
+            fill="#FFFFFF"
           />
         </svg>
       </div>

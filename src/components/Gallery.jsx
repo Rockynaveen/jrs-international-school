@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { images } from '../data/siteData';
 
 const galleryItems = [
   {
@@ -8,59 +7,69 @@ const galleryItems = [
     category: 'Campus',
     icon: '🏛️',
     badgeText: 'Campus',
-    image: '/gallery/campus.jpg',
-    highRes: images.campusExterior || '/gallery/campus.jpg',
-    description: 'Expansive pollution-free campus in Narapally featuring state-of-the-art infrastructure, landscaped courtyards, and safe walkways.',
+    image: '/WhatsApp Image 2026-09-28 at 7.24.42 PM.jpeg',
+    highRes: '/WhatsApp Image 2026-09-28 at 7.24.42 PM.jpeg',
+    description: 'Expansive pollution-free campus in Narapally featuring state-of-the-art infrastructure, landscaped courtyards, amphitheater steps, and safe bus transit.',
   },
   {
     id: 'learning',
-    title: 'Interactive Smart Classrooms',
+    title: 'Interactive STEM & Innovation Labs',
     category: 'Learning',
-    icon: '📖',
+    icon: '🔬',
     badgeText: 'Learning',
-    image: '/gallery/learning.jpg',
-    highRes: images.learningJoy || '/gallery/learning.jpg',
-    description: 'Curiosity-led learning spaces blending CBSE curriculum rigor with multimedia interactivity and individual attention.',
+    image: '/WhatsApp Image 2026-09-28 at 7.32.11 PM.jpeg',
+    highRes: '/WhatsApp Image 2026-09-28 at 7.32.11 PM.jpeg',
+    description: 'Hands-on experiential learning where students design and build working scientific models, explore physics concepts, and nurture creative thinking.',
   },
   {
     id: 'sports',
-    title: 'Athletic Turf & Sports Fields',
+    title: 'Track Athletics & Sports Championships',
     category: 'Sports',
-    icon: '⚽',
+    icon: '🏃',
     badgeText: 'Sports',
-    image: '/gallery/sports.jpg',
-    highRes: images.sportsField || '/gallery/sports.jpg',
-    description: 'Full-size football turf, cricket practice nets, and track athletics coaching young champions in agility, stamina, and team spirit.',
+    image: '/WhatsApp Image 2026-09-28 at 7.32.47 PM.jpeg',
+    highRes: '/WhatsApp Image 2026-09-28 at 7.32.47 PM.jpeg',
+    description: 'Students competing in track sprinting and athletics across inter-house teams on our dedicated international standard running track.',
   },
   {
     id: 'arts',
-    title: 'Classical & Contemporary Arts',
+    title: 'School Brass Band & Music Ensemble',
     category: 'Arts & Culture',
-    icon: '🎨',
+    icon: '🥁',
     badgeText: 'Arts & Culture',
-    image: '/gallery/arts.jpg',
-    highRes: images.danceDramatics || '/gallery/arts.jpg',
-    description: 'Nurturing cultural heritage and expressive creativity through Kuchipudi dance, fine art painting, and dramatic stage theatre.',
+    image: '/WhatsApp Image 2026-09-28 at 7.33.00 PM.jpeg',
+    highRes: '/WhatsApp Image 2026-09-28 at 7.33.00 PM.jpeg',
+    description: 'Nurturing musical discipline, rhythm, and collaborative teamwork through our distinguished marching band and ceremonial percussion performances.',
   },
   {
     id: 'activities',
-    title: 'Advanced Science & STEM Discovery',
+    title: 'Outdoor Experiential Activities',
     category: 'Activities',
-    icon: '⚗️',
+    icon: '🌱',
     badgeText: 'Activities',
-    image: '/gallery/activities.jpg',
-    highRes: images.scienceLab || '/gallery/activities.jpg',
-    description: 'Hands-on experimentation in physics, chemistry, and robotics supporting our premier IIT & NIT Foundation program.',
+    image: '/WhatsApp Image 2026-09-28 at 7.33.04 PM.jpeg',
+    highRes: '/WhatsApp Image 2026-09-28 at 7.33.04 PM.jpeg',
+    description: 'Primary learners discovering nature, developing social coordination, and enjoying guided outdoor recreation on the open campus grounds.',
+  },
+  {
+    id: 'student-life',
+    title: 'Joyful Daily Student Life',
+    category: 'Student Life',
+    icon: '✨',
+    badgeText: 'Student Life',
+    image: '/WhatsApp Image 2026-09-28 at 7.32.45 PM.jpeg',
+    highRes: '/WhatsApp Image 2026-09-28 at 7.32.45 PM.jpeg',
+    description: 'A welcoming, positive school environment where every student is encouraged to walk with confidence, form lifelong friendships, and thrive.',
   },
   {
     id: 'events',
-    title: 'Milestone Events & Celebrations',
+    title: 'School Assembly & Celebrations',
     category: 'Events',
-    icon: '📅',
+    icon: '🏫',
     badgeText: 'Events',
-    image: '/gallery/events.jpg',
-    highRes: images.heroStudent || '/gallery/events.jpg',
-    description: 'Annual Sports Meets, graduation triumphs, and cultural carnivals celebrating our students’ achievements with proud families.',
+    image: '/hero image.png',
+    highRes: '/hero image.png',
+    description: 'Whole-school morning drills, national festivals, and milestone assemblies bringing our complete student body and faculty together.',
   },
   {
     id: 'library',
@@ -68,19 +77,9 @@ const galleryItems = [
     category: 'Library',
     icon: '📖',
     badgeText: 'Library',
-    image: '/gallery/library.jpg',
-    highRes: images.libraryModern || '/gallery/library.jpg',
-    description: 'Extensive print volumes, journals, and digital research archives inspiring lifelong curiosity and independent scholarship.',
-  },
-  {
-    id: 'student-life',
-    title: 'Safe Campus Transit & Student Life',
-    category: 'Student Life',
-    icon: '🚌',
-    badgeText: 'Student Life',
-    image: '/gallery/student-life.jpg',
-    highRes: images.campusExterior || '/gallery/student-life.jpg',
-    description: 'GPS-enabled comfortable school bus fleet covering Uppal, Narapally, and surrounding areas ensuring secure daily commutes.',
+    image: '/heroslider.jpeg',
+    highRes: '/heroslider.jpeg',
+    description: 'Extensive print volumes, journals, and quiet research study tables inspiring lifelong scholarly discipline and curiosity.',
   },
 ];
 
@@ -120,7 +119,7 @@ export default function Gallery() {
   );
 
   return (
-    <section id="gallery" className="py-10 bg-[#FAF8F5] relative overflow-hidden">
+    <section id="gallery" className="py-12 bg-white relative overflow-hidden border-t border-slate-100">
       {/* ─────────────────────────────────────────────────────────────
           MAIN CONTENT CONTAINER
       ───────────────────────────────────────────────────────────── */}
@@ -134,23 +133,23 @@ export default function Gallery() {
             
             {/* Tag: GALLERY ─── */}
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#0B2545]">
+              <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#DC2626]">
                 GALLERY
               </span>
-              <span className="w-12 h-[2px] bg-[#E5A83B]" />
+              <span className="w-12 h-[2px] bg-[#DC2626]" />
             </div>
 
             {/* Main Headline */}
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.25rem] text-[#0B2545] leading-[1.08] tracking-tight mb-5">
+            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.25rem] text-[#0B0F17] leading-[1.08] tracking-tight mb-5">
               A glimpse <br />
               of{' '}
-              <span className="font-display italic font-normal text-[#E25C34]">
+              <span className="font-display italic font-normal text-[#DC2626]">
                 life at JRS
               </span>
             </h2>
 
             {/* Description Paragraph */}
-            <p className="text-sm sm:text-base text-[#5A6E82] leading-relaxed max-w-sm mb-7">
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-sm mb-7">
               From classrooms to playgrounds, from celebrations to everyday moments — explore the stories that make JRS a vibrant place to learn, grow and belong.
             </p>
 
@@ -159,7 +158,7 @@ export default function Gallery() {
               <button
                 type="button"
                 onClick={() => setShowFullModal(true)}
-                className="inline-flex items-center gap-3 bg-[#072B4F] hover:bg-[#0B3B6D] text-white px-7 py-3.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                className="inline-flex items-center gap-3 bg-[#0B0F17] hover:bg-[#DC2626] text-white px-7 py-3.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
               >
                 <span>View Full Gallery</span>
                 <span className="text-base group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -248,24 +247,24 @@ export default function Gallery() {
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
         >
           <div
-            className="relative max-w-4xl w-full bg-[#072B4F] rounded-3xl overflow-hidden shadow-2xl border border-white/20 flex flex-col max-h-[92vh]"
+            className="relative max-w-4xl w-full bg-[#0B0F17] rounded-3xl overflow-hidden shadow-2xl border border-white/20 flex flex-col max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-5 py-4 bg-[#062446] border-b border-white/10 text-white shrink-0">
+            <div className="flex items-center justify-between px-5 py-4 bg-[#0B0F17] border-b border-white/10 text-white shrink-0">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#F7C95E] text-[#072B4F] flex items-center gap-1.5">
+                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#DC2626] text-white flex items-center gap-1.5">
                   <span>{selectedItem.icon}</span>
                   <span>{selectedItem.badgeText}</span>
                 </span>
-                <span className="text-xs text-slate-300 font-medium">
+                <span className="text-xs text-gray-300 font-medium">
                   {galleryItems.findIndex((i) => i.id === selectedItem.id) + 1} of {galleryItems.length}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedItem(null)}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#072B4F] flex items-center justify-center text-xs font-bold transition-all cursor-pointer"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#0B0F17] flex items-center justify-center text-xs font-bold transition-all cursor-pointer"
                 aria-label="Close modal"
               >
                 ✕
@@ -289,7 +288,7 @@ export default function Gallery() {
                   const prevIdx = (currIdx - 1 + galleryItems.length) % galleryItems.length;
                   setSelectedItem(galleryItems[prevIdx]);
                 }}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-white text-white hover:text-[#072B4F] flex items-center justify-center text-xl transition-colors cursor-pointer"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-white text-white hover:text-[#0B0F17] flex items-center justify-center text-xl transition-colors cursor-pointer"
                 aria-label="Previous image"
               >
                 ‹
@@ -304,7 +303,7 @@ export default function Gallery() {
                   const nextIdx = (currIdx + 1) % galleryItems.length;
                   setSelectedItem(galleryItems[nextIdx]);
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-white text-white hover:text-[#072B4F] flex items-center justify-center text-xl transition-colors cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-white text-white hover:text-[#0B0F17] flex items-center justify-center text-xl transition-colors cursor-pointer"
                 aria-label="Next image"
               >
                 ›
@@ -312,21 +311,21 @@ export default function Gallery() {
             </div>
 
             {/* Modal Description Footer */}
-            <div className="p-5 bg-[#062446] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-white shrink-0">
+            <div className="p-5 bg-[#0B0F17] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-white shrink-0">
               <div className="space-y-1 max-w-xl">
                 <h3 className="font-modern font-bold text-base sm:text-lg">
                   {selectedItem.title}
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-gray-300 leading-relaxed">
                   {selectedItem.description}
                 </p>
               </div>
 
               <div className="flex items-center gap-3 shrink-0">
                 <a
-                  href="#contact"
+                  href="#admissions"
                   onClick={() => setSelectedItem(null)}
-                  className="inline-flex items-center gap-1.5 bg-[#0B6DB7] hover:bg-[#38BDF8] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer"
                 >
                   <span>Enquire for 2026–27</span>
                   <span>›</span>
@@ -348,23 +347,23 @@ export default function Gallery() {
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
         >
           <div
-            className="relative max-w-5xl w-full bg-[#FAF8F5] rounded-3xl overflow-hidden shadow-2xl border border-slate-200 flex flex-col max-h-[92vh]"
+            className="relative max-w-5xl w-full bg-[#FAF8F5] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 flex flex-col max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-5 bg-white border-b border-slate-200 shrink-0">
+            <div className="flex items-center justify-between px-6 py-5 bg-white border-b border-gray-200 shrink-0">
               <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#0B6DB7]">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-[#DC2626]">
                   COMPLETE PHOTO ARCHIVE
                 </span>
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-[#0B2545]">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-[#0B0F17]">
                   Life at JRS International School
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setShowFullModal(false)}
-                className="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#072B4F] text-[#072B4F] hover:text-white flex items-center justify-center text-sm font-bold transition-all cursor-pointer"
+                className="w-9 h-9 rounded-full bg-gray-100 hover:bg-[#0B0F17] text-[#0B0F17] hover:text-white flex items-center justify-center text-sm font-bold transition-all cursor-pointer"
                 aria-label="Close full gallery modal"
               >
                 ✕
@@ -381,9 +380,9 @@ export default function Gallery() {
                       setShowFullModal(false);
                       setSelectedItem(item);
                     }}
-                    className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
+                    className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
                   >
-                    <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                    <div className="aspect-[4/3] overflow-hidden bg-gray-100">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -391,10 +390,10 @@ export default function Gallery() {
                       />
                     </div>
                     <div className="p-3">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#0B6DB7] block mb-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#DC2626] block mb-1">
                         {item.badgeText}
                       </span>
-                      <h4 className="font-semibold text-xs text-[#0B2545] leading-snug line-clamp-1">
+                      <h4 className="font-semibold text-xs text-[#0B0F17] leading-snug line-clamp-1">
                         {item.title}
                       </h4>
                     </div>
@@ -404,12 +403,12 @@ export default function Gallery() {
             </div>
 
             {/* Footer */}
-            <div className="p-4 bg-white border-t border-slate-200 flex items-center justify-between text-xs text-[#5A6E82] shrink-0">
+            <div className="p-4 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 shrink-0">
               <span>Showing {galleryItems.length} curated highlights of JRS International School</span>
               <a
-                href="#contact"
+                href="#admissions"
                 onClick={() => setShowFullModal(false)}
-                className="bg-[#072B4F] hover:bg-[#0B3B6D] text-white px-5 py-2 rounded-full font-semibold transition-colors"
+                className="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2 rounded-full font-semibold transition-colors"
               >
                 Book a Campus Tour
               </a>

@@ -9,7 +9,7 @@ const academicProgrammes = [
     name: 'Young Buddies',
     age: 'Age 2.5 – 3.5',
     tag: 'EARLY PLAYGROUP',
-    color: '#F7C95E',
+    color: '#DC2626',
     description:
       'A gentle, secure transition from home to school. Focuses on sensory stimulation, speech development, joyful rhythm, motor coordination, and self-expression through natural tactile play.',
     keyLearnings: [
@@ -25,7 +25,7 @@ const academicProgrammes = [
     name: 'Butterflies',
     age: 'Age 3.5 – 4.5',
     tag: 'NURSERY EXPLORATION',
-    color: '#0B6DB7',
+    color: '#16A34A',
     description:
       'Expanding curiosity through picture walks, foundational phonetic patterns, number concepts, colorful storytelling, and expressive arts in open, collaborative classrooms.',
     keyLearnings: [
@@ -41,7 +41,7 @@ const academicProgrammes = [
     name: 'Honey Bees',
     age: 'Age 4.5 – 5.5',
     tag: 'KINDERGARTEN READINESS',
-    color: '#EF8750',
+    color: '#DC2626',
     description:
       'Nurturing budding independence, pre-reading fluency, elementary logical reasoning, science wonder walks, and joyful collaboration to prepare learners for primary school.',
     keyLearnings: [
@@ -57,7 +57,7 @@ const academicProgrammes = [
     name: 'Primary School',
     age: 'Classes I – IV (Ages 6 – 10)',
     tag: 'FOUNDATIONAL CBSE',
-    color: '#06335F',
+    color: '#16A34A',
     description:
       'Building strong scholastic competence in English, Mathematics, Environmental Studies, Second Languages (Hindi/Telugu), and Computer Studies, complemented by sports and performing arts.',
     keyLearnings: [
@@ -73,7 +73,7 @@ const academicProgrammes = [
     name: 'Middle School',
     age: 'Classes V – VI (Ages 10 – 12+)',
     tag: 'PREPARATORY & MIDDLE CBSE',
-    color: '#0B6DB7',
+    color: '#0B0F17',
     description:
       'Fostering analytical rigor, formal scientific experimentation, advanced computational logic, historical inquiry, and leadership initiatives aligned with the National Education Policy (NEP 2020).',
     keyLearnings: [
@@ -88,25 +88,25 @@ const academicProgrammes = [
 
 export default function Academics() {
   return (
-    <div className="min-h-screen bg-[#FFF8ED]">
+    <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-[#FFF8ED] border-b border-slate-200/60 relative overflow-hidden">
+      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F1EB] text-[#06335F] text-xs font-bold tracking-[0.2em] uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0B6DB7]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
               ACADEMIC PHILOSOPHY & PROGRAMMES
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#152A40] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
               Learning for
               <br />
-              <em className="text-[#0B6DB7] not-italic italic underline decoration-[#F7C95E] decoration-wavy underline-offset-4">
+              <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
                 REAL LIFE.
               </em>
             </h1>
 
-            <p className="text-lg sm:text-2xl text-[#68798B] leading-relaxed font-normal pt-2">
+            <p className="text-lg sm:text-2xl text-gray-600 leading-relaxed font-normal pt-2">
               From our tender pre-primary discovery rooms to rigorous middle school
               laboratories, education at JRS sparks a lifelong delight in learning.
             </p>
@@ -117,16 +117,16 @@ export default function Academics() {
       {/* Editorial Horizontal Programme Rows */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-16 sm:space-y-24">
-          <div className="border-b border-slate-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div className="border-b border-gray-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#EF8750] block mb-1">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#DC2626] block mb-1">
                 OUR FIVE-STAGE JOURNEY
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl text-[#152A40]">
+              <h2 className="font-display text-3xl sm:text-4xl text-[#0B0F17]">
                 Every age. Every milestone.
               </h2>
             </div>
-            <span className="text-sm text-[#68798B]">
+            <span className="text-sm text-gray-500">
               Aligned with CBSE Standards & NEP 2020 Pedagogical Framework
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function Academics() {
               return (
                 <div
                   key={prog.stage}
-                  className="bg-[#FFF8ED] rounded-[36px] p-6 sm:p-10 lg:p-12 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                  className="bg-[#F8FAFC] rounded-[36px] p-6 sm:p-10 lg:p-12 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 >
                   {/* Left/Right Text Column */}
                   <div
@@ -147,36 +147,36 @@ export default function Academics() {
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-12 h-12 rounded-2xl bg-[#06335F] text-[#F7C95E] font-display text-xl font-bold flex items-center justify-center shadow-sm">
+                      <span className="w-12 h-12 rounded-2xl bg-[#0B0F17] text-white font-display text-xl font-bold flex items-center justify-center shadow-sm">
                         {prog.stage}
                       </span>
                       <div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#0B6DB7] block">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#DC2626] block">
                           {prog.tag}
                         </span>
-                        <span className="text-sm font-semibold text-[#152A40]">
+                        <span className="text-sm font-semibold text-[#0B0F17]">
                           {prog.age}
                         </span>
                       </div>
                     </div>
 
-                    <h3 className="font-display text-3xl sm:text-4xl text-[#152A40] font-normal leading-tight">
+                    <h3 className="font-display text-3xl sm:text-4xl text-[#0B0F17] font-normal leading-tight">
                       {prog.name}
                     </h3>
 
-                    <p className="text-base sm:text-lg text-[#68798B] leading-relaxed">
+                    <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                       {prog.description}
                     </p>
 
                     {/* Key Learnings List */}
-                    <div className="space-y-2 pt-2 border-t border-slate-200/80">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#152A40] block">
+                    <div className="space-y-2 pt-2 border-t border-gray-200">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#0B0F17] block">
                         Focus Areas & Competencies:
                       </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-[#152A40]/80">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
                         {prog.keyLearnings.map((item, idx) => (
                           <div key={idx} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#EF8750] shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A] shrink-0" />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -189,7 +189,7 @@ export default function Academics() {
                         variant="primary"
                         size="sm"
                         arrowType="right"
-                        className="bg-[#06335F] text-white hover:bg-[#0B6DB7]"
+                        className="bg-[#DC2626] text-white hover:bg-[#B91C1C]"
                       >
                         Enquire for {prog.name}
                       </Button>
@@ -210,7 +210,7 @@ export default function Academics() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-[#06335F]">
+                      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-[#0B0F17]">
                         {prog.age}
                       </div>
                     </div>
@@ -223,37 +223,37 @@ export default function Academics() {
       </section>
 
       {/* Curriculum Highlights Banner */}
-      <section className="py-16 bg-[#E3F1EB] border-t border-[#0B6DB7]/10">
+      <section className="py-16 bg-[#F0FDF4] border-t border-emerald-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-3xl p-8 border border-emerald-50 shadow-sm">
               <span className="text-3xl mb-3 block">📚</span>
-              <h4 className="font-display text-xl font-bold text-[#06335F] mb-2">
+              <h4 className="font-display text-xl font-bold text-[#0B0F17] mb-2">
                 CBSE & NEP 2020 Aligned
               </h4>
-              <p className="text-sm text-[#68798B] leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Seamless progression following National Curriculum Framework
                 guidelines with experiential learning methods.
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-3xl p-8 border border-emerald-50 shadow-sm">
               <span className="text-3xl mb-3 block">🔬</span>
-              <h4 className="font-display text-xl font-bold text-[#06335F] mb-2">
+              <h4 className="font-display text-xl font-bold text-[#0B0F17] mb-2">
                 Experiential STEM Labs
               </h4>
-              <p className="text-sm text-[#68798B] leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Applied mathematics, computer programming, and physical science
                 investigations from early years.
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-3xl p-8 border border-emerald-50 shadow-sm">
               <span className="text-3xl mb-3 block">🌱</span>
-              <h4 className="font-display text-xl font-bold text-[#06335F] mb-2">
+              <h4 className="font-display text-xl font-bold text-[#0B0F17] mb-2">
                 Continuous Evaluation
               </h4>
-              <p className="text-sm text-[#68798B] leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Holistic progress reports focusing on conceptual grasp, creativity,
                 and social-emotional maturation.
               </p>

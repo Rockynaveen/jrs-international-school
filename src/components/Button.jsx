@@ -28,27 +28,30 @@ export default function Button({
 
   const variants = {
     primary:
-      'bg-[#06335F] text-white hover:bg-[#0B6DB7] focus:ring-[#0B6DB7]',
+      'bg-[#DC2626] text-white hover:bg-[#B91C1C] focus:ring-[#DC2626]',
     secondary:
-      'bg-[#F7C95E] text-[#06335F] hover:bg-[#fabd36] font-semibold focus:ring-[#F7C95E]',
+      'bg-[#16A34A] text-white hover:bg-[#15803D] font-semibold focus:ring-[#16A34A]',
     orange:
-      'bg-[#EF8750] text-white hover:bg-[#df7238] font-semibold focus:ring-[#EF8750]',
+      'bg-[#DC2626] text-white hover:bg-[#B91C1C] font-semibold focus:ring-[#DC2626]',
     outline:
-      'border-2 border-[#06335F]/20 bg-white text-[#06335F] hover:border-[#06335F] hover:bg-slate-50 focus:ring-[#06335F]',
+      'border-2 border-[#0B0F17]/20 bg-white text-[#0B0F17] hover:border-[#0B0F17] hover:bg-slate-50 focus:ring-[#0B0F17]',
     white:
-      'bg-white text-[#06335F] hover:bg-slate-100 shadow-md focus:ring-white',
+      'bg-white text-[#0B0F17] hover:bg-slate-100 shadow-md focus:ring-white',
     mint:
-      'bg-[#E3F1EB] text-[#06335F] hover:bg-[#d0ebe0] font-semibold focus:ring-[#06335F]',
+      'bg-[#F0FDF4] text-[#16A34A] hover:bg-[#DCFCE7] font-semibold focus:ring-[#16A34A]',
+    black:
+      'bg-[#0B0F17] text-white hover:bg-[#1F2937] focus:ring-[#0B0F17]',
   };
 
   // Badge background & icon color based on button variant
   const badgeColors = {
-    primary: 'bg-white text-[#06335F]',
-    secondary: 'bg-[#06335F] text-[#F7C95E]',
-    orange: 'bg-white text-[#EF8750]',
-    outline: 'bg-[#06335F] text-white',
-    white: 'bg-[#06335F] text-white',
-    mint: 'bg-[#06335F] text-white',
+    primary: 'bg-white text-[#DC2626]',
+    secondary: 'bg-white text-[#16A34A]',
+    orange: 'bg-white text-[#DC2626]',
+    outline: 'bg-[#0B0F17] text-white',
+    white: 'bg-[#DC2626] text-white',
+    mint: 'bg-[#16A34A] text-white',
+    black: 'bg-[#DC2626] text-white',
   };
 
   const content = (

@@ -143,29 +143,29 @@ export default function Campus() {
   });
 
   return (
-    <div className="min-h-screen bg-[#FFF8ED]">
+    <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-[#FFF8ED] border-b border-slate-200/60 relative overflow-hidden">
+      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
-          className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#E3F1EB] blur-3xl -z-10"
+          className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#16A34A]/10 blur-3xl -z-10"
           aria-hidden="true"
         />
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F1EB] text-[#06335F] text-xs font-bold tracking-[0.2em] uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0B6DB7]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
               STATE-OF-THE-ART CAMPUS
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#152A40] leading-[1.08] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-[#0B0F17] leading-[1.08] tracking-tight">
               Spaces that inspire,
               <br />
-              <em className="text-[#0B6DB7] not-italic italic underline decoration-[#F7C95E] decoration-wavy underline-offset-4">
+              <em className="text-[#DC2626] not-italic italic underline decoration-[#16A34A] decoration-wavy underline-offset-4">
                 GROUNDS THAT NURTURE.
               </em>
             </h1>
 
-            <p className="text-lg sm:text-2xl text-[#68798B] leading-relaxed font-normal pt-2">
+            <p className="text-lg sm:text-2xl text-gray-600 leading-relaxed font-normal pt-2">
               Sprawled across expansive green grounds in Narapally, Hyderabad,
               our campus combines natural sunlight, fresh open air, and world-class
               educational and athletic facilities.
@@ -175,7 +175,7 @@ export default function Campus() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="py-8 bg-white border-b border-slate-100 sticky top-18 sm:top-20 z-30 shadow-xs">
+      <section className="py-8 bg-white border-b border-gray-100 sticky top-18 sm:top-20 z-30 shadow-xs">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
@@ -184,41 +184,41 @@ export default function Campus() {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   activeFilter === cat
-                    ? 'bg-[#06335F] text-white shadow-sm'
-                    : 'bg-slate-100 text-[#152A40] hover:bg-slate-200'
+                    ? 'bg-[#DC2626] text-white shadow-sm'
+                    : 'bg-gray-100 text-[#0B0F17] hover:bg-gray-200'
                 }`}
               >
                 {cat}
               </button>
             ))}
           </div>
-          <span className="text-xs text-[#68798B] font-medium hidden sm:inline-block">
+          <span className="text-xs text-gray-500 font-medium hidden sm:inline-block">
             Showing {filteredFacilities.length} Campus Facilities
           </span>
         </div>
       </section>
 
       {/* Modern Editorial Facility Grid (12 core facilities) */}
-      <section className="py-16 sm:py-24 bg-[#FFF8ED]">
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredFacilities.map((facility) => (
               <div
                 key={facility.id}
-                className="bg-white rounded-[32px] overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col group"
+                className="bg-white rounded-[32px] overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col group"
               >
                 {/* Image */}
-                <div className="aspect-[16/10] overflow-hidden relative bg-slate-100">
+                <div className="aspect-[16/10] overflow-hidden relative bg-gray-100">
                   <img
                     src={facility.image}
                     alt={facility.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[#06335F] font-display text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[#0B0F17] font-display text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                     {facility.id}
                   </div>
-                  <div className="absolute bottom-3 left-4 bg-[#06335F]/85 backdrop-blur-sm text-[#F7C95E] px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
+                  <div className="absolute bottom-3 left-4 bg-[#0B0F17]/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
                     {facility.category}
                   </div>
                 </div>
@@ -226,17 +226,17 @@ export default function Campus() {
                 {/* Content */}
                 <div className="p-7 flex-1 flex flex-col justify-between space-y-4">
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-[#152A40] mb-2 group-hover:text-[#0B6DB7] transition-colors">
+                    <h3 className="font-display text-2xl font-bold text-[#0B0F17] mb-2 group-hover:text-[#DC2626] transition-colors">
                       {facility.name}
                     </h3>
-                    <p className="text-sm text-[#68798B] leading-relaxed">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       {facility.description}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#06335F] font-medium">
+                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-[#0B0F17] font-medium">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#EF8750]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
                       {facility.spec}
                     </span>
                   </div>
@@ -248,35 +248,35 @@ export default function Campus() {
       </section>
 
       {/* Safety & Campus Care Banner */}
-      <section className="py-16 bg-[#E3F1EB] border-y border-[#0B6DB7]/10">
+      <section className="py-16 bg-[#F0FDF4] border-y border-emerald-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div className="space-y-2">
               <span className="text-3xl">🛡️</span>
-              <h4 className="font-display text-xl font-bold text-[#06335F]">
+              <h4 className="font-display text-xl font-bold text-[#0B0F17]">
                 Safety First Protocol
               </h4>
-              <p className="text-xs sm:text-sm text-[#68798B]">
+              <p className="text-xs sm:text-sm text-gray-600">
                 Secured access gates, visitor screening software, verified support staff,
                 and female caretakers on every floor.
               </p>
             </div>
             <div className="space-y-2">
               <span className="text-3xl">🚌</span>
-              <h4 className="font-display text-xl font-bold text-[#06335F]">
+              <h4 className="font-display text-xl font-bold text-[#0B0F17]">
                 Safe Transit
               </h4>
-              <p className="text-xs sm:text-sm text-[#68798B]">
+              <p className="text-xs sm:text-sm text-gray-600">
                 Speed governors, CCTV cameras, and first-aid kits in every school bus,
                 coupled with real-time route alerts.
               </p>
             </div>
             <div className="space-y-2">
               <span className="text-3xl">🌿</span>
-              <h4 className="font-display text-xl font-bold text-[#06335F]">
+              <h4 className="font-display text-xl font-bold text-[#0B0F17]">
                 Green & Sustainable Campus
               </h4>
-              <p className="text-xs sm:text-sm text-[#68798B]">
+              <p className="text-xs sm:text-sm text-gray-600">
                 Rainwater harvesting pits, extensive solar panels, organic vegetable
                 garden patches, and natural cross-ventilation.
               </p>
