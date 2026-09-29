@@ -7,7 +7,7 @@ const pathways = [
     stageBadge: 'Early Childhood',
     title: 'Pre-Primary',
     subLevels: 'Nursery, LKG & UKG',
-    image: '/pre-primary.png',
+    image: '/pre-primary-learning.jpg',
     accentColor: '#DC2626',
     description:
       'Play, explore, and discover. Building curious and confident young learners from their very first steps in education.',
@@ -25,7 +25,7 @@ const pathways = [
     stageBadge: 'Foundation Years',
     title: 'Primary School',
     subLevels: 'Classes I to V • NCERT Syllabus',
-    image: '/primary.png',
+    image: '/primary-school-study.jpg',
     accentColor: '#16A34A',
     description:
       'Building strong scholastic foundations through hands-on inquiry, creativity, and balanced academic development.',
@@ -43,7 +43,7 @@ const pathways = [
     stageBadge: 'Advanced Prep',
     title: 'Middle School',
     subLevels: 'Classes VI to VIII • CBSE & IIT/NIT',
-    image: '/middle.png',
+    image: '/middle-school-students.jpg',
     accentColor: '#0B0F17',
     description:
       'Encouraging independent analytical thinking, teamwork, scientific inquiry, and competitive exam readiness.',

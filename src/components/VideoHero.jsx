@@ -45,7 +45,7 @@ export default function VideoHero() {
   return (
     <section
       id="home-2"
-      className="relative w-full h-[110vh] min-h-[680px] mt-[88px] sm:mt-[96px] bg-[#0B0F17] overflow-hidden flex items-center justify-center text-white"
+      className="relative w-full h-[105vh] min-h-[660px] mt-[88px] sm:mt-[96px] bg-[#0B0F17] overflow-hidden flex items-center justify-center text-white"
     >
       {/* Background YouTube Video Player with HD Poster Fallback (No Overlays, Natural Brightness) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

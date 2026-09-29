@@ -27,8 +27,8 @@ const galleryItems = [
     category: 'Sports',
     icon: '🏃',
     badgeText: 'Sports',
-    image: '/WhatsApp Image 2026-09-28 at 7.32.47 PM.jpeg',
-    highRes: '/WhatsApp Image 2026-09-28 at 7.32.47 PM.jpeg',
+    image: '/games-and-sports-track.jpg',
+    highRes: '/games-and-sports-track.jpg',
     description: 'Students competing in track sprinting and athletics across inter-house teams on our dedicated international standard running track.',
   },
   {
@@ -37,8 +37,8 @@ const galleryItems = [
     category: 'Arts & Culture',
     icon: '🥁',
     badgeText: 'Arts & Culture',
-    image: '/WhatsApp Image 2026-09-28 at 7.33.00 PM.jpeg',
-    highRes: '/WhatsApp Image 2026-09-28 at 7.33.00 PM.jpeg',
+    image: '/music-band-activity.jpg',
+    highRes: '/music-band-activity.jpg',
     description: 'Nurturing musical discipline, rhythm, and collaborative teamwork through our distinguished marching band and ceremonial percussion performances.',
   },
   {

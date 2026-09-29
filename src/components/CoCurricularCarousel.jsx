@@ -17,7 +17,7 @@ const activitiesData = [
     title: 'Music',
     description:
       'Building rhythm, listening skills and a lifelong love for Indian classical and contemporary music.',
-    image: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=1200&q=80',
+    image: '/music-band-activity.jpg',
     link: '/student-life',
     accent: '#16A34A',
   },
@@ -67,7 +67,7 @@ const activitiesData = [
     title: 'Games & Sports',
     description:
       'Encouraging teamwork, sportsmanship, strategic thinking and a healthy active lifestyle across multiple sports.',
-    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80',
+    image: '/games-and-sports-track.jpg',
     link: '/student-life',
     accent: '#DC2626',
   },
@@ -77,7 +77,7 @@ const activitiesData = [
     title: 'Science Activities',
     description:
       'Hands-on experimental learning and robotics to spark scientific curiosity, analytical reasoning and innovation.',
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80',
+    image: '/science-lab-activity.jpg',
     link: '/academics',
     accent: '#16A34A',
   },

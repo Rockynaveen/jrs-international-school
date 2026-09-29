@@ -122,7 +122,7 @@ export default function Hero() {
         aria-label="JRS International School Showcase"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative w-full h-[110vh] min-h-[680px] bg-[#0B0F17] overflow-hidden select-none"
+        className="relative w-full h-[105vh] min-h-[660px] bg-[#0B0F17] overflow-hidden select-none"
       >
         {/* SLIDE BACKGROUNDS (Real client images with subtle Ken Burns zoom & crossfade) */}
         {slidesData.map((slide, index) => {
