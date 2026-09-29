@@ -81,6 +81,16 @@ const galleryItems = [
     highRes: '/heroslider.jpeg',
     description: 'Extensive print volumes, journals, and quiet research study tables inspiring lifelong scholarly discipline and curiosity.',
   },
+  {
+    id: 'transit',
+    title: 'Safe Campus Transit & Care',
+    category: 'Campus',
+    icon: '🚌',
+    badgeText: 'Transit',
+    image: '/school-bus-transit.jpg',
+    highRes: '/school-bus-transit.jpg',
+    description: 'Safe GPS-tracked school bus fleet with caring support staff ensuring comfortable, secure daily transit across Hyderabad.',
+  },
 ];
 
 export default function Gallery() {
@@ -119,114 +129,174 @@ export default function Gallery() {
   );
 
   return (
-    <section id="gallery" className="py-12 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-b border-slate-200">
-      {/* ─────────────────────────────────────────────────────────────
-          MAIN CONTENT CONTAINER
-      ───────────────────────────────────────────────────────────── */}
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="gallery" className="py-12 bg-white relative overflow-hidden border-b border-slate-200">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* TOP ROW: Intro Heading + Campus Feature + Stacked Learning/Sports */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch mb-5 lg:mb-6">
-          
-          {/* Left Column: Intro Heading & Action */}
-          <div className="lg:col-span-4 flex flex-col justify-center pr-0 lg:pr-4 py-2 sm:py-4">
-            
-            {/* Tag: GALLERY ─── */}
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#DC2626]">
-                GALLERY
-              </span>
-              <span className="w-12 h-[2px] bg-gradient-to-r from-[#DC2626] to-[#16A34A]" />
-            </div>
-
-            {/* Main Headline */}
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight mb-6">
-              A glimpse <br />
-              of{' '}
-              <span className="font-bold bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">
-                life at JRS
-              </span>
-            </h2>
-
-            {/* Button */}
-            <div>
-              <button
-                type="button"
-                onClick={() => setShowFullModal(true)}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0B0F17] to-[#1E293B] hover:from-[#16A34A] hover:to-[#15803D] text-white px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer group"
-              >
-                <span>View Full Gallery</span>
-                <span className="text-base group-hover:translate-x-1 transition-transform duration-200">→</span>
-              </button>
-            </div>
+        {/* ================= SECTION HEADER ================= */}
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-red-50 via-white to-emerald-50 text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100 mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#DC2626]" />
+            CAMPUS LIFE GALLERY
           </div>
-
-          {/* Center Column: Big Campus Card */}
-          <div className="lg:col-span-5">
-            <div
-              onClick={() => setSelectedItem(campusItem)}
-              className="group relative rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-[260px] sm:h-[320px] lg:h-full min-h-[280px] bg-slate-100 border border-slate-200/60"
-            >
-              <img
-                src={campusItem.image}
-                alt={campusItem.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-
-          {/* Right Column: Stacked Learning & Sports Cards */}
-          <div className="lg:col-span-3 flex flex-col gap-4 sm:gap-5 justify-between">
-            {/* Card 1: Learning */}
-            <div
-              onClick={() => setSelectedItem(learningItem)}
-              className="group relative rounded-[26px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-[150px] sm:h-[165px] lg:h-[calc(50%-10px)] bg-slate-100 border border-slate-200/60"
-            >
-              <img
-                src={learningItem.image}
-                alt={learningItem.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-
-            {/* Card 2: Sports */}
-            <div
-              onClick={() => setSelectedItem(sportsItem)}
-              className="group relative rounded-[26px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-[150px] sm:h-[165px] lg:h-[calc(50%-10px)] bg-slate-100 border border-slate-200/60"
-            >
-              <img
-                src={sportsItem.image}
-                alt={sportsItem.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-
+          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
+            A glimpse of{' '}
+            <span className="bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">
+              life at JRS
+            </span>
+          </h2>
         </div>
 
-        {/* BOTTOM ROW: 5 Cards (Arts & Culture, Activities, Events, Library, Student Life) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5">
-          {bottomItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedItem(item)}
-              className="group relative rounded-[22px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer aspect-[4/3] bg-slate-100 border border-slate-200/60"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* ================= 5-COLUMN ASYMMETRICAL COLLAGE (Pixel-Perfect Reference Match) ================= */}
+        <div className="overflow-x-auto no-scrollbar pb-3 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="min-w-[880px] lg:min-w-0 h-[440px] sm:h-[480px] lg:h-[520px] flex items-center justify-between gap-3.5 sm:gap-4 lg:gap-5">
+            
+            {/* COLUMN 1: Far Left (Single Vertically Centered Card) */}
+            <div className="w-[18%] flex flex-col justify-center">
+              <div
+                onClick={() => setSelectedItem(galleryItems[4])}
+                className="group relative w-full h-[260px] sm:h-[290px] lg:h-[320px] rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src={galleryItems[4].image}
+                  alt={galleryItems[4].title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[4].title}</span>
+                </div>
+              </div>
             </div>
-          ))}
+
+            {/* COLUMN 2: Left Middle (Two Stacked Cards - Locked to Top & Bottom) */}
+            <div className="w-[21%] h-full flex flex-col gap-3.5 sm:gap-4 lg:gap-5">
+              {/* Top Card */}
+              <div
+                onClick={() => setSelectedItem(galleryItems[1])}
+                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src={galleryItems[1].image}
+                  alt={galleryItems[1].title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[1].title}</span>
+                </div>
+              </div>
+              {/* Bottom Card */}
+              <div
+                onClick={() => setSelectedItem(galleryItems[2])}
+                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src={galleryItems[2].image}
+                  alt={galleryItems[2].title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[2].title}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMN 3: Focal Center (Single Tall Portrait Card spanning full height) */}
+            <div className="w-[22%] lg:w-[22%] h-full flex flex-col">
+              <div
+                onClick={() => setSelectedItem({
+                  id: 'center-campus',
+                  title: 'JRS International School Campus',
+                  category: 'Campus',
+                  image: '/contact-school-building.jpg',
+                  description: 'State-of-the-art academic blocks, landscaped amphitheater, and expansive campus grounds in Narapally, Hyderabad.'
+                })}
+                className="group relative w-full h-full rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_14px_38px_rgba(0,0,0,0.12)] hover:shadow-[0_22px_48px_rgba(0,0,0,0.22)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src="/contact-school-building.jpg"
+                  alt="JRS International School Campus"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                  <span className="text-white text-sm font-bold drop-shadow">JRS International School Campus</span>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMN 4: Right Middle (Two Stacked Cards - Locked to Top & Bottom) */}
+            <div className="w-[21%] h-full flex flex-col gap-3.5 sm:gap-4 lg:gap-5">
+              {/* Top Card */}
+              <div
+                onClick={() => setSelectedItem(galleryItems[3])}
+                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src={galleryItems[3].image}
+                  alt={galleryItems[3].title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[3].title}</span>
+                </div>
+              </div>
+              {/* Bottom Card */}
+              <div
+                onClick={() => setSelectedItem(galleryItems[7])}
+                className="group relative flex-1 w-full rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src={galleryItems[7].image}
+                  alt={galleryItems[7].title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold drop-shadow">{galleryItems[7].title}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMN 5: Far Right (Single Vertically Centered Card) */}
+            <div className="w-[18%] flex flex-col justify-center">
+              <div
+                onClick={() => setSelectedItem({
+                  id: 'transit',
+                  title: 'Safe Campus Transit',
+                  category: 'Campus Life',
+                  image: '/school-bus-transit.jpg',
+                  description: 'Safe, GPS-enabled school bus fleet with attentive staff ensuring secure, caring daily transit for students across Hyderabad.'
+                })}
+                className="group relative w-full h-[260px] sm:h-[290px] lg:h-[320px] rounded-[26px] sm:rounded-[30px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60"
+              >
+                <img
+                  src="/school-bus-transit.jpg"
+                  alt="JRS Safe Campus Transit"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold drop-shadow">Safe Campus Transit</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* View Full Gallery Action Button */}
+        <div className="text-center mt-10">
+          <button
+            type="button"
+            onClick={() => setShowFullModal(true)}
+            className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer"
+          >
+            <span>View All Photos</span>
+            <span>→</span>
+          </button>
         </div>
 
       </div>
