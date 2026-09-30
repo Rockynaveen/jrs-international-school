@@ -136,7 +136,7 @@ export default function LatestEvents() {
   const thumbnailItems = eventsData.slice(0, 4);
 
   return (
-    <section id="events" className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden border-b border-slate-200">
+    <section id="events" className="py-12 bg-white relative overflow-hidden border-b border-slate-200">
       
       {/* Decorative Subtle Curve Background Glow */}
       <div

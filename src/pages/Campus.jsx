@@ -201,7 +201,7 @@ export default function Campus() {
       </section>
 
       {/* Modern Editorial Facility Grid (12 core facilities) */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
+      <section className="py-12 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredFacilities.map((facility) => (

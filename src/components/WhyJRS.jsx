@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 
 export default function WhyJRS() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section id="about" className="relative w-full bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-slate-200">
+    <section id="about" className="relative w-full bg-white py-12 overflow-hidden border-b border-slate-200">
       {/* Subtle Ambient Brand Glows */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-red-500/5 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-emerald-500/5 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
@@ -66,13 +65,13 @@ export default function WhyJRS() {
 
             {/* Two Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/about"
+              <button
+                type="button"
                 className="btn-pointed group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white px-8 sm:px-9 py-3.5 sm:py-4 font-semibold text-sm sm:text-base transition-all duration-300 cursor-pointer"
               >
                 <span>Learn More</span>
                 <span className="text-lg leading-none transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </Link>
+              </button>
 
               <button
                 type="button"

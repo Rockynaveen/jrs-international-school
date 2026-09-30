@@ -115,7 +115,7 @@ export default function Academics() {
       </section>
 
       {/* Editorial Horizontal Programme Rows */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-16 sm:space-y-24">
           <div className="border-b border-gray-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>

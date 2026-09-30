@@ -16,7 +16,7 @@ export default function FeatureSection({
   bgClass = 'bg-white',
 }) {
   return (
-    <section className={`py-10 ${bgClass} overflow-hidden`}>
+    <section className={`py-12 ${bgClass} overflow-hidden`}>
       <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
         <div
           className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${

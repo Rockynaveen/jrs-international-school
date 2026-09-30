@@ -113,7 +113,7 @@ export default function StudentLife() {
       </section>
 
       {/* Image-heavy Layout for All 9 Activities */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC]">
+      <section className="py-12 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {activitiesData.map((activity, idx) => (
@@ -169,7 +169,7 @@ export default function StudentLife() {
       </section>
 
       {/* House System Feature */}
-      <section className="py-20 bg-[#F0FDF4] border-t border-emerald-100">
+      <section className="py-12 bg-[#F0FDF4] border-t border-emerald-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 space-y-4">

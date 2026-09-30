@@ -4,7 +4,7 @@ import { schoolContact } from '../data/siteData';
 
 export default function AdmissionCTA() {
   return (
-    <section className="bg-white py-10 relative overflow-hidden border-t border-slate-100">
+    <section className="bg-white py-12 relative overflow-hidden border-t border-slate-100">
       <div className="max-w-[1040px] mx-auto px-6 text-center">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase shadow-xs border border-red-100 mb-6">

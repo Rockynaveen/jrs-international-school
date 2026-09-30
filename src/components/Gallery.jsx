@@ -193,7 +193,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-16 sm:py-20 lg:py-24 bg-[#FCFAF7] relative overflow-hidden border-b border-slate-200/80"
+      className="py-12 bg-[#FCFAF7] relative overflow-hidden border-b border-slate-200/80"
     >
       {/* Decorative Soft Ambient Blobs */}
       <div

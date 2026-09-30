@@ -97,7 +97,7 @@ export default function About() {
       </section>
 
       {/* Leadership / Vision Split Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100">
+      <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
             {/* Image Collage */}
@@ -159,7 +159,7 @@ export default function About() {
       </section>
 
       {/* Six Pillars Editorial Grid */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
+      <section className="py-12 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#DC2626]">

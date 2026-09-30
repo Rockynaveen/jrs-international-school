@@ -64,7 +64,7 @@ const statsData = [
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#0B0F17] text-white">
+    <section className="relative overflow-hidden py-12 bg-[#0B0F17] text-white">
       
       {/* ─────────────────────────────────────────────────────────────
           WHITE BUILDING CAMPUS BACKGROUND IMAGE & GRADIENT OVERLAY

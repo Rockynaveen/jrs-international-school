@@ -174,7 +174,7 @@ export default function Events() {
       </section>
 
       {/* Large Numbered Rows Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
+      <section className="py-12 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-6">
           {filtered.map((item) => (
             <div

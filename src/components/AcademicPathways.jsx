@@ -62,7 +62,7 @@ export default function AcademicPathways() {
   const [selectedPathway, setSelectedPathway] = useState(null);
 
   return (
-    <section id="academics" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-y border-slate-200">
+    <section id="academics" className="py-12 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-y border-slate-200">
       
       {/* Subtle Brand Ambient Glows */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-red-500/5 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />

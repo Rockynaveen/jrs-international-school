@@ -147,7 +147,7 @@ export default function CoCurricularCarousel() {
   return (
     <section
       id="activities"
-      className="py-16 sm:py-20 lg:py-24 bg-white relative border-b border-slate-200"
+      className="py-12 bg-white relative border-b border-slate-200"
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         

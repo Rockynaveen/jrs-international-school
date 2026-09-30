@@ -29,27 +29,27 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-t border-slate-200">
+    <section id="contact" className="py-12 gradient-warm-mesh relative overflow-hidden border-t border-slate-200/80">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - Clean & Simple, No Sub-paragraph */}
+        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50/80 text-[#DC2626] text-xs font-semibold tracking-[0.2em] uppercase border border-red-100 mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50/90 text-[#DC2626] text-xs font-semibold tracking-[0.2em] uppercase border border-red-100 mb-3.5 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626] animate-pulse" />
             GET IN TOUCH • ADMISSIONS 2026–27
           </div>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-[#0B0F17] leading-[1.18] tracking-tight">
             Connect with our{' '}
-            <span className="bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#16A34A] bg-clip-text text-transparent">
               admissions team.
             </span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-sans mt-3 max-w-lg mx-auto">
-            Book a campus walkthrough, explore scholarship details, and register for 2026–27 admissions.
+            Book an interactive campus walkthrough, explore scholarship details, and register for 2026–27 admissions.
           </p>
         </div>
 
-        {/* Simple 2-Column Layout: School Image on Left, Form on Right */}
-        <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-sm">
+        {/* 2-Column Layout: School Image on Left, Form on Right */}
+        <div className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-xl">
           
           {/* LEFT: School Image & Direct Info */}
           <div className="lg:col-span-5 relative flex flex-col justify-between min-h-[380px] lg:min-h-[540px] overflow-hidden">
