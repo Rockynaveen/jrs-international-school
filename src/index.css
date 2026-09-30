@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-heading: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-modern: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-sans: "Inter", "Plus Jakarta Sans", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-heading: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-modern: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 
   --color-brand-red: #DC2626;
   --color-brand-red-dark: #B91C1C;
@@ -37,21 +38,30 @@
   font-family: var(--font-heading);
 }
 
+.font-serif {
+  font-family: var(--font-serif);
+}
+
 @layer base {
   html, body {
-    font-family: "Inter", "Plus Jakarta Sans", sans-serif;
-    color: #111827;
+    font-family: var(--font-sans);
+    color: #1E293B;
     background-color: #FFFFFF;
     overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   p, li, label, input, textarea, select, button, a {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-sans);
+    line-height: 1.625;
   }
 
   h1, h2, h3, h4, h5, h6, .font-display, .font-heading, .font-modern {
-    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-    letter-spacing: -0.015em;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 
@@ -247,4 +257,35 @@
     radial-gradient(circle at 85% 70%, rgba(22, 163, 74, 0.12) 0%, transparent 45%),
     linear-gradient(180deg, #0B0F17 0%, #05070B 100%);
 }
+
+/* ==========================================================================
+   POINTED-PILL BUTTON DESIGN (Exact User Reference Match)
+   ========================================================================== */
+.btn-pointed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 50%,
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% 50%
+  );
+  clip-path: url(#pointed-pill-clip);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 12px rgba(185, 28, 28, 0.25));
+  user-select: none;
+}
+
+.btn-pointed:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 6px 16px rgba(22, 163, 74, 0.3));
+}
+
+.btn-pointed:active {
+  transform: scale(0.96) translateY(0);
+}
+
 

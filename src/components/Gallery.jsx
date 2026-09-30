@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Badge } from './ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 
 const galleryItems = [
-  // ── ROW 1 (4 items) ──
+  // ── ROW 1 (Feature Cards) ──
   {
     id: 'academics',
     title: 'Academics',
@@ -28,6 +30,8 @@ const galleryItems = [
       </svg>
     ),
   },
+
+  // ── ROW 2 (3 items) ──
   {
     id: 'art-painting',
     title: 'Art & Painting',
@@ -54,8 +58,6 @@ const galleryItems = [
       </svg>
     ),
   },
-
-  // ── ROW 2 (4 items) ──
   {
     id: 'music',
     title: 'Music',
@@ -69,6 +71,8 @@ const galleryItems = [
       </svg>
     ),
   },
+
+  // ── ROW 3 (3 items) ──
   {
     id: 'karate',
     title: 'Karate',
@@ -87,7 +91,7 @@ const galleryItems = [
     title: 'Yoga',
     badge: 'Yoga',
     categories: ['Sports', 'Beyond the Classroom'],
-    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80',
+    image: '/yoga-activity.jpg',
     description: 'Daily morning pranayama, mindfulness asanas, and emotional wellness in our meditation hall.',
     icon: (
       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +114,7 @@ const galleryItems = [
     ),
   },
 
-  // ── ROW 3 (3 wider items) ──
+  // ── ROW 4 (3 items) ──
   {
     id: 'events',
     title: 'Events',
@@ -182,16 +186,16 @@ export default function Gallery() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  const row1 = galleryItems.slice(0, 4);
-  const row2 = galleryItems.slice(4, 8);
-  const row3 = galleryItems.slice(8, 11);
+  const academicsItem = galleryItems.find((i) => i.id === 'academics') || galleryItems[0];
+  const sportsItem = galleryItems.find((i) => i.id === 'sports') || galleryItems[1];
+  const gridItems = galleryItems.slice(2); // Remaining 9 items (3 rows of 3)
 
   return (
     <section
       id="gallery"
-      className="py-14 sm:py-18 lg:py-20 bg-[#FCFAF7] relative overflow-hidden border-b border-slate-200/80"
+      className="py-16 sm:py-20 lg:py-24 bg-[#FCFAF7] relative overflow-hidden border-b border-slate-200/80"
     >
-      {/* Decorative Soft Ambient Blobs (Matches screenshot atmosphere) */}
+      {/* Decorative Soft Ambient Blobs */}
       <div
         className="w-80 h-80 rounded-full bg-[#E5F2E8]/70 blur-3xl absolute -top-20 -left-20 pointer-events-none"
         aria-hidden="true"
@@ -204,47 +208,76 @@ export default function Gallery() {
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ── HEADER ── */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <p className="text-[11px] sm:text-xs font-sans font-bold tracking-[0.26em] text-slate-500 uppercase">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50/80 text-[#DC2626] text-xs font-semibold tracking-[0.2em] uppercase border border-red-100 mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
             GALLERY
-          </p>
-          <div className="w-7 h-[2.5px] bg-[#B91C1C] mx-auto mt-1.5 mb-3 rounded-full" />
+          </div>
           
           <h2 className="font-serif text-3xl sm:text-4xl md:text-[42px] lg:text-[46px] font-bold text-[#1E293B] tracking-tight leading-tight">
             Moments at <span className="text-[#B91C1C] font-extrabold">JRS</span>
           </h2>
 
-          <p className="text-sm sm:text-[15px] lg:text-base text-slate-600 font-sans max-w-2xl mx-auto mt-3 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 font-sans max-w-2xl mx-auto mt-3.5 font-normal leading-relaxed">
             A glimpse into the vibrant life at JRS International School — where learning, creativity and growth come together.
           </p>
         </div>
 
-        {/* ── PHOTO GRID (4 + 4 + 3 Exact Screenshot Match) ── */}
+        {/* ── GALLERY GRID (Matches User Reference Image Exactly) ── */}
         <div className="space-y-3.5 sm:space-y-4">
-          {/* ROW 1: 4 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-            {row1.map((item) => (
-              <CardItem key={item.id} item={item} onSelect={setSelectedItem} heightClass="h-[210px] sm:h-[225px] lg:h-[235px]" />
+          
+          {/* ── ROW 1: 2 FEATURED WIDE CARDS (1 image per card) ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 sm:gap-4">
+            
+            {/* Card 1: Academics (1 image only) */}
+            <div
+              onClick={() => setSelectedItem(academicsItem)}
+              className="group relative h-[230px] sm:h-[260px] lg:h-[280px] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(0,0,0,0.07)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] transition-all duration-500 cursor-pointer border border-slate-200/60 bg-slate-900 select-none"
+            >
+              <img
+                src={academicsItem.image}
+                alt={academicsItem.title}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/35 group-hover:bg-black/45 transition-colors duration-300 pointer-events-none" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 text-center z-10 pointer-events-none">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-bold text-white tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300">
+                  {academicsItem.title}
+                </h3>
+              </div>
+            </div>
+
+            {/* Card 2: Sports (1 image only) */}
+            <div
+              onClick={() => setSelectedItem(sportsItem)}
+              className="group relative h-[230px] sm:h-[260px] lg:h-[280px] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(0,0,0,0.07)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] transition-all duration-500 cursor-pointer border border-slate-200/60 bg-slate-900 select-none"
+            >
+              <img
+                src={sportsItem.image}
+                alt={sportsItem.title}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/35 group-hover:bg-black/45 transition-colors duration-300 pointer-events-none" />
+              <div className="absolute inset-0 flex items-center justify-center p-4 text-center z-10 pointer-events-none">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-bold text-white tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300">
+                  {sportsItem.title}
+                </h3>
+              </div>
+            </div>
+
+          </div>
+
+          {/* ── ROWS 2, 3, 4: 3-COLUMN RECTANGULAR CARDS (Makeup, Planning & Decor, Mehndi Style) ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+            {gridItems.map((item) => (
+              <SingleGalleryCard key={item.id} item={item} onSelect={setSelectedItem} />
             ))}
           </div>
 
-          {/* ROW 2: 4 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-            {row2.map((item) => (
-              <CardItem key={item.id} item={item} onSelect={setSelectedItem} heightClass="h-[210px] sm:h-[225px] lg:h-[235px]" />
-            ))}
-          </div>
-
-          {/* ROW 3: 3 Wider Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
-            {row3.map((item) => (
-              <CardItem key={item.id} item={item} onSelect={setSelectedItem} heightClass="h-[220px] sm:h-[240px] lg:h-[255px]" />
-            ))}
-          </div>
         </div>
 
         {/* ── BOTTOM BUTTON: "View More Photos →" (With Sunburst Spark Accents) ── */}
-        <div className="text-center mt-10 sm:mt-12 flex items-center justify-center">
+        <div className="text-center mt-12 sm:mt-16 flex items-center justify-center">
           <div className="relative inline-flex items-center justify-center">
             {/* Left Sunburst Sparks */}
             <span className="hidden sm:inline-block text-[#DC2626]/70 mr-3 text-sm select-none" aria-hidden="true">
@@ -254,7 +287,7 @@ export default function Gallery() {
             <button
               type="button"
               onClick={() => setShowFullModal(true)}
-              className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#16A34A] text-white px-7 sm:px-8 py-3.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wider transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
+              className="btn-pointed inline-flex items-center justify-center gap-2 bg-[#B91C1C] hover:bg-[#16A34A] text-white px-8 sm:px-9 py-3.5 text-xs sm:text-[13px] font-bold tracking-wider transition-all duration-300 cursor-pointer"
             >
               <span>View More Photos</span>
               <span className="text-sm font-normal">→</span>
@@ -269,38 +302,22 @@ export default function Gallery() {
 
       </div>
 
-      {/* ── LIGHTBOX MODAL (On click of any card) ── */}
-      {selectedItem && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setSelectedItem(null)}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
-        >
-          <div
-            className="relative max-w-4xl w-full bg-[#0B0F17] rounded-3xl overflow-hidden shadow-2xl border border-white/20 flex flex-col max-h-[92vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
+      {/* ── LIGHTBOX MODAL (On click of any card) using shadcn Dialog ── */}
+      <Dialog open={!!selectedItem} onOpenChange={(open) => !open && setSelectedItem(null)}>
+        {selectedItem && (
+          <DialogContent className="max-w-4xl bg-[#0B0F17] border-white/20 text-white p-0">
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-5 py-4 bg-[#0B0F17] border-b border-white/10 text-white shrink-0">
+            <DialogHeader className="px-5 py-4 border-b border-white/10 flex-row items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#B91C1C] text-white flex items-center gap-2">
+                <Badge variant="red" className="px-3 py-1 uppercase tracking-wider gap-2">
                   <span className="w-4 h-4 flex items-center justify-center">{selectedItem.icon}</span>
                   <span>{selectedItem.badge}</span>
-                </span>
+                </Badge>
                 <span className="text-xs text-gray-300 font-medium">
                   {galleryItems.findIndex((i) => i.id === selectedItem.id) + 1} of {galleryItems.length}
                 </span>
               </div>
-              <button
-                type="button"
-                onClick={() => setSelectedItem(null)}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#0B0F17] flex items-center justify-center text-xs font-bold transition-all cursor-pointer"
-                aria-label="Close modal"
-              >
-                ✕
-              </button>
-            </div>
+            </DialogHeader>
 
             {/* Modal Image Area */}
             <div className="relative flex-grow min-h-[260px] max-h-[62vh] bg-black/50 flex items-center justify-center overflow-hidden">
@@ -344,10 +361,10 @@ export default function Gallery() {
             {/* Modal Description Footer */}
             <div className="p-5 bg-[#0B0F17] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-white shrink-0">
               <div className="space-y-1 max-w-xl">
-                <h3 className="font-bold text-base sm:text-lg">
+                <DialogTitle className="text-white text-base sm:text-lg">
                   {selectedItem.title}
-                </h3>
-                <p className="text-xs text-gray-300 leading-relaxed">
+                </DialogTitle>
+                <p className="text-xs text-gray-300 leading-relaxed font-sans">
                   {selectedItem.description}
                 </p>
               </div>
@@ -355,126 +372,102 @@ export default function Gallery() {
               <a
                 href="#admissions"
                 onClick={() => setSelectedItem(null)}
-                className="inline-flex items-center gap-1.5 bg-[#B91C1C] hover:bg-[#16A34A] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors cursor-pointer shrink-0"
+                className="btn-pointed inline-flex items-center justify-center gap-1.5 bg-[#B91C1C] hover:bg-[#16A34A] text-white px-6 sm:px-7 py-2.5 text-xs font-semibold transition-colors cursor-pointer shrink-0"
               >
                 <span>Book Campus Tour</span>
                 <span>›</span>
               </a>
             </div>
-          </div>
-        </div>
-      )}
+          </DialogContent>
+        )}
+      </Dialog>
 
-      {/* ── "VIEW MORE PHOTOS" FULL ARCHIVE MODAL ── */}
-      {showFullModal && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setShowFullModal(false)}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
-        >
-          <div
-            className="relative max-w-5xl w-full bg-[#FAF8F5] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 flex flex-col max-h-[92vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-5 bg-white border-b border-gray-200 shrink-0">
-              <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#B91C1C]">
-                  PHOTO ARCHIVE
-                </span>
-                <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#0B0F17]">
-                  Moments at JRS International School
-                </h3>
-              </div>
-              <button
-                type="button"
-                onClick={() => setShowFullModal(false)}
-                className="w-9 h-9 rounded-full bg-gray-100 hover:bg-[#0B0F17] text-[#0B0F17] hover:text-white flex items-center justify-center text-sm font-bold transition-all cursor-pointer"
-                aria-label="Close full gallery modal"
-              >
-                ✕
-              </button>
+      {/* ── "VIEW MORE PHOTOS" FULL ARCHIVE MODAL using shadcn Dialog ── */}
+      <Dialog open={showFullModal} onOpenChange={setShowFullModal}>
+        <DialogContent className="max-w-5xl bg-[#FAF8F5] border-gray-200 p-0">
+          {/* Modal Header */}
+          <DialogHeader className="px-6 py-5 bg-white border-b border-gray-200">
+            <div>
+              <span className="text-[11px] font-bold tracking-widest uppercase text-[#B91C1C]">
+                PHOTO ARCHIVE
+              </span>
+              <DialogTitle className="text-xl sm:text-2xl text-[#0B0F17]">
+                Moments at JRS International School
+              </DialogTitle>
             </div>
+          </DialogHeader>
 
-            {/* Grid of All Photos */}
-            <div className="p-6 overflow-y-auto max-h-[calc(92vh-140px)]">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {galleryItems.map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => {
-                      setShowFullModal(false);
-                      setSelectedItem(item);
-                    }}
-                    className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
-                  >
-                    <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-xs font-semibold">
-                        <span className="w-4 h-4 flex items-center justify-center">{item.icon}</span>
-                        <span>{item.badge}</span>
-                      </div>
+          {/* Grid of All Photos */}
+          <div className="p-6 overflow-y-auto max-h-[calc(92vh-140px)]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {galleryItems.map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => {
+                    setShowFullModal(false);
+                    setSelectedItem(item);
+                  }}
+                  className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 flex items-center justify-center p-3 text-center pointer-events-none">
+                      <span className="font-serif text-lg font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                        {item.title}
+                      </span>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-4 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 shrink-0">
-              <span>Showing all 11 curated campus photo moments</span>
-              <a
-                href="#admissions"
-                onClick={() => setShowFullModal(false)}
-                className="bg-[#B91C1C] hover:bg-[#16A34A] text-white px-5 py-2 rounded-full font-semibold transition-all"
-              >
-                Apply for Admission
-              </a>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      )}
+
+          {/* Modal Footer */}
+          <div className="p-4 bg-white border-t border-gray-200 flex items-center justify-between text-xs text-gray-500 shrink-0">
+            <span>Showing all 11 curated campus photo moments</span>
+            <a
+              href="#admissions"
+              onClick={() => setShowFullModal(false)}
+              className="btn-pointed bg-[#B91C1C] hover:bg-[#16A34A] text-white px-6 py-2 text-xs font-semibold transition-all inline-flex items-center justify-center"
+            >
+              Apply for Admission
+            </a>
+          </div>
+        </DialogContent>
+      </Dialog>
 
     </section>
   );
 }
 
-// ── SUB-COMPONENT: Individual Gallery Card (Pixel-Perfect Reference Match) ──
-function CardItem({ item, onSelect, heightClass }) {
+// ── SUB-COMPONENT: Single Gallery Card (Centered White Serif Typography - Makeup / Decor / Mehndi Style) ──
+function SingleGalleryCard({ item, onSelect }) {
   return (
     <div
       onClick={() => onSelect(item)}
-      className={`group relative w-full ${heightClass} rounded-2xl overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer bg-slate-100 border border-slate-200/60`}
+      className="group relative h-[190px] sm:h-[210px] lg:h-[225px] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(0,0,0,0.07)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] transition-all duration-500 cursor-pointer border border-slate-200/60 bg-slate-900 select-none"
     >
       {/* Background Image */}
       <img
         src={item.image}
         alt={item.title}
         loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
       />
 
-      {/* Gentle Bottom Gradient Scrim */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent pointer-events-none" />
+      {/* Dark Scrim Overlay for Crystal-Clear Text Legibility */}
+      <div className="absolute inset-0 bg-black/35 group-hover:bg-black/45 transition-colors duration-300 pointer-events-none" />
 
-      {/* Bottom-Left Floating Glassmorphism Pill Badge */}
-      <div className="absolute bottom-3 left-3 sm:bottom-3.5 sm:left-3.5 z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/45 hover:bg-black/60 backdrop-blur-md border border-white/25 text-white shadow-xs transition-colors">
-          {/* Circular Icon Container */}
-          <div className="w-5 h-5 rounded-full border border-white/40 flex items-center justify-center shrink-0 text-white/95">
-            {item.icon}
-          </div>
-          {/* Title */}
-          <span className="text-xs sm:text-[13px] font-sans font-semibold tracking-wide text-white drop-shadow-xs">
-            {item.badge}
-          </span>
-        </div>
+      {/* Prominent Centered White Serif Typography */}
+      <div className="absolute inset-0 flex items-center justify-center p-4 text-center z-10 pointer-events-none">
+        <h3 className="font-serif text-xl sm:text-2xl lg:text-[25px] font-bold text-white tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-300">
+          {item.title}
+        </h3>
       </div>
     </div>
   );

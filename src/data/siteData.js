@@ -16,7 +16,7 @@ export const images = {
   basketballCourt: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
   skatingAndGames: "/karati.webp",
   karateAndMartialArts: "/karati.webp",
-  yogaZen: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80",
+  yogaZen: "/yoga-activity.jpg",
   
   // Arts & culture
   artPainting: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80",

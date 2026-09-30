@@ -62,7 +62,7 @@ export default function AcademicPathways() {
   const [selectedPathway, setSelectedPathway] = useState(null);
 
   return (
-    <section id="academics" className="py-12 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-y border-slate-200">
+    <section id="academics" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EEF2F6] via-[#F8FAFC] to-[#EEF2F6] relative overflow-hidden border-y border-slate-200">
       
       {/* Subtle Brand Ambient Glows */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-red-500/5 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
@@ -71,17 +71,20 @@ export default function AcademicPathways() {
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ================= SECTION HEADER ================= */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-red-50 via-slate-50 to-emerald-50 text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100/80 mb-3.5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50/80 text-[#DC2626] text-xs font-semibold tracking-[0.2em] uppercase border border-red-100 mb-3.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
             ACADEMIC PATHWAYS
           </div>
 
           {/* Main Title */}
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-[#0B0F17] leading-[1.18] tracking-tight">
             Academic <span className="bg-gradient-to-r from-[#DC2626] to-[#EF4444] bg-clip-text text-transparent">Pathways</span>
           </h2>
+          <p className="text-sm sm:text-base text-slate-600 font-sans mt-3.5 max-w-xl mx-auto">
+            Comprehensive CBSE curriculum enriched with interactive inquiry, competitive foundation, and holistic development.
+          </p>
         </div>
 
         {/* ================= 3 NEAT ACADEMIC CARDS ================= */}

@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import Button from '../components/Button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Label } from '../components/ui/label';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
 import { schoolContact } from '../data/siteData';
 
 export default function Contact() {
@@ -30,17 +35,17 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
           className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#DC2626]/10 blur-3xl -z-10"
           aria-hidden="true"
         />
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100">
+            <Badge variant="red" className="px-3.5 py-1.5 gap-2 uppercase tracking-[0.2em]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
               GET IN TOUCH
-            </div>
+            </Badge>
 
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold text-[#0B0F17] leading-[1.12] tracking-tight">
               We’d love to
@@ -59,7 +64,7 @@ export default function Contact() {
       </section>
 
       {/* Main Split Section: Contact Info & Form */}
-      <section className="py-10 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Official Details */}
@@ -220,62 +225,55 @@ export default function Contact() {
                       </p>
                     </div>
 
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                        Your Full Name *
-                      </label>
-                      <input
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-name">Your Full Name *</Label>
+                      <Input
+                        id="contact-name"
                         type="text"
                         name="name"
                         required
                         value={form.name}
                         onChange={handleChange}
                         placeholder="e.g. Ananya Sharma"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                          Phone Number *
-                        </label>
-                        <input
+                      <div className="space-y-2">
+                        <Label htmlFor="contact-phone">Phone Number *</Label>
+                        <Input
+                          id="contact-phone"
                           type="tel"
                           name="phone"
                           required
                           value={form.phone}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
-                          className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
                         />
                       </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                          Email Address *
-                        </label>
-                        <input
+                      <div className="space-y-2">
+                        <Label htmlFor="contact-email">Email Address *</Label>
+                        <Input
+                          id="contact-email"
                           type="email"
                           name="email"
                           required
                           value={form.email}
                           onChange={handleChange}
                           placeholder="ananya@example.com"
-                          className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
                         />
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                        Purpose of Enquiry *
-                      </label>
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-subject">Purpose of Enquiry *</Label>
                       <select
+                        id="contact-subject"
                         name="subject"
                         required
                         value={form.subject}
                         onChange={handleChange}
-                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
+                        className="flex h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0B0F17] shadow-xs transition-colors focus-visible:outline-none focus-visible:border-[#DC2626] focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-[#DC2626]/20"
                       >
                         <option value="">Select an option</option>
                         <option value="New Admission Enquiry (2026–27)">New Admission Enquiry (2026–27)</option>
@@ -287,25 +285,23 @@ export default function Contact() {
                       </select>
                     </div>
 
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                        Your Message *
-                      </label>
-                      <textarea
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-message">Your Message *</Label>
+                      <Textarea
+                        id="contact-message"
                         name="message"
                         rows="4"
                         required
                         value={form.message}
                         onChange={handleChange}
                         placeholder="Write your query or message here..."
-                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-[#DC2626] text-white hover:bg-[#16A34A] rounded-full py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#16A34A] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="btn-pointed w-full bg-[#DC2626] text-white hover:bg-[#16A34A] py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#16A34A] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {submitting ? 'Transmitting message...' : 'Send Message →'}
                     </button>

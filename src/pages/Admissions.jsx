@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import Button from '../components/Button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Label } from '../components/ui/label';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
 import { schoolContact } from '../data/siteData';
 
 const admissionSteps = [
@@ -65,7 +70,7 @@ export default function Admissions() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
           className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#DC2626]/10 blur-3xl -z-10"
           aria-hidden="true"
@@ -94,7 +99,7 @@ export default function Admissions() {
       </section>
 
       {/* 4 Steps Section */}
-      <section className="py-10 bg-white border-b border-gray-100">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#DC2626]">
@@ -136,7 +141,7 @@ export default function Admissions() {
       </section>
 
       {/* Enquiry Form Section with Editorial Split */}
-      <section className="py-10 bg-[#F8FAFC]" id="enquiry-form">
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]" id="enquiry-form">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Context & Helpline */}
@@ -258,64 +263,57 @@ export default function Admissions() {
                     </div>
 
                     {/* Parent Name */}
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                        Parent / Guardian Name *
-                      </label>
-                      <input
+                    <div className="space-y-2">
+                      <Label htmlFor="parentName">Parent / Guardian Name *</Label>
+                      <Input
+                        id="parentName"
                         type="text"
                         name="parentName"
                         required
                         value={formData.parentName}
                         onChange={handleChange}
                         placeholder="e.g. Rajesh Kumar"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
                       />
                     </div>
 
                     {/* Phone & Email Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                          Phone Number *
-                        </label>
-                        <input
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone Number *</Label>
+                        <Input
+                          id="phone"
                           type="tel"
                           name="phone"
                           required
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
-                          className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
                         />
                       </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                          Email Address *
-                        </label>
-                        <input
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email Address *</Label>
+                        <Input
+                          id="email"
                           type="email"
                           name="email"
                           required
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="rajesh@example.com"
-                          className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
                         />
                       </div>
                     </div>
 
                     {/* Grade Seeking */}
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                        Grade / Programme Seeking Admission For *
-                      </label>
+                    <div className="space-y-2">
+                      <Label htmlFor="grade">Grade / Programme Seeking Admission For *</Label>
                       <select
+                        id="grade"
                         name="grade"
                         required
                         value={formData.grade}
                         onChange={handleChange}
-                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm"
+                        className="flex h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0B0F17] shadow-xs transition-colors focus-visible:outline-none focus-visible:border-[#DC2626] focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-[#DC2626]/20"
                       >
                         <option value="">Select Grade Level</option>
                         <option value="Young Buddies (Age 2.5–3.5)">Young Buddies (Age 2.5–3.5)</option>
@@ -331,17 +329,15 @@ export default function Admissions() {
                     </div>
 
                     {/* Message */}
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#0B0F17] mb-2">
-                        Message or Specific Questions
-                      </label>
-                      <textarea
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message or Specific Questions</Label>
+                      <Textarea
+                        id="message"
                         name="message"
                         rows="4"
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your child’s interests, current school, or any specific questions..."
-                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-gray-200 text-[#0B0F17] focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all text-sm resize-none"
                       />
                     </div>
 
@@ -349,7 +345,7 @@ export default function Admissions() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-[#DC2626] text-white hover:bg-[#16A34A] rounded-full py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#16A34A] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="btn-pointed w-full bg-[#DC2626] text-white hover:bg-[#16A34A] py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#16A34A] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {submitting ? (
                         <span>Processing enquiry...</span>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card } from './ui/card';
+import { Badge } from './ui/badge';
 
 export default function ProgrammeCard({
   id,
@@ -12,7 +14,7 @@ export default function ProgrammeCard({
   link = '/academics',
 }) {
   return (
-    <div className="group rounded-[24px] overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative">
+    <Card className="group rounded-[24px] overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative">
       {/* Top Image Container */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
         <img
@@ -30,9 +32,9 @@ export default function ProgrammeCard({
         </div>
 
         <div className="absolute bottom-4 left-4 right-4 text-white">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#16A34A] block mb-0.5">
+          <Badge variant="emerald" className="mb-1 text-[11px] font-bold uppercase tracking-wider">
             {tagline}
-          </span>
+          </Badge>
           <h3 className="font-display text-2xl font-bold tracking-tight text-white drop-shadow-sm">
             {name}
           </h3>
@@ -76,6 +78,6 @@ export default function ProgrammeCard({
           </span>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -136,7 +136,7 @@ export default function LatestEvents() {
   const thumbnailItems = eventsData.slice(0, 4);
 
   return (
-    <section id="events" className="py-12 bg-white relative overflow-hidden border-b border-slate-200">
+    <section id="events" className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden border-b border-slate-200">
       
       {/* Decorative Subtle Curve Background Glow */}
       <div
@@ -151,14 +151,18 @@ export default function LatestEvents() {
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* ================= SECTION HEADER ================= */}
-        <div className="max-w-3xl mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-bold tracking-[0.25em] text-[#DC2626] uppercase mb-3">
-            <span>— LATEST EVENTS</span>
+        <div className="max-w-3xl mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50/80 text-[#DC2626] text-xs font-semibold tracking-[0.2em] uppercase border border-red-100 mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
+            LATEST EVENTS &amp; HAPPENINGS
           </div>
 
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-[#0B0F17] leading-[1.18] tracking-tight">
             Latest Events &amp; <span className="bg-gradient-to-r from-[#DC2626] to-[#16A34A] bg-clip-text text-transparent">Celebrations</span>
           </h2>
+          <p className="text-sm sm:text-base text-slate-600 font-sans mt-3 max-w-xl">
+            From annual sports meets and science fests to cultural celebrations, discover our lively calendar.
+          </p>
         </div>
 
         {/* ================= 2-COLUMN SPLIT SHOWCASE ================= */}
@@ -229,7 +233,7 @@ export default function LatestEvents() {
             <div className="pt-3 sm:pt-4">
               <Link
                 to="/events"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white font-semibold text-sm sm:text-base transition-all duration-300 cursor-pointer group"
+                className="btn-pointed inline-flex items-center justify-center gap-2.5 px-9 py-3.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white font-semibold text-sm sm:text-base transition-all duration-300 cursor-pointer group"
               >
                 <span>View More</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.2] group-hover:translate-x-1 transition-transform" />

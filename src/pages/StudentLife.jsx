@@ -1,6 +1,8 @@
 import React from 'react';
 import AdmissionCTA from '../components/AdmissionCTA';
 import Button from '../components/Button';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
 import { images } from '../data/siteData';
 
 const activitiesData = [
@@ -82,7 +84,7 @@ export default function StudentLife() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
           className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#16A34A]/10 blur-3xl -z-10"
           aria-hidden="true"
@@ -115,7 +117,7 @@ export default function StudentLife() {
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {activitiesData.map((activity, idx) => (
-              <div
+              <Card
                 key={idx}
                 className="bg-white rounded-[32px] overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col group"
               >
@@ -127,9 +129,9 @@ export default function StudentLife() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase text-[#0B0F17] shadow-sm">
+                  <Badge variant="secondary" className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[11px] font-bold tracking-widest uppercase text-[#0B0F17] shadow-sm">
                     {activity.category}
-                  </div>
+                  </Badge>
                 </div>
 
                 {/* Body Content */}
@@ -160,7 +162,7 @@ export default function StudentLife() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

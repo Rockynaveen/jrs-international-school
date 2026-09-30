@@ -208,7 +208,7 @@ export default function Hero() {
                     {/* Primary CTA */}
                     <a
                       href={slide.primaryCta.href}
-                      className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white font-bold text-[13px] sm:text-[14px] uppercase tracking-wider px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#16A34A] focus:ring-offset-2 focus:ring-offset-[#0B0F17] cursor-pointer"
+                      className="btn-pointed group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white font-bold text-[13px] sm:text-[14px] uppercase tracking-wider px-8 sm:px-9 py-3.5 sm:py-4 transition-all duration-300 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#16A34A] focus:ring-offset-2 focus:ring-offset-[#0B0F17] cursor-pointer"
                     >
                       <span>{slide.primaryCta.label}</span>
                     </a>
@@ -218,10 +218,10 @@ export default function Hero() {
                       <button
                         type="button"
                         onClick={() => setVideoModalOpen(true)}
-                        className="group inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/60 backdrop-blur-md font-semibold text-[13px] sm:text-[14px] uppercase tracking-wider px-6 sm:px-7 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
+                        className="btn-pointed group inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/60 backdrop-blur-md font-semibold text-[13px] sm:text-[14px] uppercase tracking-wider px-7 sm:px-8 py-3.5 sm:py-4 transition-all duration-300 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
                       >
-                        <span className="w-6 h-6 rounded-full bg-[#16A34A] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                          <Play className="w-3 h-3 fill-current ml-0.5" />
+                        <span className="w-5 h-5 rounded-full bg-[#16A34A] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                          <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
                         </span>
                         <span>{slide.secondaryCta.label}</span>
                       </button>

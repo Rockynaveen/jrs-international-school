@@ -90,7 +90,7 @@ export default function Academics() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#DC2626] text-xs font-bold tracking-[0.2em] uppercase border border-red-100">
@@ -115,7 +115,7 @@ export default function Academics() {
       </section>
 
       {/* Editorial Horizontal Programme Rows */}
-      <section className="py-10 bg-white">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-16 sm:space-y-24">
           <div className="border-b border-gray-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>

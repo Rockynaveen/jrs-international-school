@@ -116,7 +116,7 @@ export default function Events() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
           className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#DC2626]/10 blur-3xl -z-10"
           aria-hidden="true"
@@ -174,7 +174,7 @@ export default function Events() {
       </section>
 
       {/* Large Numbered Rows Section */}
-      <section className="py-10 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12 space-y-6">
           {filtered.map((item) => (
             <div

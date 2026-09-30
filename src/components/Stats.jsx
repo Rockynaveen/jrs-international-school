@@ -64,7 +64,7 @@ const statsData = [
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden py-12 bg-[#0B0F17] text-white">
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#0B0F17] text-white">
       
       {/* ─────────────────────────────────────────────────────────────
           WHITE BUILDING CAMPUS BACKGROUND IMAGE & GRADIENT OVERLAY
@@ -91,14 +91,14 @@ export default function Stats() {
             
             {/* Tag: OUR COMMUNITY ─── */}
             <div className="flex items-center gap-3 mb-3.5">
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/90">
+              <span className="text-xs font-semibold tracking-[0.25em] uppercase text-white/90">
                 OUR COMMUNITY
               </span>
               <span className="w-12 h-[2px] bg-gradient-to-r from-[#DC2626] to-[#16A34A]" />
             </div>
 
             {/* Headline */}
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-white leading-tight tracking-tight mb-6">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-white leading-[1.18] tracking-tight mb-6">
               Built on People, <br />
               <span className="font-bold bg-gradient-to-r from-[#16A34A] to-[#4ADE80] bg-clip-text text-transparent">
                 Driven by Possibilities
@@ -109,7 +109,7 @@ export default function Stats() {
             <div>
               <a
                 href="#about"
-                className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/20 text-white bg-gradient-to-r from-black/60 to-black/30 hover:from-[#16A34A] hover:to-[#15803D] hover:border-transparent text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer group"
+                className="btn-pointed inline-flex items-center justify-center gap-2.5 px-8 py-3 border border-white/20 text-white bg-gradient-to-r from-black/60 to-black/30 hover:from-[#16A34A] hover:to-[#15803D] hover:border-transparent text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer group"
               >
                 <span>Discover Our Community</span>
                 <span className="text-base group-hover:translate-x-1 transition-transform duration-200">→</span>

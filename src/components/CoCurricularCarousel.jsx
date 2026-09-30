@@ -37,7 +37,7 @@ const activitiesData = [
     title: 'Yoga',
     description:
       'Developing focus, inner well-being, healthy posture, breath awareness and mental calmness.',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+    image: '/yoga-activity.jpg',
     link: '/student-life',
     accent: '#DC2626',
   },
@@ -147,27 +147,27 @@ export default function CoCurricularCarousel() {
   return (
     <section
       id="activities"
-      className="py-12 bg-white relative border-b border-slate-200"
+      className="py-16 sm:py-20 lg:py-24 bg-white relative border-b border-slate-200"
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ================= SECTION HEADER ================= */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 relative">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 relative">
           {/* Eyebrow Label */}
-          <div className="inline-flex flex-col items-center justify-center">
-            <span className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.25em] text-[#DC2626] block">
-              BEYOND THE CLASSROOM
-            </span>
-            {/* Red to Green Horizontal Accent Bar */}
-            <div className="w-12 h-1 bg-gradient-to-r from-[#DC2626] to-[#16A34A] rounded-full mt-2 mb-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50/80 text-[#DC2626] text-xs font-semibold tracking-[0.2em] uppercase border border-red-100 mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
+            BEYOND THE CLASSROOM
           </div>
 
           {/* Main Display Headline */}
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#0B0F17] leading-tight tracking-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-[#0B0F17] leading-[1.18] tracking-tight">
             Explore.{' '}
             <span className="bg-gradient-to-r from-[#16A34A] to-[#22C55E] bg-clip-text text-transparent">Create.</span>{' '}
             Grow.
           </h2>
+          <p className="text-sm sm:text-base text-slate-600 font-sans mt-3 max-w-xl mx-auto">
+            Discover athletic passions, performing arts, and experiential discoveries that build confidence beyond textbooks.
+          </p>
         </div>
 
         {/* ================= ON-SCROLL CARD STACKING CONTAINER ================= */}

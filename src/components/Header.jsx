@@ -313,10 +313,9 @@ export default function Header({ heroMode = 'home-1', setHeroMode }) {
                 else navigate('/admissions');
               }
             }}
-            className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white"
+            className="btn-pointed inline-flex items-center justify-center px-7 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-300 active:translate-y-0 cursor-pointer bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white"
           >
             <span>Apply Now</span>
-            <span className="text-xs font-normal">→</span>
           </a>
 
           {/* Modern Mobile Menu Hamburger Toggle */}
@@ -442,9 +441,9 @@ export default function Header({ heroMode = 'home-1', setHeroMode }) {
             <a
               href="/admissions"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center block bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
+              className="btn-pointed w-full text-center block bg-gradient-to-r from-[#DC2626] to-[#B91C1C] hover:from-[#16A34A] hover:to-[#15803D] text-white py-3.5 text-xs font-bold uppercase tracking-wider transition-all"
             >
-              Apply Now →
+              <span>Apply Now</span>
             </a>
             <div className="text-center text-xs text-slate-500 font-sans leading-relaxed">
               Korremula X Road, Narapally, Near Uppal Depot, Hyderabad

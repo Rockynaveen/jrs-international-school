@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import AdmissionCTA from '../components/AdmissionCTA';
 import Button from '../components/Button';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
 import { images, schoolContact } from '../data/siteData';
 
 const facilitiesList = [
@@ -145,7 +147,7 @@ export default function Campus() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         <div
           className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#16A34A]/10 blur-3xl -z-10"
           aria-hidden="true"
@@ -199,11 +201,11 @@ export default function Campus() {
       </section>
 
       {/* Modern Editorial Facility Grid (12 core facilities) */}
-      <section className="py-10 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredFacilities.map((facility) => (
-              <div
+              <Card
                 key={facility.id}
                 className="bg-white rounded-[32px] overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col group"
               >
@@ -218,9 +220,9 @@ export default function Campus() {
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[#0B0F17] font-display text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                     {facility.id}
                   </div>
-                  <div className="absolute bottom-3 left-4 bg-[#0B0F17]/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
+                  <Badge variant="black" className="absolute bottom-3 left-4 backdrop-blur-sm text-white px-3 py-1 text-[10px] font-bold tracking-widest uppercase">
                     {facility.category}
-                  </div>
+                  </Badge>
                 </div>
 
                 {/* Content */}
@@ -241,7 +243,7 @@ export default function Campus() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

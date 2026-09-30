@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import AdmissionCTA from '../components/AdmissionCTA';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
 import { images } from '../data/siteData';
 
 const corePillars = [
@@ -59,7 +61,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Editorial Hero Header */}
-      <section className="pt-12 sm:pt-20 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-white border-b border-gray-100 relative overflow-hidden">
         {/* Soft subtle background circles */}
         <div
           className="absolute top-0 right-10 w-96 h-96 rounded-full bg-[#16A34A]/10 blur-3xl -z-10"
@@ -95,7 +97,7 @@ export default function About() {
       </section>
 
       {/* Leadership / Vision Split Section */}
-      <section className="py-10 bg-white border-b border-gray-100">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
             {/* Image Collage */}
@@ -157,7 +159,7 @@ export default function About() {
       </section>
 
       {/* Six Pillars Editorial Grid */}
-      <section className="py-10 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#DC2626]">
@@ -174,7 +176,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {corePillars.map((pillar, idx) => (
-              <div
+              <Card
                 key={idx}
                 className="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col group"
               >
@@ -185,9 +187,9 @@ export default function About() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase text-[#0B0F17]">
+                  <Badge variant="secondary" className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[11px] font-bold tracking-widest uppercase text-[#0B0F17]">
                     {pillar.eyebrow}
-                  </div>
+                  </Badge>
                 </div>
                 <div className="p-7 flex-1 flex flex-col justify-between space-y-4">
                   <div>
@@ -205,7 +207,7 @@ export default function About() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
